@@ -1,0 +1,316 @@
+/* RESET */
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+  }
+  /*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  /*
+    5. Improve media defaults
+  */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  /*
+    6. Remove built-in form typography styles
+  */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /*
+    7. Avoid text overflows
+  */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  /*
+    8. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+
+/* RESET END */
+
+/* ROOT VARIABLES */
+
+:root {
+  --header-width: 100%;
+}
+
+/* BODY */
+
+body {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, .50fr) .02fr;
+    overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+/* HEADER */
+
+header {
+    width: 100%;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.hands {
+    width: 100%;
+    height: 100%;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    position: relative;
+}
+
+h1 {
+  justify-self: center;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  position: absolute;
+  color: white;
+}
+
+.container {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 100%;
+}
+      /* NAV START */
+
+      .navigation {
+        grid-column-start: 3;
+        grid-column-end: 4;
+        justify-self: end;
+        position: absolute;
+        background: linear-gradient(109.6deg, rgb(36, 45, 57) 11.2%, rgb(16, 37, 60) 51.2%, rgb(0, 0, 0) 98.6%);
+        height: 133.2%;
+        width: 0px;
+        transition: width 0.5s ease-in-out;
+      }
+
+      nav {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+      }
+
+      .exit {
+        width: 25px;
+        height: 25px;
+        background-color: aqua;
+      }
+
+      .exit:hover {
+        cursor: pointer;
+      }
+
+      ul {
+        list-style-type: none;
+        grid-row-start: 1;
+        grid-row-end: 5;
+        line-height: 100px;
+        font-size: 1.2rem;
+      }
+
+      .nav-icon-one {
+        width: 50px;
+        border: 2px solid white;
+        grid-column-start: 3;
+        grid-column-end: 4;
+        justify-self: center;
+        position: relative;
+      }
+
+      .nav-icon-two {
+        width: 50px;
+        border: 2px solid white;
+        grid-column-start: 3;
+        grid-column-end: 4;
+        justify-self: center;
+        margin-top: 6px;
+      }
+
+      .nav-icon-three {
+        width: 50px;
+        border: 2px solid white;
+        grid-column-start: 3;
+        grid-column-end: 4;
+        justify-self: center;
+        margin-top: 6px;
+      }
+
+      .icon-container {
+        grid-column-start: 3;
+        grid-column-end: 4;
+        position: absolute;
+        justify-self: end;
+        margin-top: 3%;
+        margin-right: 5%;
+      }
+
+      @keyframes rotate {
+        0% {
+          transform: rotate(0);
+        }
+
+        100% {
+          transform: rotateY(-180deg);
+        }
+      }
+
+
+      .icon-container:hover {
+        cursor: pointer;
+        animation: rotate .5s ease-in-out 1;
+      }
+
+      /* NAV END */
+
+
+main {
+  grid-row-start: 2;
+  grid-row-end: 4;
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+
+.history {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 1200px;
+}
+
+.text {
+  width: 100%;
+  height: 1200px;
+  position: relative;
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+
+.history-title {
+  justify-self: center;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  position: absolute;
+  color: white;
+  font-size: 2rem;
+  align-self: center;
+}
+
+.history-btn {
+  height: 50px;
+  width: 120px;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  position: absolute;
+  justify-self: center;
+  align-self: end;
+  margin-bottom: 10%;
+  border: none;
+  border-radius: 35px;
+  font-weight: bold;
+}
+
+.history-btn a {
+  color: black;
+}
+
+.history-btn a:active {
+  color: grey;
+}
+
+.history-btn:hover {
+  cursor: pointer;
+}
+
+.schedule {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 1200px;
+}
+
+.seats {
+  width: 100%;
+  height: 1200px;
+  position: relative;
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+
+.service-title {
+  justify-self: center;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  position: absolute;
+  color: white;
+  font-size: 2rem;
+  align-self: center;
+}
+
+.service-btn {
+  height: 50px;
+  width: 120px;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  position: absolute;
+  justify-self: center;
+  align-self: end;
+  margin-bottom: 10%;
+  border: none;
+  border-radius: 35px;
+  line-height: 15px;
+  font-weight: bold;
+}
+
+.service-btn:hover {
+  cursor: pointer;
+}
+
+footer {
+  grid-row-start: 4;
+  grid-row-end: 5;
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+
+.footer-container {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  height: 200px;
+}
