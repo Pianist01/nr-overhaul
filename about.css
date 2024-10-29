@@ -55,7 +55,7 @@ body {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, .50fr) .02fr;
+    grid-template-rows: repeat(3, .20fr) .02fr;
     overflow-x: hidden;
 }
 
@@ -74,6 +74,7 @@ header {
     grid-column-end: 4;
     grid-row-start: 1;
     grid-row-end: 2;
+    height: 100%;
 }
 
 .container {
@@ -198,3 +199,64 @@ h2 {
     }
 
     /* NAV END */
+
+main {
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+
+.intro {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: .03fr .2fr .1fr;
+  height: 20%;
+}
+
+.intro-title {
+  color: black;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  align-self: start;
+}
+
+.service-image {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  align-self: center;
+  justify-self: center;
+}
+
+.intro-info1 {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  align-self: center;
+  font-size: 1.2em;
+  margin-right: 25%;
+  margin-left: 10%;
+  justify-self: center;
+}
+
+.intro-info2 {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  align-self: center;
+  font-size: 1.2em;
+  padding: 0 50px 0 50px;
+  margin-right: 10%;
+  margin-left: 10%;
+}
+
+.band {
+  grid-row-start: 3;
+  grid-row-end: 4;
+}
