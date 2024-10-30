@@ -55,8 +55,9 @@ body {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, .20fr) .02fr;
+    grid-template-rows: .20fr .5fr .5fr .5fr 1fr;
     overflow-x: hidden;
+    height: 100%;
 }
 
 a {
@@ -202,9 +203,10 @@ h2 {
 
 main {
   grid-row-start: 2;
-  grid-row-end: 3;
+  grid-row-end: 5;
   grid-column-start: 1;
   grid-column-end: 4;
+  display: grid;
 }
 
 .intro {
@@ -212,8 +214,8 @@ main {
   grid-column-end: 4;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: .03fr .2fr .1fr;
-  height: 20%;
+  grid-template-rows: .03fr .7fr .1fr;
+  height: 100%;
 }
 
 .intro-title {
@@ -256,7 +258,58 @@ main {
   margin-left: 10%;
 }
 
+.pastors {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, .2fr) .5fr;
+  height: 65%;
+}
+
+.pastor-title {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  color: black;
+  align-self: start;
+}
+
+.pastor-image {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  align-self: center;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  justify-self: center;
+}
+
+.pastor-name {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  justify-self: center;
+  align-self: center;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  font-size: 1.1em;
+}
+
+.pastor-info {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  align-self: start;
+  margin-left: 15%;
+  margin-right: 15%;
+  font-size: 1.2em;
+  grid-row-start: 3;
+  grid-row-end: 4;
+}
+
 .band {
   grid-row-start: 3;
   grid-row-end: 4;
+  display: grid;
+  justify-content: center;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  align-content: center;
 }
