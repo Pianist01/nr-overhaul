@@ -388,3 +388,14 @@ figcaption {
   height: 250px;
   border-radius: 50%;
 }
+
+/* INFO PANELS THAT HOVER OVER BAND */
+
+.joata-box {
+  background-color: aqua;
+  justify-self: center;
+  align-self: center;
+  width: 70%;
+  height: 0;
+  overflow: hidden;
+}
