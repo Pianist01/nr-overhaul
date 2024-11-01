@@ -1,3 +1,5 @@
+const bodyContainer = document.querySelector('body');
+
 const iconBox = document.querySelector('.icon-container');
 
 iconBox.addEventListener('click', (e) => {
@@ -21,16 +23,34 @@ const mainContainer = document.querySelector('.band');
 const joksan = document.querySelector('.joksan-info');
 joksan.addEventListener('click', (e) => {
     const joksanInfo = document.createElement('div');
-    joksanInfo.style.backgroundColor = 'red';
-    joksanInfo.style.width = '100px';
-    joksanInfo.style.height = '100px';
+    joksanInfo.classList.add('joata-box');
+
+    let height = 0;
+    const maxHeight = 50;
+
+    const animateHeight = () => {
+        height += 4;
+        joksanInfo.style.height = height + '%';
+
+        if(height < maxHeight) {
+            requestAnimationFrame(animateHeight);
+        }
+    };
+
+    animateHeight();
+
+
     joksanInfo.style.gridColumnStart = '1';
     joksanInfo.style.gridColumnEnd = '4';
     joksanInfo.style.gridRowStart = '1';
     joksanInfo.style.gridRowEnd = '3';
+    joksanInfo.style.zIndex = '1';
+    joksanInfo.style.position = 'absolute';
 
     // const exitInfo = document.createElement('div');
     // exitInfo.style.backgroundColor = 'blue';
     // joksanInfo.append(exitInfo);
     mainContainer.append(joksanInfo);
 });
+
+// Function to blur screen when 
