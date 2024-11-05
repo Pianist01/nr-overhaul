@@ -60,6 +60,11 @@ body {
     height: 100%;
 }
 
+    /* ADDING BLUR CLASSLIST TO BLUR CONTENT LATER */
+    .blurred {
+      filter: blur(8px);
+    }
+
 a {
     text-decoration: none;
     color: white;
@@ -398,4 +403,5 @@ figcaption {
   width: 70%;
   height: 0;
   overflow: hidden;
+  filter: blur(0);
 }
