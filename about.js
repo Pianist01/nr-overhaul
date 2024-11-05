@@ -22,15 +22,15 @@ const mainContainer = document.querySelector('.band');
 
 const joksan = document.querySelector('.joksan-info');
 joksan.addEventListener('click', (e) => {
-    const joksanInfo = document.createElement('div');
-    joksanInfo.classList.add('joata-box');
+    const joksanBox = document.createElement('div');
+    joksanBox.classList.add('joata-box');
 
     let height = 0;
-    const maxHeight = 50;
+    const maxHeight = 23;
 
     const animateHeight = () => {
-        height += 4;
-        joksanInfo.style.height = height + '%';
+        height += 1;
+        joksanBox.style.height = height + '%';
 
         if(height < maxHeight) {
             requestAnimationFrame(animateHeight);
@@ -39,18 +39,29 @@ joksan.addEventListener('click', (e) => {
 
     animateHeight();
 
+    bodyContainer.style.filter = 'blur(8px)';
 
-    joksanInfo.style.gridColumnStart = '1';
-    joksanInfo.style.gridColumnEnd = '4';
-    joksanInfo.style.gridRowStart = '1';
-    joksanInfo.style.gridRowEnd = '3';
-    joksanInfo.style.zIndex = '1';
-    joksanInfo.style.position = 'absolute';
+    const unBlur = setInterval(() => {
+        joksanBox.style.backdropFilter = 'none';
+    }, 1000);
+
+    
+
+    joksanBox.style.gridColumnStart = '1';
+    joksanBox.style.gridColumnEnd = '4';
+    joksanBox.style.gridRowStart = '1';
+    joksanBox.style.gridRowEnd = '3';
+    joksanBox.style.zIndex = '1';
+    joksanBox.style.position = 'absolute';
 
     // const exitInfo = document.createElement('div');
     // exitInfo.style.backgroundColor = 'blue';
     // joksanInfo.append(exitInfo);
-    mainContainer.append(joksanInfo);
+    mainContainer.append(joksanBox);
 });
 
-// Function to blur screen when 
+// Function to blur screen when band member is clicked on
+
+// function blurBackground() {
+//     blurOverlay.style.backdropFilter = 'blur(8px)';
+// };
