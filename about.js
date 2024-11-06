@@ -26,10 +26,10 @@ joksan.addEventListener('click', (e) => {
     joksanBox.classList.add('joata-box');
 
     let height = 0;
-    const maxHeight = 23;
+    const maxHeight = 60;
 
     const animateHeight = () => {
-        height += 1;
+        height += 3;
         joksanBox.style.height = height + '%';
 
         if(height < maxHeight) {
@@ -38,12 +38,6 @@ joksan.addEventListener('click', (e) => {
     };
 
     animateHeight();
-
-    bodyContainer.style.filter = 'blur(8px)';
-
-    const unBlur = setInterval(() => {
-        joksanBox.style.backdropFilter = 'none';
-    }, 1000);
 
     
 
