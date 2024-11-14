@@ -396,7 +396,7 @@ figcaption {
 
 /* INFO PANELS THAT HOVER OVER BAND */
 
-.band-box {
+.member-box {
   background-color: aqua;
   justify-self: center;
   align-self: center;
@@ -404,4 +404,15 @@ figcaption {
   height: 0;
   overflow: hidden;
   filter: blur(0);
+}
+
+.info-box {
+  /* background-color: grey; */
+  width: 100px;
+  height: 100px;
+}
+
+.member-image {
+  height: 50px;
+  width: 50px;
 }
