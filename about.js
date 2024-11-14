@@ -4,6 +4,16 @@ const iconBox = document.querySelector('.icon-container');
 
 const figureBox = document.querySelector('figure');
 
+let memberBox;
+
+let height = 0;
+
+const maxHeight = 60;
+
+let memberInfo;
+
+let bandIndex;
+
 iconBox.addEventListener('click', (e) => {
     e.preventDefault();
     console.log('It works!');
@@ -31,45 +41,106 @@ let clickCount = 0;
 
 const bandArray = [joksan, zaza, baba, poopi, rosa];
 
-bandArray.forEach((item, index) => {
-    item.addEventListener('click', (e) => {
-        e.preventDefault();
-        console.log('Working' + index);
-        const memberBox = document.createElement('div');
-        memberBox.classList.add('band-box');
+figureBox.addEventListener('click', (e) => {
+    console.log('This one works');
+});
 
-        let height = 0;
-        const maxHeight = 60;
+bandArray.forEach((member, index) => {
+    member.addEventListener('click', (e) => {
+        if(index === 0) {
+            console.log('This is Joksan');
+            memberBox = document.createElement('div');
+            memberBox.classList.add('member-box');
+            animate();
+            aboutMember();
+            mainContainer.append(memberBox);
+        } else if(index === 1) {
+            console.log('This is Abel');
+        }
+    });
+});
 
-        const animateHeight = () => {
+function animate() {
+    height = 0;
+    maxHeight;
+
+    const animateHeight = () => {
         height += 3;
         memberBox.style.height = height + '%';
 
         if(height < maxHeight) {
             requestAnimationFrame(animateHeight);
         }
-
-// Limit clicks to only one when clicking on a band member, clicking should be disabled after one is clicked, until they exit from that band member. 
-        clickCount += 1;
-        if(clickCount === 2) {
-            item.disabled = true;
-        }
-    };
+    }
 
     animateHeight();
 
-        memberBox.style.gridColumnStart = '1';
-        memberBox.style.gridColumnEnd = '4';
-        memberBox.style.gridRowStart = '1';
-        memberBox.style.gridRowEnd = '3';
-        memberBox.style.zIndex = '1';
-        memberBox.style.position = 'absolute';
+    memberBox.style.gridColumnStart = '1';
+    memberBox.style.gridColumnEnd = '4';
+    memberBox.style.gridRowStart = '1';
+    memberBox.style.gridRowEnd = '3';
+    memberBox.style.zIndex = '1';
+    memberBox.style.position = 'absolute';
+    
+}
 
-    mainContainer.append(memberBox);
-    });
-});
+function aboutMember() {
+    memberInfo = document.createElement('div');
+    memberInfo.classList.add('info-box');
 
-console.log(clickCount);
+    let img = document.createElement('img')
+    img.classList.add('member-image');
+
+    if(bandArray[bandIndex] === 0) {
+        img.src = 'img/Job.jpg';
+    } else if(bandArray[bandIndex] === 1) {
+        img.src = 'img/Zaza.jpg';
+    }
+
+    memberInfo.append(img);
+    memberBox.append(memberInfo);
+};
+
+// bandArray.forEach((item, index) => {
+//     item.addEventListener('click', (e) => {
+//         e.preventDefault();
+//         console.log('Working' + index);
+//         const memberBox = document.createElement('div');
+//         memberBox.classList.add('band-box');
+
+//         console.log(clickCount);
+
+//         let height = 0;
+//         const maxHeight = 60;
+
+//         const animateHeight = () => {
+//         height += 3;
+//         memberBox.style.height = height + '%';
+
+//         if(height < maxHeight) {
+//             requestAnimationFrame(animateHeight);
+//         }
+
+// // Limit clicks to only one when clicking on a band member, clicking should be disabled after one is clicked, until they exit from that band member. 
+//         clickCount += 1;
+//         if(clickCount === 2) {
+//             item.disabled = true;
+//         }
+//     };
+
+//     animateHeight();
+
+//         memberBox.style.gridColumnStart = '1';
+//         memberBox.style.gridColumnEnd = '4';
+//         memberBox.style.gridRowStart = '1';
+//         memberBox.style.gridRowEnd = '3';
+//         memberBox.style.zIndex = '1';
+//         memberBox.style.position = 'absolute';
+
+//     mainContainer.append(memberBox);
+//     });
+// });
+
 
 
 // joksan.addEventListener('click', (e) => {
