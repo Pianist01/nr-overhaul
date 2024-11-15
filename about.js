@@ -4,7 +4,8 @@ const iconBox = document.querySelector('.icon-container');
 
 const figureBox = document.querySelector('figure');
 
-let memberBox;
+const memberBox = document.createElement('div');
+memberBox.classList.add('member-box');
 
 let height = 0;
 
@@ -12,7 +13,15 @@ const maxHeight = 60;
 
 let memberInfo;
 
-let bandIndex;
+let img;
+
+// Overlays Selected
+
+const overlayOne = document.querySelector('.overlay1');
+const overlayTwo = document.querySelector('.overlay2');
+const overlayThree = document.querySelector('.overlay3');
+const overlayFour = document.querySelector('.overlay4');
+const overlayFive = document.querySelector('.overlay5');
 
 iconBox.addEventListener('click', (e) => {
     e.preventDefault();
@@ -41,23 +50,44 @@ let clickCount = 0;
 
 const bandArray = [joksan, zaza, baba, poopi, rosa];
 
-figureBox.addEventListener('click', (e) => {
-    console.log('This one works');
-});
-
 bandArray.forEach((member, index) => {
+    member.disabled = true;
     member.addEventListener('click', (e) => {
+
         if(index === 0) {
-            console.log('This is Joksan');
-            memberBox = document.createElement('div');
-            memberBox.classList.add('member-box');
+            console.log('This is Joksan' + index);
+            memberBox;
             animate();
             aboutMember();
-            mainContainer.append(memberBox);
+            img.src = 'img/Job.jpg';
+            overlayThree.style.display = 'block';
         } else if(index === 1) {
             console.log('This is Abel');
+            memberBox;
+            animate();
+            aboutMember();
+            img.src = 'img/Zaza.jpg';
+        } else if(index === 2) {
+            console.log('This is Gadiel');
+            memberBox;
+            animate();
+            aboutMember();
+            img.src = 'img/Gadiel.jpg';
+        } else if(index === 3) {
+            console.log('This is Isai');
+            memberBox;
+            animate();
+            aboutMember();
+            img.src = 'img/poopi.jpg';
+        } else {
+            console.log('This is Rosy');
+            memberBox;
+            animate();
+            aboutMember();
+            img.src = 'img/Rosa.jpg';
         }
     });
+    mainContainer.append(memberBox);
 });
 
 function animate() {
@@ -88,14 +118,8 @@ function aboutMember() {
     memberInfo = document.createElement('div');
     memberInfo.classList.add('info-box');
 
-    let img = document.createElement('img')
+    img = document.createElement('img')
     img.classList.add('member-image');
-
-    if(bandArray[bandIndex] === 0) {
-        img.src = 'img/Job.jpg';
-    } else if(bandArray[bandIndex] === 1) {
-        img.src = 'img/Zaza.jpg';
-    }
 
     memberInfo.append(img);
     memberBox.append(memberInfo);
