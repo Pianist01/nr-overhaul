@@ -51,7 +51,6 @@ let clickCount = 0;
 const bandArray = [joksan, zaza, baba, poopi, rosa];
 
 bandArray.forEach((member, index) => {
-    member.disabled = true;
     member.addEventListener('click', (e) => {
 
         if(index === 0) {
@@ -60,31 +59,50 @@ bandArray.forEach((member, index) => {
             animate();
             aboutMember();
             img.src = 'img/Job.jpg';
-            overlayThree.style.display = 'block';
+            baba.style.pointerEvents = 'none';
+            zaza.style.pointerEvents = 'none';
+            poopi.style.pointerEvents = 'none';
+            rosa.style.pointerEvents = 'none';
         } else if(index === 1) {
             console.log('This is Abel');
             memberBox;
             animate();
             aboutMember();
             img.src = 'img/Zaza.jpg';
+            joksan.style.pointerEvents = 'none';
+            baba.style.pointerEvents = 'none';
+            poopi.style.pointerEvents = 'none';
+            rosa.style.pointerEvents = 'none';
         } else if(index === 2) {
             console.log('This is Gadiel');
             memberBox;
             animate();
             aboutMember();
             img.src = 'img/Gadiel.jpg';
+            joksan.style.pointerEvents = 'none';
+            zaza.style.pointerEvents = 'none';
+            poopi.style.pointerEvents = 'none';
+            rosa.style.pointerEvents = 'none';
         } else if(index === 3) {
             console.log('This is Isai');
             memberBox;
             animate();
             aboutMember();
             img.src = 'img/poopi.jpg';
+            joksan.style.pointerEvents = 'none';
+            zaza.style.pointerEvents = 'none';
+            baba.style.pointerEvents = 'none';
+            rosa.style.pointerEvents = 'none';
         } else {
             console.log('This is Rosy');
             memberBox;
             animate();
             aboutMember();
             img.src = 'img/Rosa.jpg';
+            joksan.style.pointerEvents = 'none';
+            zaza.style.pointerEvents = 'none';
+            baba.style.pointerEvents = 'none';
+            poopi.style.pointerEvents = 'none';
         }
     });
     mainContainer.append(memberBox);
@@ -124,6 +142,16 @@ function aboutMember() {
     memberInfo.append(img);
     memberBox.append(memberInfo);
 };
+
+// This funciton will close member info box and reset pointer click event
+function enableClick() {
+
+}
+
+// This function and every other one named about(insert band member) will display member description
+function aboutJoksan() {
+
+}
 
 // bandArray.forEach((item, index) => {
 //     item.addEventListener('click', (e) => {
