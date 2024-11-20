@@ -430,3 +430,38 @@ figcaption {
   align-self: center;
   border-radius: 50%;
 }
+
+.member-paragraph {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 4;
+  align-self: start;
+  justify-self: center;
+  font-size: 1.2em;
+  width: 80%;
+}
+
+.member-title {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  align-self: start;
+}
+
+.member-position {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  justify-self: center;
+  align-self: center;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.band-exit {
+  background-color: aqua;
+  cursor: pointer;
+}
