@@ -11,9 +11,13 @@ let height = 0;
 
 const maxHeight = 60;
 
+const minHeight = 0;
+
 let memberInfo;
 
 let img;
+
+let joksanTitle;
 
 // Overlays Selected
 
@@ -54,6 +58,16 @@ const nameArray = ['Joksan Hernandez', 'Abel Garcia', 'Gadiel Garcia', 'Isai Her
 
 bandArray.forEach((member, index) => {
     member.addEventListener('click', (e) => {
+
+        const goDark = () => {
+            figureBox.addEventListener('click', (e) => {
+                if(!(e.currentTarget === member)) {
+                    bodyContainer.style.backgroundColor = 'black';
+                }
+            });
+        };
+
+        goDark();
 
         if(index === 0) {
             console.log('This is Joksan' + index);
@@ -130,7 +144,7 @@ function animate() {
 
         if(height < maxHeight) {
             requestAnimationFrame(animateHeight);
-        }
+        } 
     }
 
     animateHeight();
@@ -161,16 +175,25 @@ function enableClick() {
     memberExit.classList.add('band-exit');
     memberExit.addEventListener('click', (e) => {
         e.preventDefault();
+        memberInfo.style.display = 'none';
+        const goAway = () => {
+            height -= 3;
+            memberBox.style.height = height + '%';
+            if(height) {
+                requestAnimationFrame(goAway);
+            }
+        }
         bandArray.forEach((item) => {
             item.style.pointerEvents = '';
         });
+        goAway();
     });
     memberInfo.append(memberExit);
 }
 
 // This function and every other one named about(insert band member) will display member description
 function aboutJoksan() {
-    const joksanTitle = document.createElement('h2');
+    joksanTitle = document.createElement('h2');
     joksanTitle.classList.add('member-title');
     joksanTitle.textContent = nameArray[0];
 
@@ -243,91 +266,3 @@ function aboutRosy() {
     rosaDescrip.textContent = 'Apasionada con cantando, Rosy ayuda la banda como la segunda voz. Ella le agrega mas emocion a cada cancion con una sonrisa en su cara.';
     memberInfo.append(rosaTitle, rosaPosition, rosaDescrip);
 }
-
-// bandArray.forEach((item, index) => {
-//     item.addEventListener('click', (e) => {
-//         e.preventDefault();
-//         console.log('Working' + index);
-//         const memberBox = document.createElement('div');
-//         memberBox.classList.add('band-box');
-
-//         console.log(clickCount);
-
-//         let height = 0;
-//         const maxHeight = 60;
-
-//         const animateHeight = () => {
-//         height += 3;
-//         memberBox.style.height = height + '%';
-
-//         if(height < maxHeight) {
-//             requestAnimationFrame(animateHeight);
-//         }
-
-// // Limit clicks to only one when clicking on a band member, clicking should be disabled after one is clicked, until they exit from that band member. 
-//         clickCount += 1;
-//         if(clickCount === 2) {
-//             item.disabled = true;
-//         }
-//     };
-
-//     animateHeight();
-
-//         memberBox.style.gridColumnStart = '1';
-//         memberBox.style.gridColumnEnd = '4';
-//         memberBox.style.gridRowStart = '1';
-//         memberBox.style.gridRowEnd = '3';
-//         memberBox.style.zIndex = '1';
-//         memberBox.style.position = 'absolute';
-
-//     mainContainer.append(memberBox);
-//     });
-// });
-
-
-
-// joksan.addEventListener('click', (e) => {
-//     const joksanBox = document.createElement('div');
-//     joksanBox.classList.add('joata-box');
-
-//     let height = 0;
-//     const maxHeight = 60;
-
-//     const animateHeight = () => {
-//         height += 3;
-//         joksanBox.style.height = height + '%';
-
-//         if(height < maxHeight) {
-//             requestAnimationFrame(animateHeight);
-//         }
-//     };
-
-//     animateHeight();
-
-//     const darkenBackground = () => {
-//         bodyContainer.style.backgroundColor = 'black';
-//         joksan.style.opacity = '0';
-//     }
-
-//     darkenBackground();
-
-    
-
-//     joksanBox.style.gridColumnStart = '1';
-//     joksanBox.style.gridColumnEnd = '4';
-//     joksanBox.style.gridRowStart = '1';
-//     joksanBox.style.gridRowEnd = '3';
-//     joksanBox.style.zIndex = '1';
-//     joksanBox.style.position = 'absolute';
-
-//     // const exitInfo = document.createElement('div');
-//     // exitInfo.style.backgroundColor = 'blue';
-//     // joksanInfo.append(exitInfo);
-//     mainContainer.append(joksanBox);
-// });
-
-// Function to blur screen when band member is clicked on
-
-// function blurBackground() {
-//     bodyContainer.style.opacity = '0';
-// };
