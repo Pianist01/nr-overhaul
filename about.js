@@ -7,6 +7,12 @@ const figureBox = document.querySelector('figure');
 const memberBox = document.createElement('div');
 memberBox.classList.add('member-box');
 
+const logo = document.querySelector('.logo');
+logo.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.location.href = 'index.html';
+});
+
 let height = 0;
 
 const maxHeight = 60;
@@ -59,15 +65,13 @@ const nameArray = ['Joksan Hernandez', 'Abel Garcia', 'Gadiel Garcia', 'Isai Her
 bandArray.forEach((member, index) => {
     member.addEventListener('click', (e) => {
 
-        const goDark = () => {
-            figureBox.addEventListener('click', (e) => {
-                if(!(e.currentTarget === member)) {
-                    bodyContainer.style.backgroundColor = 'black';
-                }
+        if(bodyContainer !== e) {
+            console.log('this is not body');
+            bodyContainer.style.backgroundColor = 'black';
+            bandArray.forEach((player) => {
+                player.style.opacity = '0';
             });
-        };
-
-        goDark();
+        }
 
         if(index === 0) {
             console.log('This is Joksan' + index);
@@ -77,6 +81,7 @@ bandArray.forEach((member, index) => {
             aboutJoksan();
             enableClick();
             img.src = 'img/Job.jpg';
+            joksan.style.pointerEvents = 'none';
             baba.style.pointerEvents = 'none';
             zaza.style.pointerEvents = 'none';
             poopi.style.pointerEvents = 'none';
@@ -89,6 +94,7 @@ bandArray.forEach((member, index) => {
             aboutAbel();
             enableClick();
             img.src = 'img/Zaza.jpg';
+            zaza.style.pointerEvents = 'none';
             joksan.style.pointerEvents = 'none';
             baba.style.pointerEvents = 'none';
             poopi.style.pointerEvents = 'none';
@@ -101,6 +107,7 @@ bandArray.forEach((member, index) => {
             aboutGadiel();
             enableClick();
             img.src = 'img/Gadiel.jpg';
+            baba.style.pointerEvents = 'none';
             joksan.style.pointerEvents = 'none';
             zaza.style.pointerEvents = 'none';
             poopi.style.pointerEvents = 'none';
@@ -113,6 +120,7 @@ bandArray.forEach((member, index) => {
             aboutIsai();
             enableClick();
             img.src = 'img/poopi.jpg';
+            poopi.style.pointerEvents = 'none';
             joksan.style.pointerEvents = 'none';
             zaza.style.pointerEvents = 'none';
             baba.style.pointerEvents = 'none';
@@ -125,6 +133,7 @@ bandArray.forEach((member, index) => {
             aboutRosy();
             enableClick();
             img.src = 'img/Rosa.jpg';
+            rosa.style.pointerEvents = 'none';
             joksan.style.pointerEvents = 'none';
             zaza.style.pointerEvents = 'none';
             baba.style.pointerEvents = 'none';
@@ -175,6 +184,7 @@ function enableClick() {
     memberExit.classList.add('band-exit');
     memberExit.addEventListener('click', (e) => {
         e.preventDefault();
+        bodyContainer.style.backgroundColor = 'white';
         memberInfo.style.display = 'none';
         const goAway = () => {
             height -= 3;
@@ -185,6 +195,7 @@ function enableClick() {
         }
         bandArray.forEach((item) => {
             item.style.pointerEvents = '';
+            item.style.opacity = '100';
         });
         goAway();
     });

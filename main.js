@@ -1,6 +1,12 @@
 console.log('This is a test');
 
 const iconBox = document.querySelector('.icon-container');
+const logo = document.querySelector('.logo');
+
+logo.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.location.href = 'index.html';
+});
 
 iconBox.addEventListener('click', (e) => {
     e.preventDefault();

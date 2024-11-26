@@ -103,12 +103,16 @@ header {
     position: relative;
 }
 
-h1 {
+.logo {
   justify-self: center;
   grid-column-start: 2;
   grid-column-end: 3;
   position: absolute;
-  color: white;
+  width: 220px;
+  height: 220px;
+  align-self: start;
+  margin-top: -50px;
+  cursor: pointer;
 }
 
 h2 {
@@ -167,7 +171,7 @@ h2 {
     }
 
     .nav-icon-one {
-      width: 50px;
+      width: 40px;
       border: 2px solid white;
       grid-column-start: 3;
       grid-column-end: 4;
@@ -176,7 +180,7 @@ h2 {
     }
 
     .nav-icon-two {
-      width: 50px;
+      width: 40px;
       border: 2px solid white;
       grid-column-start: 3;
       grid-column-end: 4;
@@ -185,7 +189,7 @@ h2 {
     }
 
     .nav-icon-three {
-      width: 50px;
+      width: 40px;
       border: 2px solid white;
       grid-column-start: 3;
       grid-column-end: 4;
@@ -469,3 +473,17 @@ figcaption {
   background-color: aqua;
   cursor: pointer;
 }
+
+    /* ANIMATION TO FADE BACKGROUND TO BLACK */
+    @keyframes disappear {
+      0% {
+        background-color: transparent;
+      }
+
+      100% {
+        background-color: black;
+      }
+    }
+    body {
+      animation: disappear 2s ease-in-out 1;
+    }
