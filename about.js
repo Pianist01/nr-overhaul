@@ -13,6 +13,8 @@ logo.addEventListener('click', (e) => {
     window.location.href = 'index.html';
 });
 
+console.log(getComputedStyle(bodyContainer).backgroundColor);
+
 let height = 0;
 
 const maxHeight = 60;
@@ -24,14 +26,6 @@ let memberInfo;
 let img;
 
 let joksanTitle;
-
-// Overlays Selected
-
-const overlayOne = document.querySelector('.overlay1');
-const overlayTwo = document.querySelector('.overlay2');
-const overlayThree = document.querySelector('.overlay3');
-const overlayFour = document.querySelector('.overlay4');
-const overlayFive = document.querySelector('.overlay5');
 
 iconBox.addEventListener('click', (e) => {
     e.preventDefault();
@@ -62,12 +56,27 @@ const bandArray = [joksan, zaza, baba, poopi, rosa];
 
 const nameArray = ['Joksan Hernandez', 'Abel Garcia', 'Gadiel Garcia', 'Isai Hernandez', 'Rosy'];
 
+let transparent = 0;
+const maxTransparent = 1;
+const minTransparent = 0;
+
 bandArray.forEach((member, index) => {
     member.addEventListener('click', (e) => {
 
         if(bodyContainer !== e) {
             console.log('this is not body');
-            bodyContainer.style.backgroundColor = 'black';
+
+            const animateColor = () => {
+                setInterval(() => {
+                    if (transparent < maxTransparent) {
+                        bodyContainer.style.backgroundColor = `rgba(0, 0, 0, ${transparent += .2})`;
+                        requestAnimationFrame(animateColor);
+                }
+                }, 500);
+            }
+
+            animateColor();
+
             bandArray.forEach((player) => {
                 player.style.opacity = '0';
             });
@@ -182,9 +191,12 @@ function aboutMember() {
 function enableClick() {
     const memberExit = document.createElement('div');
     memberExit.classList.add('band-exit');
+    let exitImage = document.createElement('img');
+    exitImage.src = 'img/exit.png';
+    memberExit.append(exitImage);
     memberExit.addEventListener('click', (e) => {
         e.preventDefault();
-        bodyContainer.style.backgroundColor = 'white';
+        // bodyContainer.style.backgroundColor = 'white';
         memberInfo.style.display = 'none';
         const goAway = () => {
             height -= 3;
@@ -193,11 +205,25 @@ function enableClick() {
                 requestAnimationFrame(goAway);
             }
         }
+
+        goAway();
+
+        const backToWhite = () => {
+            setInterval(() => {
+                if(transparent > minTransparent) {
+                    transparent -= .5;
+                    bodyContainer.style.backgroundColor = `rgba(0, 0, 0, ${transparent})`;
+                    requestAnimationFrame(backToWhite);
+                }
+            }, 1000);
+        }
+
+        backToWhite();
+
         bandArray.forEach((item) => {
             item.style.pointerEvents = '';
             item.style.opacity = '100';
         });
-        goAway();
     });
     memberInfo.append(memberExit);
 }

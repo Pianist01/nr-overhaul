@@ -246,6 +246,8 @@ main {
   grid-row-end: 3;
   align-self: center;
   justify-self: center;
+  width: 85%;
+  height: 85%;
 }
 
 .intro-info1 {
@@ -278,7 +280,7 @@ main {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, .2fr) .5fr;
-  height: 65%;
+  height: 100%;
 }
 
 .pastor-title {
@@ -295,6 +297,9 @@ main {
   grid-row-start: 3;
   grid-row-end: 4;
   justify-self: center;
+  width: 50%;
+  height: 70%;
+  border-radius: 50%;
 }
 
 .pastor-name {
@@ -310,8 +315,7 @@ main {
 .pastor-info {
   grid-column-start: 2;
   grid-column-end: 4;
-  align-self: start;
-  margin-left: 15%;
+  align-self: center;
   margin-right: 15%;
   font-size: 1.2em;
   grid-row-start: 3;
@@ -405,10 +409,10 @@ figcaption {
 /* INFO PANELS THAT HOVER OVER BAND */
 
 .member-box {
-  background-color: aqua;
+  background-color: white;
   justify-self: center;
   align-self: center;
-  width: 70%;
+  width: 55%;
   height: 0;
   overflow: hidden;
   filter: blur(0);
@@ -421,7 +425,7 @@ figcaption {
   width: 100%;
   height: 100%;
   padding: 30px;
-  background-color: green;
+  background: radial-gradient(343px at 46.3% 47.5%, rgb(242, 242, 242) 0%, rgb(241, 241, 241) 72.9%);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
@@ -447,7 +451,7 @@ figcaption {
   align-self: start;
   justify-self: center;
   font-size: 1.2em;
-  width: 80%;
+  width: 75%;
 }
 
 .member-title {
@@ -456,6 +460,7 @@ figcaption {
   grid-row-start: 1;
   grid-row-end: 1;
   align-self: start;
+  color: black;
 }
 
 .member-position {
@@ -470,20 +475,12 @@ figcaption {
 }
 
 .band-exit {
-  background-color: aqua;
   cursor: pointer;
+  height: 25px;
+  width: 25px;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  justify-self: end;
+  margin-top: 3%;
+  margin-right: 5%;
 }
-
-    /* ANIMATION TO FADE BACKGROUND TO BLACK */
-    @keyframes disappear {
-      0% {
-        background-color: transparent;
-      }
-
-      100% {
-        background-color: black;
-      }
-    }
-    body {
-      animation: disappear 2s ease-in-out 1;
-    }
