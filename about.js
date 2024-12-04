@@ -60,26 +60,24 @@ let transparent = 0;
 const maxTransparent = 1;
 const minTransparent = 0;
 
+let insideChurch = document.querySelector('.service-image');
+let levaWife = document.querySelector('.pastor-image');
+
 bandArray.forEach((member, index) => {
     member.addEventListener('click', (e) => {
 
         if(bodyContainer !== e) {
             console.log('this is not body');
 
-            const animateColor = () => {
-                setInterval(() => {
-                    if (transparent < maxTransparent) {
-                        bodyContainer.style.backgroundColor = `rgba(0, 0, 0, ${transparent += .2})`;
-                        requestAnimationFrame(animateColor);
-                }
-                }, 500);
-            }
-
-            animateColor();
+            bodyContainer.style.backgroundColor = 'rgba(0, 0, 0, 1)';
 
             bandArray.forEach((player) => {
                 player.style.opacity = '0';
             });
+
+            insideChurch.style.opacity = 0;
+
+            levaWife.style.opacity = 0;
         }
 
         if(index === 0) {
@@ -196,7 +194,9 @@ function enableClick() {
     memberExit.append(exitImage);
     memberExit.addEventListener('click', (e) => {
         e.preventDefault();
-        // bodyContainer.style.backgroundColor = 'white';
+        bodyContainer.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+        insideChurch.style.opacity = 1;
+        levaWife.style.opacity = 1;
         memberInfo.style.display = 'none';
         const goAway = () => {
             height -= 3;
