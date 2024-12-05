@@ -13,6 +13,8 @@ logo.addEventListener('click', (e) => {
     window.location.href = 'index.html';
 });
 
+const levaContainer = document.querySelector('.pastors');
+
 console.log(getComputedStyle(bodyContainer).backgroundColor);
 
 let height = 0;
@@ -26,6 +28,10 @@ let memberInfo;
 let img;
 
 let joksanTitle;
+
+let exitImage;
+
+let levaBox;
 
 iconBox.addEventListener('click', (e) => {
     e.preventDefault();
@@ -62,6 +68,48 @@ const minTransparent = 0;
 
 let insideChurch = document.querySelector('.service-image');
 let levaWife = document.querySelector('.pastor-image');
+
+levaWife.addEventListener('click', (e) => {
+    e.preventDefault();
+    console.log('This is Leva and Reyna');
+    levaBox = document.createElement('div');
+    levaBox.classList.add('leva-container');
+    levaBox.style.width = '50%';
+
+    bodyContainer.style.backgroundColor = 'rgba(0, 0, 0, 1)';
+    bandArray.forEach((player) => {
+        player.style.opacity = '0';
+    });
+
+    insideChurch.style.opacity = 0;
+
+    height = 0;
+    maxHeight;
+
+    const animateHeight = () => {
+        height += 3;
+        levaBox.style.height = height + '%';
+
+        if(height < maxHeight) {
+            requestAnimationFrame(animateHeight);
+        } 
+    }
+
+    animateHeight();
+
+    levaExit();
+
+    levaBox.style.gridColumnStart = 1;
+    levaBox.style.gridColumnEnd = 4;
+    levaBox.style.gridRowStart = 1;
+    levaBox.style.gridRowEnd = 4;
+    levaBox.style.zIndex = 1;
+    levaBox.style.position = 'absolute';
+    levaBox.style.justifySelf = 'center';
+    levaBox.style.alignSelf = 'center';
+
+    levaContainer.append(levaBox);
+})
 
 bandArray.forEach((member, index) => {
     member.addEventListener('click', (e) => {
@@ -189,7 +237,7 @@ function aboutMember() {
 function enableClick() {
     const memberExit = document.createElement('div');
     memberExit.classList.add('band-exit');
-    let exitImage = document.createElement('img');
+    exitImage = document.createElement('img');
     exitImage.src = 'img/exit.png';
     memberExit.append(exitImage);
     memberExit.addEventListener('click', (e) => {
@@ -226,6 +274,27 @@ function enableClick() {
         });
     });
     memberInfo.append(memberExit);
+}
+
+function levaExit() {
+    const exit = document.createElement('div');
+    exit.classList.add('leva-exit');
+    exitImage = document.createElement('img');
+    exitImage.src = 'img/exit.png';
+    exit.append(exitImage)
+    levaBox.append(exit);
+
+    exit.addEventListener('click', (e) => {
+        const byeLeva = () => {
+            height -= 3;
+            levaBox.style.height = height + '%';
+            if(height) {
+                requestAnimationFrame(byeLeva);
+            }
+        }
+
+        byeLeva();
+    });
 }
 
 // This function and every other one named about(insert band member) will display member description
