@@ -91,7 +91,7 @@ header {
 
 .container {
 grid-column-start: 1;
-grid-column-end: 4;
+grid-column-end: 3;
 display: grid;
 grid-template-columns: repeat(3, 1fr);
 height: 100%;
@@ -143,7 +143,7 @@ align-self: center;
     justify-self: end;
     position: absolute;
     background: linear-gradient(109.6deg, rgb(36, 45, 57) 11.2%, rgb(16, 37, 60) 51.2%, rgb(0, 0, 0) 98.6%);
-    height: 133.2%;
+    height: 149.6%;
     width: 0px;
     transition: width 0.5s ease-in-out;
   }
@@ -157,7 +157,7 @@ align-self: center;
   .exit {
     width: 25px;
     height: 25px;
-    background-color: aqua;
+    margin: 5% 0 0 5%;
   }
 
   .exit:hover {
@@ -222,7 +222,7 @@ grid-row-end: 5;
 grid-column-start: 1;
 grid-column-end: 4;
 display: grid;
-grid-template-rows: repeat(2, 1fr) 2fr .5fr;
+grid-template-rows: repeat(2, 1fr) 2fr;
 }
 
 .intro {
@@ -251,6 +251,8 @@ align-self: center;
 justify-self: center;
 width: 85%;
 height: 85%;
+opacity: 100;
+transition: opacity .5s ease-in-out;
 }
 
 .intro-info1 {
@@ -303,7 +305,9 @@ justify-self: center;
 width: 550px;
 height: 550px;
 cursor: pointer;
-margin-top: -18%;
+margin-top: -16%;
+opacity: 100;
+transition: opacity .5s ease-in-out;
 }
 
 .pastor-name {
@@ -382,11 +386,12 @@ grid-column-start: 2;
 grid-column-end: 3;
 color: black;
 align-self: start;
+margin-top: 10%;
 }
 
 .joksan-info {
 grid-column: 1/2;
-align-self: center;
+align-self: end;
 justify-self: center;
 }
 
@@ -401,8 +406,10 @@ justify-self: center;
 }
 
 figure {
-align-self: center;
+align-self: end;
 justify-self: center;
+opacity: 1;
+transition: opacity .5s ease-in-out;
 }
 
 figure:hover {
@@ -527,3 +534,6 @@ justify-self: end;
 margin-top: 3%;
 margin-right: 5%;
 }
+
+/* FOOTER */
+
