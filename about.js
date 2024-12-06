@@ -33,6 +33,8 @@ let exitImage;
 
 let levaBox;
 
+let levaSquare;
+
 iconBox.addEventListener('click', (e) => {
     e.preventDefault();
     console.log('It works!');
@@ -72,9 +74,16 @@ let levaWife = document.querySelector('.pastor-image');
 levaWife.addEventListener('click', (e) => {
     e.preventDefault();
     console.log('This is Leva and Reyna');
+
+    levaWife.style.opacity = 0;
+
     levaBox = document.createElement('div');
     levaBox.classList.add('leva-container');
     levaBox.style.width = '50%';
+
+    levaSquare = document.createElement('div');
+    levaSquare.classList.add('leva-square');
+    levaBox.append(levaSquare);
 
     bodyContainer.style.backgroundColor = 'rgba(0, 0, 0, 1)';
     bandArray.forEach((player) => {
@@ -96,6 +105,8 @@ levaWife.addEventListener('click', (e) => {
     }
 
     animateHeight();
+
+    aboutLeva();
 
     levaExit();
 
@@ -282,9 +293,10 @@ function levaExit() {
     exitImage = document.createElement('img');
     exitImage.src = 'img/exit.png';
     exit.append(exitImage)
-    levaBox.append(exit);
+    levaSquare.append(exit);
 
     exit.addEventListener('click', (e) => {
+        bodyContainer.style.backgroundColor = 'rgba(0, 0, 0, 0)';
         const byeLeva = () => {
             height -= 3;
             levaBox.style.height = height + '%';
@@ -294,7 +306,29 @@ function levaExit() {
         }
 
         byeLeva();
+
+        levaWife.style.opacity = 1;
+        insideChurch.style.opacity = 1;
+        bandArray.forEach((item) => {
+            item.style.opacity = 1;
+        });
     });
+}
+
+function aboutLeva() {
+    const levaTitle = document.createElement('h2')
+    levaTitle.classList.add('member-title');
+    levaTitle.textContent = 'Victor y Brizza Hernandez';
+
+    const levaPosition = document.createElement('p');
+    levaPosition.classList.add('member-position');
+    levaPosition.textContent = 'Pastores';
+
+    const levaDescrip = document.createElement('p');
+    levaDescrip.classList.add('member-paragraph');
+    levaDescrip.textContent = 'Victor y Brizza tienen 20 a\u00F1os casados. Con sus dos hijos y hija, toda la familia sirve dentro de la iglesia. Salvado de una vida de drogas y deliquencia, Victor sigue con el mismo fuego de servir a Cristo hoy como el primer dia. Pero, tras cada hombre que se esfuerza a servir a Dios a lo 100%, siempre hay una mujer de Dios tras de el. Brizza siempre hace todo lo posible de ayudar el ministerio con las mujeres y para todos en general. Siempre la puedes encontrar sirviendo la congregacion en todo lo que necesita.';
+
+    levaSquare.append(levaTitle, levaPosition, levaDescrip);
 }
 
 // This function and every other one named about(insert band member) will display member description
