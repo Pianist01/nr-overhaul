@@ -176,6 +176,7 @@ h1 {
         cursor: pointer;
         animation: rotate .5s ease-in-out 1;
       }
+<<<<<<< HEAD
 
       nav {
         display: grid;
@@ -263,3 +264,5 @@ main {
   height: 40px;
   width: 40px;
 }
+=======
+>>>>>>> d1f3a0d6a9587c7480d25e17ca2ded236227a48b
