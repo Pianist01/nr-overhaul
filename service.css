@@ -1,1 +1,178 @@
+/* RESET */
 
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+  }
+  /*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  /*
+    5. Improve media defaults
+  */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  /*
+    6. Remove built-in form typography styles
+  */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /*
+    7. Avoid text overflows
+  */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  /*
+    8. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+  
+/* RESET END */
+
+/* BODY */
+
+body {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 2fr 1fr .5fr;
+    overflow-x: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+/* HEADER ROOT VARIABLES */
+
+:root {
+    --header-width: 100%;
+    --header-column: 1/4;
+    --header-row: 1/2;
+    --header-image-width: 100%;
+    --header-image-height: 100%;
+    --header-image-column: 1/4;
+    --header-image-position: relative;
+    --logo-column: 2/3;
+    --logo-position: absolute;
+    --logo-justify-self: center;
+    --logo-width-height: 220px;
+    --logo-align-self: start;
+    --logo-margin-top: -50px;
+
+    --header-container-column: 1/4;
+    --header-container-height: 100%; 
+}
+
+/* ROOT VARIABLES END */
+
+/* HEADER STYLES */
+
+header {
+    grid-column: var(--header-column);
+    width: var(--header-width);
+    grid-row: var(--header-row);
+}
+
+.header-container {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    height: var(--header-container-height);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+}
+
+.page-image {
+    width: var(--header-image-width);
+    height: var(--header-image-height);
+    grid-column: var(--header-image-column);
+}
+
+.logo {
+    justify-self: var(--logo-justify-self);
+    grid-column: var(--logo-column);
+    position: var(--logo-position);
+    width: var(--logo-width-height);
+    height: var(--logo-width-height);
+    align-self: var(--logo-align-self);
+    margin-top: var(--logo-margin-top);
+    cursor: pointer;
+}
+
+h1 {
+    justify-self: center;
+    grid-column: 2/3;
+    align-self: center;
+    color: white;
+    position: absolute;
+}
+    /* NAV STYLES */
+
+    .icon-container {
+        grid-column-start: 3;
+        grid-column-end: 4;
+        position: absolute;
+        justify-self: end;
+        margin-top: 3%;
+        margin-right: 5%;
+      }
+
+      .nav-icon-one {
+        width: 40px;
+        border: 2px solid white;
+        grid-column-start: 3;
+        grid-column-end: 4;
+        justify-self: center;
+        position: relative;
+      }
+    
+      .nav-icon-two {
+        width: 40px;
+        border: 2px solid white;
+        grid-column-start: 3;
+        grid-column-end: 4;
+        justify-self: center;
+        margin-top: 6px;
+      }
+    
+      .nav-icon-three {
+        width: 40px;
+        border: 2px solid white;
+        grid-column-start: 3;
+        grid-column-end: 4;
+        justify-self: center;
+        margin-top: 6px;
+      }
+    
+      @keyframes rotate {
+        0% {
+          transform: rotate(0);
+        }
+    
+        100% {
+          transform: rotateY(-180deg);
+        }
+      }
+    
+      .icon-container:hover {
+        cursor: pointer;
+        animation: rotate .5s ease-in-out 1;
+      }
