@@ -13,6 +13,8 @@ logo.addEventListener('click', (e) => {
     window.location.href = 'index.html';
 });
 
+const levaContainer = document.querySelector('.pastors');
+
 console.log(getComputedStyle(bodyContainer).backgroundColor);
 
 let height = 0;
@@ -26,6 +28,12 @@ let memberInfo;
 let img;
 
 let joksanTitle;
+
+let exitImage;
+
+let levaBox;
+
+let levaSquare;
 
 iconBox.addEventListener('click', (e) => {
     e.preventDefault();
@@ -60,26 +68,75 @@ let transparent = 0;
 const maxTransparent = 1;
 const minTransparent = 0;
 
+let insideChurch = document.querySelector('.service-image');
+let levaWife = document.querySelector('.pastor-image');
+
+levaWife.addEventListener('click', (e) => {
+    e.preventDefault();
+    console.log('This is Leva and Reyna');
+
+    levaWife.style.opacity = 0;
+
+    levaBox = document.createElement('div');
+    levaBox.classList.add('leva-container');
+    levaBox.style.width = '50%';
+
+    levaSquare = document.createElement('div');
+    levaSquare.classList.add('leva-square');
+    levaBox.append(levaSquare);
+
+    bodyContainer.style.backgroundColor = 'rgba(0, 0, 0, 1)';
+    bandArray.forEach((player) => {
+        player.style.opacity = '0';
+    });
+
+    insideChurch.style.opacity = 0;
+
+    height = 0;
+    maxHeight;
+
+    const animateHeight = () => {
+        height += 3;
+        levaBox.style.height = height + '%';
+
+        if(height < maxHeight) {
+            requestAnimationFrame(animateHeight);
+        } 
+    }
+
+    animateHeight();
+
+    aboutLeva();
+
+    levaExit();
+
+    levaBox.style.gridColumnStart = 1;
+    levaBox.style.gridColumnEnd = 4;
+    levaBox.style.gridRowStart = 1;
+    levaBox.style.gridRowEnd = 4;
+    levaBox.style.zIndex = 1;
+    levaBox.style.position = 'absolute';
+    levaBox.style.justifySelf = 'center';
+    levaBox.style.alignSelf = 'center';
+
+    levaContainer.append(levaBox);
+})
+
 bandArray.forEach((member, index) => {
     member.addEventListener('click', (e) => {
 
         if(bodyContainer !== e) {
             console.log('this is not body');
 
-            const animateColor = () => {
-                setInterval(() => {
-                    if (transparent < maxTransparent) {
-                        bodyContainer.style.backgroundColor = `rgba(0, 0, 0, ${transparent += .2})`;
-                        requestAnimationFrame(animateColor);
-                }
-                }, 500);
-            }
-
-            animateColor();
+            bodyContainer.style.backgroundColor = 'rgba(0, 0, 0, 1)';
 
             bandArray.forEach((player) => {
                 player.style.opacity = '0';
             });
+
+            insideChurch.style.opacity = 0;
+
+            levaWife.style.opacity = 0;
         }
 
         if(index === 0) {
@@ -191,12 +248,14 @@ function aboutMember() {
 function enableClick() {
     const memberExit = document.createElement('div');
     memberExit.classList.add('band-exit');
-    let exitImage = document.createElement('img');
+    exitImage = document.createElement('img');
     exitImage.src = 'img/exit.png';
     memberExit.append(exitImage);
     memberExit.addEventListener('click', (e) => {
         e.preventDefault();
-        // bodyContainer.style.backgroundColor = 'white';
+        bodyContainer.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+        insideChurch.style.opacity = 1;
+        levaWife.style.opacity = 1;
         memberInfo.style.display = 'none';
         const goAway = () => {
             height -= 3;
@@ -226,6 +285,50 @@ function enableClick() {
         });
     });
     memberInfo.append(memberExit);
+}
+
+function levaExit() {
+    const exit = document.createElement('div');
+    exit.classList.add('leva-exit');
+    exitImage = document.createElement('img');
+    exitImage.src = 'img/exit.png';
+    exit.append(exitImage)
+    levaSquare.append(exit);
+
+    exit.addEventListener('click', (e) => {
+        bodyContainer.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+        const byeLeva = () => {
+            height -= 3;
+            levaBox.style.height = height + '%';
+            if(height) {
+                requestAnimationFrame(byeLeva);
+            }
+        }
+
+        byeLeva();
+
+        levaWife.style.opacity = 1;
+        insideChurch.style.opacity = 1;
+        bandArray.forEach((item) => {
+            item.style.opacity = 1;
+        });
+    });
+}
+
+function aboutLeva() {
+    const levaTitle = document.createElement('h2')
+    levaTitle.classList.add('member-title');
+    levaTitle.textContent = 'Victor y Brizza Hernandez';
+
+    const levaPosition = document.createElement('p');
+    levaPosition.classList.add('member-position');
+    levaPosition.textContent = 'Pastores';
+
+    const levaDescrip = document.createElement('p');
+    levaDescrip.classList.add('member-paragraph');
+    levaDescrip.textContent = 'Victor y Brizza tienen 20 a\u00F1os casados. Con sus dos hijos y hija, toda la familia sirve dentro de la iglesia. Salvado de una vida de drogas y deliquencia, Victor sigue con el mismo fuego de servir a Cristo hoy como el primer dia. Pero, tras cada hombre que se esfuerza a servir a Dios a lo 100%, siempre hay una mujer de Dios tras de el. Brizza siempre hace todo lo posible de ayudar el ministerio con las mujeres y para todos en general. Siempre la puedes encontrar sirviendo la congregacion en todo lo que necesita.';
+
+    levaSquare.append(levaTitle, levaPosition, levaDescrip);
 }
 
 // This function and every other one named about(insert band member) will display member description
