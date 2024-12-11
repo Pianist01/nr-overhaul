@@ -54,10 +54,15 @@
 body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 2fr 1fr .5fr;
+    grid-template-rows: 2fr 2fr .5fr;
     overflow-x: hidden;
     height: 100%;
     width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: white;
 }
 
 /* HEADER ROOT VARIABLES */
@@ -176,7 +181,6 @@ h1 {
         cursor: pointer;
         animation: rotate .5s ease-in-out 1;
       }
-<<<<<<< HEAD
 
       nav {
         display: grid;
@@ -243,26 +247,76 @@ h1 {
 main {
   grid-row: 2/3;
   grid-column: 1/4;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.service-box {
+  background-color: blue;
+  width: 100%;
+  align-self: center;
+}
+
+.sundays {
+  grid-column: 1/2;
+  grid-row: 1/1;
+  width: 100%;
+  height: 100%;
+  display: grid;
 }
 
 .sunday-image {
-  height: 40px;
-  width: 40px;
+  height: 300px;
+  width: 300px;
+  justify-self: center;
+  align-self: center;
+  cursor: pointer;
+}
+
+.tuesdays {
+  grid-column: 2/3;
+  grid-row: 1/1;
+  width: 100%;
+  height: 100%;
+  display: grid;
 }
 
 .tuesday-image {
-  height: 40px;
-  width: 40px;
+  height: 300px;
+  width: 300px;
+  justify-self: center;
+  align-self: center;
+  cursor: pointer;
+}
+
+.santa-cena {
+  grid-column: 3/4;
+  grid-row: 1/1;
+  width: 100%;
+  height: 100%;
+  display: grid;
 }
 
 .cena-image {
-  height: 40px;
-  width: 40px;
+  height: 300px;
+  width: 300px;
+  justify-self: center;
+  align-self: center;
+  cursor: pointer;
+}
+
+.vigilia {
+  grid-column: 2/3;
+  grid-row: 2/2;
+  width: 100%;
+  height: 100%;
+  display: grid;
 }
 
 .vigilia-image {
-  height: 40px;
-  width: 40px;
+  height: 300px;
+  width: 300px;
+  justify-self: center;
+  align-self: center;
+  cursor: pointer;
 }
-=======
->>>>>>> d1f3a0d6a9587c7480d25e17ca2ded236227a48b
