@@ -2,7 +2,15 @@ const container = document.querySelector('body');
 const navBox = document.querySelector('.icon-container');
 let navMenu;
 const navExit = document.querySelector('.exit');
+const headerContainer = document.querySelector('.header-container');
 const mainContainer = document.querySelector('.main-container');
+
+const pageLogo = document.querySelector('.logo');
+
+pageLogo.addEventListener('click', (e) => {
+  e.preventDefault();
+  window.location.href = 'index.html';
+});
 
 navBox.addEventListener('click', (e) => {
   e.preventDefault();
@@ -16,9 +24,15 @@ menuExit();
 const sunday = document.querySelector('.sunday-image');
 const tuesday = document.querySelector('.tuesday-image');
 const cena = document.querySelector('.cena-image');
-const vigil = document.querySelector('.vigilia');
+const vigil = document.querySelector('.vigilia-image');
+
+const sundayBox = document.querySelector('.sundays');
+const tuesdayBox = document.querySelector('.tuesdays');
+const cenaBox = document.querySelector('.santa-cena');
+const vigilBox = document.querySelector('.vigilia');
 
 const services = [sunday, tuesday, cena, vigil];
+const serviceBoxes = [sundayBox, tuesdayBox, cenaBox, vigilBox];
 let serviceBox = document.createElement('div');
 serviceBox.classList.add('service-box');
 let infoBox;
@@ -35,7 +49,7 @@ services.forEach((service, index) => {
       container.style.backgroundColor = 'rgba(0, 0, 0, 1)';
     }
 
-    services.forEach((item) => {
+    serviceBoxes.forEach((item) => {
       item.style.opacity = 0;
     });
 
@@ -114,10 +128,13 @@ function exitBox() {
     e.preventDefault();
     container.style.backgroundColor = 'rgba(0, 0, 0, 0)';
     services.forEach((item) => {
-      item.style.opacity = 100;
       item.style.pointerEvents = '';
 
       infoBox.style.display = 'none';
+    });
+
+    serviceBoxes.forEach((box) => {
+      box.style.opacity = 100;
     });
 
     const boxDisappear = () => {
@@ -144,12 +161,34 @@ function menuExit() {
 }
 
 function imageHover() {
-  services.forEach((service) => {
+  services.forEach((service, index) => {
     service.addEventListener('mouseover', (e) => {
-      container.style.filter = 'blur(10px)';
+      e.preventDefault();
+      headerContainer.style.filter = 'blur(5px)';
+      if(index === 0) {
+        tuesday.style.filter = 'blur(5px)';
+        cena.style.filter = 'blur(5px)';
+        vigil.style.filter = 'blur(5px)';
+      } else if(index === 1) {
+        sunday.style.filter = 'blur(5px)';
+        cena.style.filter = 'blur(5px)';
+        vigil.style.filter = 'blur(5px)';
+      } else if(index === 2) {
+        sunday.style.filter = 'blur(5px)';
+        tuesday.style.filter = 'blur(5px)';
+        vigil.style.filter = 'blur(5px)';
+      } else if(index === 3) {
+        sunday.style.filter = 'blur(5px)';
+        tuesday.style.filter = 'blur(5px)';
+        cena.style.filter = 'blur(5px)';
+      }
     });
     service.addEventListener('mouseout', (e) => {
-      container.style.filter = '';
+      e.preventDefault();
+      headerContainer.style.filter = '';
+      services.forEach((item) => {
+        item.style.filter = '';
+      });
     });
   });
 }
