@@ -198,36 +198,43 @@ height: 100%;
     .service {
       display: grid;
       grid-template-columns: 1fr;
-      grid-template-rows: repeat(5, .3fr);
+      /* grid-template-rows: repeat(5, .3fr); */
     }
 
     .dropdown {
-      width: 100%;
-      height: 100%;
+      /* width: 100%;
+      height: 100%; */
       grid-column: 1/2;
       grid-row: 2/6;
       display: grid;
       grid-template-columns: 1fr;
+      grid-template-rows: repeat(4, .3fr);
+      background-color: white;
+      opacity: 20%;
     }
 
-    .nav-sunday {
+    .sunday {
+      grid-column: 1/2;
+      grid-row: 1/2;
+      display: none;
+    }
+
+    .tuesday {
       grid-column: 1/2;
       grid-row: 2/3;
+      display: none;
     }
 
-    .nav-tuesday {
+    .cena {
       grid-column: 1/2;
       grid-row: 3/4;
+      display: none;
     }
 
-    .nav-cena {
+    .vigil {
       grid-column: 1/2;
       grid-row: 4/5;
-    }
-
-    .nav-vigil {
-      grid-column: 1/2;
-      grid-row: 5/6;
+      display: none;
     }
 
     /* NAV END */
