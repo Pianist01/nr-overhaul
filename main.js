@@ -50,3 +50,83 @@ serviceButton.addEventListener('mouseout', (e) => {
     e.preventDefault();
     serviceButton.style.boxShadow = '';
 });
+
+let height;
+const maxHeight = 100;
+const dropDown = document.createElement('div');
+
+const serviceMenu = document.querySelector('.service');
+serviceMenu.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    serviceMenu.style.gridTemplateRows = 'repeat(5, .3fr)';
+    dropDown.classList.add('dropdown');
+
+    height = 0;
+    maxHeight;
+
+    const animateDrop = () => {
+        height += 3;
+
+        dropDown.style.height = height + '%';
+        if(height < maxHeight) {
+            requestAnimationFrame(animateDrop);
+        }
+    }
+
+    animateDrop();
+    dropDownContent();
+
+    serviceMenu.append(dropDown);
+});
+
+// serviceMenu.addEventListener('mouseout', (e) => {
+//     e.preventDefault();
+
+//     const dropAway = () => {
+//         height -= 3;
+//         dropDown.style.height = height + '%';
+
+//         if(height) {
+//             serviceMenu.style.gridTemplateRows = '';
+//             requestAnimationFrame(dropAway);
+//         }
+//     }
+
+//     dropAway();
+
+// });
+
+let sunday, tuesday, cena, vigil;
+
+const serviceLink = [sunday, tuesday, cena, vigil];
+
+function dropDownContent() {
+    serviceLink.forEach((service, index) => {
+        service = document.createElement('a');
+        if(index === 0) {
+            service.href = '#';
+            service.textContent = 'Domingos';
+            service.classList.add('sunday');
+            service.style.display = 'block';
+        } else if(index === 1) {
+            service.href = '#';
+            service.textContent = 'Martes';
+            service.classList.add('tuesday');
+            // service.style.display = 'block';
+        } else if(index === 2) {
+            service.href = '#';
+            service.textContent = 'Santa Cena';
+            service.classList.add('cena');
+            // service.style.display = 'block';
+        } else if(index === 3) {
+            service.href = '#';
+            service.textContent = 'Vigilia';
+            service.classList.add('vigil');
+            // service.style.dispaly = 'block';
+        }
+
+        dropDown.append(service);
+    });
+
+}
