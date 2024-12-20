@@ -53,34 +53,35 @@ serviceButton.addEventListener('mouseout', (e) => {
 
 let height;
 const maxHeight = 100;
-const dropDown = document.createElement('div');
+let baseHeight = 25;
+// const dropDown = document.createElement('div');
 
 const serviceMenu = document.querySelector('.service');
-serviceMenu.addEventListener('click', (e) => {
-    e.preventDefault();
+// serviceMenu.addEventListener('mouseenter', (e) => {
+//     e.preventDefault();
 
-    serviceMenu.style.gridTemplateRows = 'repeat(5, .3fr)';
-    dropDown.classList.add('dropdown');
+//     serviceMenu.style.gridTemplateRows = 'repeat(5, .3fr)';
+//     dropDown.classList.add('dropdown');
 
-    height = 0;
-    maxHeight;
+//     height = 0;
+//     maxHeight;
 
-    const animateDrop = () => {
-        height += 3;
+//     const animateDrop = () => {
+//         height += 3;
 
-        dropDown.style.height = height + '%';
-        if(height < maxHeight) {
-            requestAnimationFrame(animateDrop);
-        }
-    }
+//         dropDown.style.height = height + '%';
+//         if(height < maxHeight) {
+//             requestAnimationFrame(animateDrop);
+//         }
+//     }
 
-    animateDrop();
-    dropDownContent();
+//     animateDrop();
+//     dropDownContent();
 
-    serviceMenu.append(dropDown);
-});
+//     serviceMenu.append(dropDown);
+// });
 
-// serviceMenu.addEventListener('mouseout', (e) => {
+// serviceMenu.addEventListener('mouseleave', (e) => {
 //     e.preventDefault();
 
 //     const dropAway = () => {
@@ -88,10 +89,13 @@ serviceMenu.addEventListener('click', (e) => {
 //         dropDown.style.height = height + '%';
 
 //         if(height) {
-//             serviceMenu.style.gridTemplateRows = '';
+//             serviceMenu.style.gridTemplateRows = 'none';
 //             requestAnimationFrame(dropAway);
 //         }
 //     }
+
+//     const about = document.querySelector('.about-us');
+//     about.style.backGroundColor = 'white';
 
 //     dropAway();
 
@@ -101,32 +105,83 @@ let sunday, tuesday, cena, vigil;
 
 const serviceLink = [sunday, tuesday, cena, vigil];
 
-function dropDownContent() {
-    serviceLink.forEach((service, index) => {
-        service = document.createElement('a');
-        if(index === 0) {
-            service.href = '#';
-            service.textContent = 'Domingos';
-            service.classList.add('sunday');
-            service.style.display = 'block';
-        } else if(index === 1) {
-            service.href = '#';
-            service.textContent = 'Martes';
-            service.classList.add('tuesday');
-            // service.style.display = 'block';
-        } else if(index === 2) {
-            service.href = '#';
-            service.textContent = 'Santa Cena';
-            service.classList.add('cena');
-            // service.style.display = 'block';
-        } else if(index === 3) {
-            service.href = '#';
-            service.textContent = 'Vigilia';
-            service.classList.add('vigil');
-            // service.style.dispaly = 'block';
+// Redoing dropdown menu
+
+function dropDownUp() {
+    serviceMenu.addEventListener('mouseenter', (e) => {
+        e.preventDefault();
+
+        height = 25;
+        maxHeight;
+
+        const animateDrop = () => {
+            height += 3;
+
+            serviceMenu.style.height = height + '%';
+            serviceMenu.style.gridTemplateRows = 'repeat(5, .3fr)';
+            if(height < maxHeight) {
+                requestAnimationFrame(animateDrop);
+            }
         }
 
-        dropDown.append(service);
+        dropDownContent();
+
+        animateDrop();
+    })
+
+    serviceMenu.addEventListener('mouseleave', (e) => {
+        e.preventDefault();
+
+        const goAway = () => {
+            height -= 3;
+            serviceMenu.style.height = height + '%';
+            serviceMenu.style.gridTemplateRows = '';
+
+            if(height > baseHeight) {
+                requestAnimationFrame(goAway);
+            }
+        }
+
+        goAway();
+    })
+}
+
+dropDownUp();
+
+function dropDownContent(event) {
+    switch (event.type) {
+        case 'mouseenter': 
+        serviceLink.forEach((service, index) => {
+            service = document.createElement('a');
+            if(index === 0) {
+                service.href = '#';
+                service.textContent = 'Domingos';
+                service.classList.add('sunday');
+                service.style.display = 'block';
+            } else if(index === 1) {
+                service.href = '#';
+                service.textContent = 'Martes';
+                service.classList.add('tuesday');
+                service.style.display = 'block';
+            } else if(index === 2) {
+                service.href = '#';
+                service.textContent = 'Santa Cena';
+                service.classList.add('cena');
+                service.style.display = 'block';
+            } else if(index === 3) {
+                service.href = '#';
+                service.textContent = 'Vigilia';
+                service.classList.add('vigil');
+                service.style.display = 'block';
+            }
     });
+        
+        serviceMenu.append(service);
+        break;
+
+        case 'mouseleave':
+            console.log('It left');
+
+    };
 
 }
