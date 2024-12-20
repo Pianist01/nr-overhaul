@@ -199,6 +199,7 @@ height: 100%;
       display: grid;
       grid-template-columns: 1fr;
       /* grid-template-rows: repeat(5, .3fr); */
+      height: 25%;
     }
 
     .dropdown {
@@ -210,30 +211,30 @@ height: 100%;
       grid-template-columns: 1fr;
       grid-template-rows: repeat(4, .3fr);
       background-color: white;
-      opacity: 20%;
+      z-index: 1;
     }
 
     .sunday {
-      grid-column: 1/2;
-      grid-row: 1/2;
-      display: none;
-    }
-
-    .tuesday {
       grid-column: 1/2;
       grid-row: 2/3;
       display: none;
     }
 
-    .cena {
+    .tuesday {
       grid-column: 1/2;
       grid-row: 3/4;
       display: none;
     }
 
-    .vigil {
+    .cena {
       grid-column: 1/2;
       grid-row: 4/5;
+      display: none;
+    }
+
+    .vigil {
+      grid-column: 1/2;
+      grid-row: 5/6;
       display: none;
     }
 
