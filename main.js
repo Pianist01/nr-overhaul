@@ -101,9 +101,14 @@ const serviceMenu = document.querySelector('.service');
 
 // });
 
-let sunday, tuesday, cena, vigil;
+let sunday = document.createElement('a');
+let tuesday = document.createElement('a');
+let cena = document.createElement('a');
+let vigil = document.createElement('a');
 
 const serviceLink = [sunday, tuesday, cena, vigil];
+
+let serviceItem;
 
 // Redoing dropdown menu
 
@@ -124,35 +129,7 @@ function dropDownUp() {
             }
         }
 
-        dropDownContent();
-
-        animateDrop();
-    })
-
-    serviceMenu.addEventListener('mouseleave', (e) => {
-        e.preventDefault();
-
-        const goAway = () => {
-            height -= 3;
-            serviceMenu.style.height = height + '%';
-            serviceMenu.style.gridTemplateRows = '';
-
-            if(height > baseHeight) {
-                requestAnimationFrame(goAway);
-            }
-        }
-
-        goAway();
-    })
-}
-
-dropDownUp();
-
-function dropDownContent(event) {
-    switch (event.type) {
-        case 'mouseenter': 
         serviceLink.forEach((service, index) => {
-            service = document.createElement('a');
             if(index === 0) {
                 service.href = '#';
                 service.textContent = 'Domingos';
@@ -174,14 +151,59 @@ function dropDownContent(event) {
                 service.classList.add('vigil');
                 service.style.display = 'block';
             }
-    });
-        
-        serviceMenu.append(service);
-        break;
 
-        case 'mouseleave':
-            console.log('It left');
+            serviceMenu.append(service);
+        });
 
-    };
+        animateDrop();
+    })
 
+    serviceMenu.addEventListener('mouseleave', (e) => {
+        e.preventDefault();
+
+        const goAway = () => {
+            height -= 3;
+            serviceMenu.style.height = height + '%';
+            serviceMenu.style.gridTemplateRows = '';
+            if(height > baseHeight) {
+                requestAnimationFrame(goAway);
+            }
+        }
+
+        serviceLink.forEach((item) => {
+            item.style.display = 'none';
+        });
+
+        goAway();
+    })
 }
+
+dropDownUp();
+
+// function dropDownContent(event) {
+//     switch (event.type) {
+//         case 'mouseenter': 
+//         serviceLink.forEach((service, index) => {
+//             service = document.createElement('a');
+//             if(index === 0) {
+//                 service.href = '#';
+//                 service.textContent = 'Domingos';
+//                 service.classList.add('sunday');
+//                 service.style.display = 'block';
+//             } else if(index === 1) {
+//                 service.href = '#';
+//                 service.textContent = 'Martes';
+//                 service.classList.add('tuesday');
+//                 service.style.display = 'block';
+//             } else if(index === 2) {
+//                 service.href = '#';
+//                 service.textContent = 'Santa Cena';
+//                 service.classList.add('cena');
+//                 service.style.display = 'block';
+//             } else if(index === 3) {
+//                 service.href = '#';
+//                 service.textContent = 'Vigilia';
+//                 service.classList.add('vigil');
+//                 service.style.display = 'block';
+//             }
+//     });
