@@ -54,7 +54,7 @@
   body {
     display: grid; 
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr) .2fr;
+    grid-template-rows: 1fr .7fr .3fr;
     overflow-x: hidden;
     height: 100%;
     width: 100%;
@@ -107,7 +107,7 @@
 
   .header-img {
     width: var(--header-image-width);
-    height: var(--header-image-height);
+    height: var(--header-image-height); 
     grid-column: var(--header-image-column);
   }
 
@@ -189,6 +189,7 @@
       height: 100%;
       width: 0;
       transition: width 0.5s ease-in-out;
+      height: 133%;
     }
 
     .exit {
@@ -231,10 +232,79 @@
       justify-self: center;
       margin-top: 6px;
     }
+
+    .service {
+      display: grid;
+      grid-template-columns: 1fr;
+      height: 25%;
+    }
+
+    .sunday {
+      grid-column: 1/2;
+      grid-row: 2/3;
+      display: none;
+      justify-self: center;
+      align-self: start;
+    }
+
+    .tuesday {
+      grid-column: 1/2;
+      grid-row: 3/4;
+      display: none;
+      justify-self: center;
+      align-self: start;
+    }
+
+    .cena {
+      grid-column: 1/2;
+      grid-row: 4/5;
+      display: none;
+      justify-self: center;
+      align-self: start;
+    }
     /* NAV STYLES END */
 
   /* HEADER STYLES END */
 
   /* MAIN STYLES START */
 
-  
+  .main-container {
+    grid-column: 1/4;
+    grid-row: 2/3;
+    justify-items: center;
+    display: grid;
+    grid-template-rows: .2fr 1fr;
+
+  }
+
+  h2 {
+    grid-row: 1/2;
+    align-self: start;
+    grid-column: 1/2;
+    margin-top: 1%;
+  }
+
+  figure {
+    grid-row: 1/2;
+    align-self: start;
+    margin-top: 3%;
+    grid-column: 1/2;
+  }
+
+  .main-info {
+    font-size: 1.2em;
+    line-height: 40px;
+    text-wrap: pretty;
+    margin-left: 5%;
+    margin-right: 5%;
+    align-self: start;
+    margin-top: 5%;
+  }
+
+  /* MAIN STYLES END */
+
+  /* FOOTER STYLES START */
+
+  footer {
+    align-self: center;
+  }
