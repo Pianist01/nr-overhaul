@@ -277,7 +277,7 @@
 
   }
 
-  h2 {
+  h1 {
     grid-row: 1/2;
     align-self: start;
     grid-column: 1/2;
@@ -287,18 +287,24 @@
   figure {
     grid-row: 1/2;
     align-self: start;
-    margin-top: 3%;
+    margin-top: 4%;
     grid-column: 1/2;
+    font-size: 1.1em;
+  }
+
+  .info-container {
+    width: 65%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 5%;
   }
 
   .main-info {
-    font-size: 1.2em;
-    line-height: 40px;
+    font-size: 1.3em;
+    line-height: 45px;
+    text-indent: 3.5em;
     text-wrap: pretty;
-    margin-left: 5%;
-    margin-right: 5%;
-    align-self: start;
-    margin-top: 5%;
+    text-align: center;
   }
 
   /* MAIN STYLES END */
