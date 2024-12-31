@@ -52,21 +52,59 @@ function dropDownUp() {
 
         serviceLink.forEach((service, index) => {
             if(index === 0) {
-                service.href = '#';
+                service.href = 'tuesday.html';
                 service.textContent = 'Martes';
                 service.classList.add('sunday');
                 service.style.display = 'block';
             } else if(index === 1) {
-                service.href = '#';
+                service.href = 'cena.html';
                 service.textContent = 'Santa Cena';
                 service.classList.add('tuesday');
                 service.style.display = 'block';
             } else if(index === 2) {
-                service.href = '#';
+                service.href = 'vigil.html';
                 service.textContent = 'Vigilia';
                 service.classList.add('cena');
                 service.style.display = 'block';
             } 
+
+            if(window.location.pathname.endsWith('tuesday.html')) {
+                if(index === 0) {
+                    service.href = 'sunday.html';
+                    service.textContent = 'Domingos';
+                    service.classList.add('sunday');
+                    service.style.display = 'block';
+                } else if(index === 1) {
+                    service.href = 'cena.html';
+                    service.textContent = 'Santa Cena';
+                    service.classList.add('tuesday');
+                    service.style.display = 'block';
+                } else if (index === 2) {
+                    service.href = 'vigil.html';
+                    service.textContent = 'Vigilia';
+                    service.classList.add('cena');
+                    service.style.display = 'block';
+                }
+            }
+
+            if(window.location.pathname.endsWith('cena.html')) {
+                if(index === 0) {
+                    service.href = 'sunday.html';
+                    service.textContent = 'Domingos';
+                    service.classList.add('sunday');
+                    service.style.display = 'block';
+                } else if(index === 1) {
+                    service.href = 'tuesday.html';
+                    service.textContent = 'Martes';
+                    service.classList.add('tuesday');
+                    service.style.display = 'block';
+                } else if(index === 2) {
+                    service.href = 'vigil.html';
+                    service.textContent = 'Vigilia';
+                    service.classList.add('cena');
+                    service.style.display = 'block';
+                }
+            }
             serviceMenu.append(service);
         });
 
