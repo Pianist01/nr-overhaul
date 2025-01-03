@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact page for any questions">
+    <meta name="author" content="Steven Peralta">
+    <link rel="stylesheet" href="contact.css">
+    <title>Contactanos</title>
+</head>
+<body>
+    <header>
+        <header>
+            <div class="container">
+            <img class="hands" src="img/contact-image.jpg" alt="Hands Up In Worship" width="1080" height="720">
+    
+            <img class="logo" src="img/Nuevo Remanente Logo (4).png">
+    
+            <div class="icon-container">
+            <div class="nav-icon-one"></div>
+            <div class="nav-icon-two"></div>
+            <div class="nav-icon-three"></div>
+            </div>
+            
+            <div class="navigation">
+                <div class="exit">
+                    <img class="nav-exit" src="img/exit.png">
+                </div>
+            <nav>
+               <ul>
+                    <li class="home">
+                        <a href="#">Home</a>
+                    </li>
+    
+                    <li class="service">
+                        <a href="service.html">Servicios/Horarios</a>
+                    </li>
+    
+                    <li class="about-us">
+                        <a href="about.html">Conoscanos</a>
+                    </li>
+    
+               </ul> 
+            </nav>
+            </div>
+            </div>
+        </header>
+
+    <main>
+        <h1>Contactanos</h1>
+        <p>Si tiene mas preguntas de nuestra iglesia como los servicios, las actividades afuera de la iglesia, etc. Mandanos un mensaje aqu&itilde;!</p>
+
+        <form id="contact-form" method="post" action="sendmail.php">
+            <div class="form-row1">
+                <label for="contact-form-name">Name:</label>
+                <input id="contact-form-name" class="form-input" type="text" name="name" required>
+            </div>
+
+            <div class="form-row2">
+                <label for="contact-form-email">Email:</label>
+                <input id="contact-form-email" class="form-input" type="email" name="email" required>
+            </div>
+
+            <div class="form-row3">
+                <label for="contact-form-phone">Numero de telefono:</label>
+                <input id="contact-form-phone" class="form-input" type="tel" name="phone" required>
+            </div>
+
+            <div class="form-row4">
+                <label for="contact-form-message">Si nos quiere decir algo, aqui nos puede decir:</label>
+                <textarea id="contact-form-message" class="form-input" name="message"></textarea>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>Footer information will go here</p>
+    </footer>
+</body>
+</html>
