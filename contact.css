@@ -228,3 +228,18 @@
     }
 
     /* NAV END */
+
+    /* MAIN CONTENT STYLES */
+
+    main {
+      grid-row: 2/3;
+      grid-column: 1/2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .contact-box {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
