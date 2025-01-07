@@ -22,7 +22,7 @@ navExit.addEventListener('click', (e) => {
 });
 
 const serviceMenu = document.querySelector('.service');
-const maxHeight = 60;
+const maxHeight = 70;
 const baseHeight = 25;
 
 const sunday = document.createElement('a');
@@ -48,6 +48,56 @@ function dropDownUp() {
                 requestAnimationFrame(animateDrop);
             }
         }
+
+        serviceLink.forEach((service, index) => {
+            if(index === 0) {
+                service.href = 'sunday.html';
+                service.textContent = 'Domingos';
+                service.classList.add('sunday');
+                service.style.display = 'block';
+            } else if(index === 1) {
+                service.href = 'tuesday.html';
+                service.textContent = 'Martes';
+                service.classList.add('tuesday');
+                service.style.display = 'block';
+            } else if(index === 2) {
+                service.href = 'cena.html';
+                service.textContent = 'Santa Cena';
+                service.classList.add('cena');
+                service.style.display = 'block';
+            } else if(index === 3) {
+                service.href = 'vigil.html';
+                service.textContent = 'Vigilia';
+                service.classList.add('vigil');
+                service.style.display = 'block';
+            }
+
+            serviceMenu.append(service);
+        });
+
         animateDrop();
     });
+
+    serviceMenu.addEventListener('mouseleave', (e) => {
+        e.preventDefault();
+
+        const goAway = () => {
+            height -= 3;
+            serviceMenu.style.height = height + '%';
+            serviceMenu.style.gridTemplateRows = '';
+            if(height > baseHeight) {
+                requestAnimationFrame(goAway);
+            }
+        }
+
+        serviceLink.forEach((item) => {
+            item.style.display = 'none';
+        });
+        goAway();
+    });
 }
+
+dropDownUp();
+
+// Main content functionality
+
