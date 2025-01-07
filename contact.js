@@ -1,0 +1,53 @@
+console.log('Working');
+
+// Header functionality
+
+const logo = document.querySelector('.logo');
+logo.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.location.href = 'index.html';
+});
+
+const menu = document.querySelector('.icon-container');
+const navMenu = document.querySelector('.navigation');
+const navExit = document.querySelector('.exit');
+menu.addEventListener('click', (e) => {
+    e.preventDefault();
+    navMenu.style.width = '300px';
+});
+
+navExit.addEventListener('click', (e) => {
+    e.preventDefault();
+    navMenu.style.width = '0';
+});
+
+const serviceMenu = document.querySelector('.service');
+const maxHeight = 60;
+const baseHeight = 25;
+
+const sunday = document.createElement('a');
+const tuesday = document.createElement('a');
+const cena = document.createElement('a');
+const vigil = document.createElement('a');
+
+const serviceLink = [sunday, tuesday, cena, vigil];
+
+function dropDownUp() {
+    serviceMenu.addEventListener('mouseenter', (e) => {
+        e.preventDefault();
+    
+        height = 25;
+        maxHeight;
+    
+        const animateDrop = () => {
+            height += 3;
+    
+            serviceMenu.style.height = height + '%';
+            serviceMenu.style.gridTemplateRows = 'repeat(5, .3fr)';
+            if(height < maxHeight) {
+                requestAnimationFrame(animateDrop);
+            }
+        }
+        animateDrop();
+    });
+}
