@@ -209,30 +209,6 @@
       font-size: 1.2rem;
     }
 
-    .nav-icon-one {
-      width: 40px;
-      border: 2px solid white;
-      grid-column: 3/4;
-      justify-self: center;
-      /* position: relative */
-    }
-
-    .nav-icon-two {
-      width: 40px;
-      border: 2px solid white;
-      grid-column: 3/4;
-      justify-self: center;
-      margin-top: 6px;
-    }
-
-    .nav-icon-three {
-      width: 40px;
-      border: 2px solid white;
-      grid-column: 3/4;
-      justify-self: center;
-      margin-top: 6px;
-    }
-
     .service {
       display: grid;
       grid-template-columns: 1fr;
