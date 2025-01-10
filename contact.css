@@ -278,26 +278,31 @@
 
     .form-row1 {
       grid-row: 1/2;
-      align-self: center;
+      align-self: start;
       justify-self: center;
     }
 
     .form-row2 {
       grid-row: 2/3;
-      align-self: center;
+      align-self: start;
       justify-self: center;
     }
 
     .form-row3 {
       grid-row: 3/4;
       justify-self: center;
-      align-self: center;
+      align-self: start;
     }
 
     .form-row4 {
       grid-row: 4/5;
       justify-self: center;
-      align-self: center;
+      align-self: start;
+    }
+
+    textarea {
+      height: 100px;
+      width: 400px;
     }
 
     button {
@@ -305,4 +310,5 @@
       height: 50px;
       width: 75px;
       justify-self: center;
+      align-self: start;
     }
