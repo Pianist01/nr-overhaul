@@ -55,8 +55,8 @@
 
         <form id="contact-form" method="post" action="sendmail.php">
             <div class="form-row1">
-                <label for="contact-form-name">Name:</label>
-                <input id="contact-form-name" class="form-input" type="text" name="name" required>
+                <label class="name" for="contact-form-name">Name:</label>
+                <input class="name-input" id="contact-form-name" class="form-input" type="text" name="name" required>
             </div>
 
             <div class="form-row2">
@@ -65,13 +65,13 @@
             </div>
 
             <div class="form-row3">
-                <label for="contact-form-phone">Numero de telefono:</label>
+                <label for="contact-form-phone">Telefono:</label>
                 <input id="contact-form-phone" class="form-input" type="tel" name="phone" required>
             </div>
 
             <div class="form-row4">
-                <label for="contact-form-message">Si nos quiere decir algo, aqui nos puede decir:</label>
-                <textarea id="contact-form-message" class="form-input" name="message"></textarea>
+                <label for="contact-form-message"></label>
+                <textarea id="contact-form-message" class="form-input" name="message" placeholder="Si tiene una pregunta, aqui nos puede decir!"></textarea>
             </div>
 
             <button type="submit">Submit</button>
