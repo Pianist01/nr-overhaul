@@ -237,6 +237,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      background-color: rgba(0, 0, 0, 0);
+      transition: background-color 1s ease-in-out;
     }
 
     .contact-box {
@@ -245,6 +247,7 @@
       grid-template-rows: .3fr repeat(5, .2fr);
       width: 50%;
       height: 50%;
+      border: 5px solid white;
     }
 
     h1 {
@@ -252,6 +255,8 @@
       grid-row: 1/2;
       justify-self: center;
       align-self: start;
+      color: black;
+      transition: color 1s ease-in-out;
     }
 
     form {
@@ -310,5 +315,5 @@
       height: 50px;
       width: 75px;
       justify-self: center;
-      align-self: start;
+      align-self: center;
     }
