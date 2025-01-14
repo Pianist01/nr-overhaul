@@ -101,3 +101,13 @@ dropDownUp();
 
 // Main content functionality
 
+const main = document.querySelector('main');
+const title = document.querySelector('h1');
+
+window.addEventListener('scroll', (e) => {
+    e.preventDefault();
+    if(window.scrollY > 900) {
+        main.style.backgroundColor = 'rgba(0, 0, 0, 1)';
+        title.style.color = 'white';
+    }
+});
