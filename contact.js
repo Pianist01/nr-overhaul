@@ -103,11 +103,21 @@ dropDownUp();
 
 const main = document.querySelector('main');
 const title = document.querySelector('h1');
+const box = document.querySelector('.contact-box');
 
 window.addEventListener('scroll', (e) => {
     e.preventDefault();
     if(window.scrollY > 900) {
         main.style.backgroundColor = 'rgba(0, 0, 0, 1)';
-        title.style.color = 'white';
+        box.style.boxShadow = '1px 1px 20px 1px white';
+        box.style.backgroundColor = 'white';
     }
 });
+
+const inputArea = document.querySelector('input');
+const button = document.querySelector('button');
+if(inputArea.value === '') {
+    button.disabled = true;
+} else if(inputArea.value) {
+    button.disabled = false;
+}
