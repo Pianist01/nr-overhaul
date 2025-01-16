@@ -54,7 +54,7 @@
   body {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(2, 1fr) .5fr;
+    grid-template-rows: repeat(2, 1fr) .2fr;
     overflow-x: hidden;
     height: 100%;
     width: 100%;
@@ -247,7 +247,33 @@
       grid-template-rows: .3fr repeat(5, .2fr);
       width: 50%;
       height: 50%;
-      border: 5px solid white;
+      will-change: box-shadow;
+      box-shadow: 0px 0px 0px 0px white;
+      transition: box-shadow 1s ease-in-out;
+      animation: changeLight 5s ease-in-out infinite;
+      border-radius: 30px;
+    }
+
+    @keyframes changeLight {
+      0% {
+        box-shadow: 1px 1px 20px 1px white;
+      }
+
+      25% {
+        box-shadow: .75px .75px 15px .75px white;
+      }
+
+      50% {
+        box-shadow: .5px .5px 10px .5px white;
+      }
+
+      75% {
+        box-shadow: .75px .75px 15px .75px white;
+      }
+
+      100% {
+        box-shadow: 1px 1px 20px 1px white;
+      }
     }
 
     h1 {
@@ -256,6 +282,7 @@
       justify-self: center;
       align-self: start;
       color: black;
+      margin-top: 5%;
       transition: color 1s ease-in-out;
     }
 
@@ -279,6 +306,7 @@
       grid-row: 1/7;
       height: 100%;
       width: 100%;
+      border-radius: 30px 0px 0px 30px;
     }
 
     .form-row1 {
@@ -312,7 +340,7 @@
 
     button {
       grid-row: 5/6;
-      height: 50px;
+      height: 40px;
       width: 75px;
       justify-self: center;
       align-self: center;
