@@ -109,7 +109,7 @@ function dropDownUp() {
         });
 
         animateDrop();
-    })
+    });
 
     serviceMenu.addEventListener('mouseleave', (e) => {
         e.preventDefault();
