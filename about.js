@@ -49,6 +49,83 @@ iconBox.addEventListener('click', (e) => {
     });
 });
 
+const serviceMenu = document.querySelector('.service');
+const maxMenuHeight = 70;
+const baseHeight = 25;
+
+let sunday = document.createElement('a');
+let tuesday = document.createElement('a');
+let cena = document.createElement('a');
+let vigil = document.createElement('a');
+
+const serviceLink = [sunday, tuesday, cena, vigil];
+
+function dropDownUp() {
+    serviceMenu.addEventListener('mouseenter', (e) => {
+        e.preventDefault();
+
+        height = 25;
+        maxMenuHeight;
+
+        const animateDrop = () => {
+            height += 3;
+
+            serviceMenu.style.height = height + '%';
+            serviceMenu.style.gridTemplateRows = 'repeat(5, .3fr)';
+            if(height < maxMenuHeight) {
+                requestAnimationFrame(animateDrop);
+            }
+        }
+
+        serviceLink.forEach((service, index) => {
+            if(index === 0) {
+                service.href = 'sunday.html';
+                service.textContent = 'Domingos';
+                service.classList.add('sunday');
+                service.style.display = 'block';
+            } else if(index === 1) {
+                service.href = 'tuesday.html';
+                service.textContent = 'Martes';
+                service.classList.add('tuesday');
+                service.style.display = 'block';
+            } else if(index === 2) {
+                service.href = 'cena.html';
+                service.textContent = 'Santa Cena';
+                service.classList.add('cena');
+                service.style.display = 'block';
+            } else if(index === 3) {
+                service.href = 'vigil.html';
+                service.textContent = 'Vigilia';
+                service.classList.add('vigil');
+                service.style.display = 'block';
+            }
+
+            serviceMenu.append(service);
+        });
+        animateDrop();
+    });
+
+    serviceMenu.addEventListener('mouseleave', (e) => {
+        e.preventDefault();
+
+        const goAway = () => {
+            height -= 3;
+            serviceMenu.style.height = height + '%';
+            serviceMenu.style.gridTemplateRows = '';
+            if(height > baseHeight) {
+                requestAnimationFrame(goAway);
+            }
+        }
+
+        serviceLink.forEach((item) => {
+            item.style.display = 'none';
+        });
+        goAway();
+    });
+}
+
+dropDownUp();
+
 // This code will display the info for the band members when they are clicked on
 
 const mainContainer = document.querySelector('.band');
