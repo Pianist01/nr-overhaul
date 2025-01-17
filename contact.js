@@ -116,8 +116,29 @@ window.addEventListener('scroll', (e) => {
 
 const inputArea = document.querySelector('input');
 const button = document.querySelector('button');
-if(inputArea.value === '') {
-    button.disabled = true;
-} else if(inputArea.value) {
-    button.disabled = false;
-}
+
+button.disabled = true;
+
+inputArea.addEventListener('input', function() {
+    if(inputArea.value.trim() !== '') {
+        console.log('Filled');
+        button.disabled = false;
+    } else {
+        console.log('Not filled');
+        button.disabled = true;
+    }
+});
+
+const formName = document.getElementById('contact-form-name');
+const email = document.getElementById('contact-form-email');
+const phoneNumber = document.getElementById('contact-form-phone');
+
+const formQuestions = [formName, email, phoneNumber];
+
+let formData = []
+
+button.addEventListener('click', (e) => {
+    e.preventDefault();
+    formData.push(inputArea.value);
+    console.log(formData);
+});
