@@ -248,33 +248,11 @@
       width: 50%;
       height: 50%;
       will-change: box-shadow;
-      box-shadow: 0px 0px 0px 0px white;
+      box-shadow: 1px 1px 20px 1px white;
       transition: box-shadow 1s ease-in-out;
-      animation: changeLight 5s ease-in-out infinite;
       border-radius: 30px;
     }
 
-    @keyframes changeLight {
-      0% {
-        box-shadow: 1px 1px 20px 1px white;
-      }
-
-      25% {
-        box-shadow: .75px .75px 15px .75px white;
-      }
-
-      50% {
-        box-shadow: .5px .5px 10px .5px white;
-      }
-
-      75% {
-        box-shadow: .75px .75px 15px .75px white;
-      }
-
-      100% {
-        box-shadow: 1px 1px 20px 1px white;
-      }
-    }
 
     h1 {
       grid-column: 2/3;
