@@ -23,6 +23,40 @@
             <p class="message"></p>
         </div>
     </main>
-<script src="user.js"></script>
+<script>
+    let getData = localStorage.getItem('visitorData');
+
+let arrayToString = JSON.parse(getData);
+
+class inquire {
+    constructor(name, email, number, message) {
+        this.name = name,
+        this.email = email,
+        this.number = number,
+        this.message = message
+    };
+}
+
+const userInformation = new inquire(...arrayToString);
+
+const userName = document.querySelector('.name');
+const userEmail = document.querySelector('.email');
+const userNumber = document.querySelector('.number');
+const userMessage = document.querySelector('.message');
+
+const userContent = [userName, userEmail, userNumber, userMessage];
+
+userContent.forEach((item, index) => {
+    if(index === 0) {
+        item.textContent = userInformation.name;
+    } else if(index === 1) {
+        item.textContent = userInformation.email;
+    } else if(index === 2) {
+        item.textContent = userInformation.number;
+    } else if(index === 3) {
+        item.textContent = userInformation.message;
+    }
+});
+</script>
 </body>
 </html>
