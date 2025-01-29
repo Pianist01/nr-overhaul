@@ -16,13 +16,24 @@
 
     main {
         height: 100%;
-        align-content: center;
+        /* align-content: center; */
         display: grid;
         grid-template-columns: 1fr;
+        width: 50%;
     }
 
     h1 {
+        grid-row: 1/2;
+        grid-column: 1/2;
         justify-self: center;
+    }
+
+    .user-info-container {
+        align-self: start;
+        grid-row: 1/2;
+        height: 100px;
+        grid-column: 1/2;
+        margin-top: 20%;
     }
     
 </style>
@@ -41,36 +52,19 @@
 
 let arrayToString = JSON.parse(getData);
 
-class inquire {
-    constructor(name, email, number, message) {
-        this.name = name,
-        this.email = email,
-        this.number = number,
-        this.message = message
-    };
+let dataValue = Object.values(arrayToString);
+
+console.log(dataValue);
+
+const displayToScreen = document.querySelector('.user-info-container');
+
+for(let i = 0; i < dataValue.length; i++) {
+    let dataInfo = document.createElement('p');
+    dataInfo.textContent = dataValue[i];
+    displayToScreen.append(dataInfo);
+    console.log(dataInfo);
 }
 
-const userInformation = new inquire(...arrayToString);
-
-const userName = document.querySelector('.name');
-const userEmail = document.querySelector('.email');
-const userNumber = document.querySelector('.number');
-const userMessage = document.querySelector('.message');
-
-const userContent = [userName, userEmail, userNumber, userMessage];
-
-userContent.forEach((item, index) => {
-    let userPhrase = document.createElement('p');
-    if(index === 0) {
-        item.textContent = userInformation.name;
-    } else if(index === 1) {
-        item.textContent = userInformation.email;
-    } else if(index === 2) {
-        item.textContent = userInformation.number;
-    } else if(index === 3) {
-        item.textContent = userInformation.message;
-    }
-});
 </script>
 </body>
 </html>
