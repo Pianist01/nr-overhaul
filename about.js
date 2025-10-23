@@ -134,12 +134,12 @@ const joksan = document.querySelector('.joksan-info');
 const zaza = document.querySelector('.abel-info');
 const baba = document.querySelector('.gadiel-info');
 const poopi = document.querySelector('.poopi-info');
-const rosa = document.querySelector('.rosa-info');
+// const rosa = document.querySelector('.rosa-info');
 let clickCount = 0;
 
-const bandArray = [joksan, zaza, baba, poopi, rosa];
+const bandArray = [joksan, zaza, baba, poopi];
 
-const nameArray = ['Joksan Hernandez', 'Abel Garcia', 'Gadiel Garcia', 'Isai Hernandez', 'Rosy'];
+const nameArray = ['Joksan Hernandez', 'Abel Garcia', 'Gadiel Garcia', 'Isai Hernandez'];
 
 let transparent = 0;
 const maxTransparent = 1;
@@ -228,7 +228,6 @@ bandArray.forEach((member, index) => {
             baba.style.pointerEvents = 'none';
             zaza.style.pointerEvents = 'none';
             poopi.style.pointerEvents = 'none';
-            rosa.style.pointerEvents = 'none';
         } else if(index === 1) {
             console.log('This is Abel');
             memberBox;
@@ -241,7 +240,6 @@ bandArray.forEach((member, index) => {
             joksan.style.pointerEvents = 'none';
             baba.style.pointerEvents = 'none';
             poopi.style.pointerEvents = 'none';
-            rosa.style.pointerEvents = 'none';
         } else if(index === 2) {
             console.log('This is Gadiel');
             memberBox;
@@ -254,7 +252,6 @@ bandArray.forEach((member, index) => {
             joksan.style.pointerEvents = 'none';
             zaza.style.pointerEvents = 'none';
             poopi.style.pointerEvents = 'none';
-            rosa.style.pointerEvents = 'none';
         } else if(index === 3) {
             console.log('This is Isai');
             memberBox;
@@ -267,7 +264,6 @@ bandArray.forEach((member, index) => {
             joksan.style.pointerEvents = 'none';
             zaza.style.pointerEvents = 'none';
             baba.style.pointerEvents = 'none';
-            rosa.style.pointerEvents = 'none';
         } else {
             console.log('This is Rosy');
             memberBox;
@@ -469,17 +465,17 @@ function aboutIsai() {
     memberInfo.append(isaiTitle, isaiPosition, isaiDescrip);
 }
 
-function aboutRosy() {
-    const rosaTitle = document.createElement('h2');
-    rosaTitle.classList.add('member-title');
-    rosaTitle.textContent = nameArray[4];
+// function aboutRosy() {
+//     const rosaTitle = document.createElement('h2');
+//     rosaTitle.classList.add('member-title');
+//     rosaTitle.textContent = nameArray[4];
 
-    const rosaPosition = document.createElement('p');
-    rosaPosition.classList.add('member-position');
-    rosaPosition.textContent = 'Segunda Voz';
+//     const rosaPosition = document.createElement('p');
+//     rosaPosition.classList.add('member-position');
+//     rosaPosition.textContent = 'Segunda Voz';
 
-    const rosaDescrip = document.createElement('p');
-    rosaDescrip.classList.add('member-paragraph');
-    rosaDescrip.textContent = 'Apasionada con cantando, Rosy ayuda la banda como la segunda voz. Ella le agrega mas emocion a cada cancion con una sonrisa en su cara.';
-    memberInfo.append(rosaTitle, rosaPosition, rosaDescrip);
-}
+//     const rosaDescrip = document.createElement('p');
+//     rosaDescrip.classList.add('member-paragraph');
+//     rosaDescrip.textContent = 'Apasionada con cantando, Rosy ayuda la banda como la segunda voz. Ella le agrega mas emocion a cada cancion con una sonrisa en su cara.';
+//     memberInfo.append(rosaTitle, rosaPosition, rosaDescrip);
+// }
