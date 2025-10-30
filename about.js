@@ -479,3 +479,10 @@ function aboutIsai() {
 //     rosaDescrip.textContent = 'Apasionada con cantando, Rosy ayuda la banda como la segunda voz. Ella le agrega mas emocion a cada cancion con una sonrisa en su cara.';
 //     memberInfo.append(rosaTitle, rosaPosition, rosaDescrip);
 // }
+
+const insta = document.querySelector('.insta');
+
+insta.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.open('https://www.instagram.com/nuevoremanenteoc/', '_blank');
+});
