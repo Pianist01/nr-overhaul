@@ -207,3 +207,10 @@ dropDownUp();
 //                 service.style.display = 'block';
 //             }
 //     });
+
+const insta = document.querySelector('.insta');
+
+insta.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.open('https://www.instagram.com/nuevoremanenteoc/', '_blank');
+});
