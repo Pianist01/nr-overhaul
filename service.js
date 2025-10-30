@@ -258,3 +258,10 @@ function aboutVigilia() {
 
   infoBox.append(vigilTitle, vigilHours, vigilDescrip);
 }
+
+const insta = document.querySelector('.insta');
+
+insta.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.open('https://www.instagram.com/nuevoremanenteoc/', '_blank');
+});
