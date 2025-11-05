@@ -48,6 +48,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             echo '<li>' . htmlspecialchars($error) . '</li>';
         }
         echo '</ul>';
+        echo '<p><a href= 'javascript:history.back()'>Volver/Go back</a></p>';
     } else {
         echo 'Invalid request';
     }
