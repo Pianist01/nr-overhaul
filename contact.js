@@ -114,34 +114,47 @@ window.addEventListener('scroll', (e) => {
     }
 });
 
-const button = document.querySelector('button');
+// const button = document.querySelector('button');
 
-button.disabled = true;
+// button.disabled = true;
 
-const formInputs = document.querySelectorAll('.form-input');
+// const formInputs = document.querySelectorAll('.form-input');
 
-let formData = []
+// let formData = [];
 
-formInputs.forEach((item) => {
+// class inquire {
+//     constructor(name, email, number, message) {
+//         this.name = name,
+//         this.email = email,
+//         this.number = number,
+//         this.message = message
+//     };
+// }
 
-    console.log(item);
 
-    item.addEventListener('input', function() {
-        if(item.value.trim() !== '') {
-            console.log('Filled');
-            button.disabled = false;
-        } else {
-            console.log('Not filled');
-            button.disabled = true;
-        }
-    });
+// formInputs.forEach((item) => {
 
-    button.addEventListener('click', (e) => {
-        e.preventDefault();
-        formData.push(item.value);
-        console.log(formData);
-        let data = JSON.stringify(formData);
-        localStorage.setItem('visitorData', data);
-        window.location.href = 'user.html';
-    });
-});
+//     console.log(item);
+
+//     item.addEventListener('input', function() {
+//         if(item.value.trim() !== '') {
+//             console.log('Filled');
+//             button.disabled = false;
+//             console.log(formData);
+//         } else {
+//             console.log('Not filled');
+//             button.disabled = true;
+//         }
+//     });
+
+
+//     button.addEventListener('click', (e) => {
+//         e.preventDefault();
+//         formData.push(item.value);
+//         console.log(formData);
+//         const userInformation = new inquire(...formData);
+//         let data = JSON.stringify(userInformation);
+//         localStorage.setItem('visitorData', data);
+//         window.location.href = 'user.html';
+//     });
+// });
