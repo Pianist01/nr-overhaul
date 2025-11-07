@@ -421,3 +421,41 @@ height: 200px;
 .insta:hover {
   cursor: pointer;
 }
+
+/* MEDIA QUERIES */
+
+@media (max-width: 1199px) {
+  body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+}
+
+@media (max-width: 1600px) {
+  body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .long-logo {
+    margin-right: 32%;
+  }
+}
+
+@media (max-width: 1440px) {
+  body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .long-logo {
+    margin-right: 28%
+  }
+}
+
+@media (max-width: 1023px) {
+  body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+}
