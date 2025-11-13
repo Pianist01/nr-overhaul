@@ -1,4 +1,6 @@
 console.log('This is a test');
+const screenWidth = screen.width;
+console.log('Total screen wdith: ', screenWidth)
 
 const iconBox = document.querySelector('.icon-container');
 const logo = document.querySelector('.logo');
@@ -8,12 +10,12 @@ logo.addEventListener('click', (e) => {
     window.location.href = 'index.html';
 });
 
-iconBox.addEventListener('click', (e) => {
+if(screenWidth > 428) {
+    iconBox.addEventListener('click', (e) => {
     e.preventDefault();
     console.log('It works!');
     const navMenu = document.querySelector('.navigation');
     navMenu.style.width = '300px';
-    navMenu.style.display = 'block';
 
     const closeMenu = document.querySelector('.exit');
     closeMenu.addEventListener('click', (e) => {
@@ -21,6 +23,8 @@ iconBox.addEventListener('click', (e) => {
         navMenu.style.width = '0';
     });
 });
+}
+
 
 const historyButton = document.querySelector('.history-btn');
 
@@ -51,55 +55,18 @@ serviceButton.addEventListener('mouseout', (e) => {
     serviceButton.style.boxShadow = '';
 });
 
+serviceButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.location.href = 'service.html';
+});
+
 let height;
 const maxHeight = 70;
 let baseHeight = 25;
 // const dropDown = document.createElement('div');
 
 const serviceMenu = document.querySelector('.service');
-// serviceMenu.addEventListener('mouseenter', (e) => {
-//     e.preventDefault();
 
-//     serviceMenu.style.gridTemplateRows = 'repeat(5, .3fr)';
-//     dropDown.classList.add('dropdown');
-
-//     height = 0;
-//     maxHeight;
-
-//     const animateDrop = () => {
-//         height += 3;
-
-//         dropDown.style.height = height + '%';
-//         if(height < maxHeight) {
-//             requestAnimationFrame(animateDrop);
-//         }
-//     }
-
-//     animateDrop();
-//     dropDownContent();
-
-//     serviceMenu.append(dropDown);
-// });
-
-// serviceMenu.addEventListener('mouseleave', (e) => {
-//     e.preventDefault();
-
-//     const dropAway = () => {
-//         height -= 3;
-//         dropDown.style.height = height + '%';
-
-//         if(height) {
-//             serviceMenu.style.gridTemplateRows = 'none';
-//             requestAnimationFrame(dropAway);
-//         }
-//     }
-
-//     const about = document.querySelector('.about-us');
-//     about.style.backGroundColor = 'white';
-
-//     dropAway();
-
-// });
 
 let sunday = document.createElement('a');
 let tuesday = document.createElement('a');
@@ -180,37 +147,30 @@ function dropDownUp() {
 
 dropDownUp();
 
-// function dropDownContent(event) {
-//     switch (event.type) {
-//         case 'mouseenter': 
-//         serviceLink.forEach((service, index) => {
-//             service = document.createElement('a');
-//             if(index === 0) {
-//                 service.href = '#';
-//                 service.textContent = 'Domingos';
-//                 service.classList.add('sunday');
-//                 service.style.display = 'block';
-//             } else if(index === 1) {
-//                 service.href = '#';
-//                 service.textContent = 'Martes';
-//                 service.classList.add('tuesday');
-//                 service.style.display = 'block';
-//             } else if(index === 2) {
-//                 service.href = '#';
-//                 service.textContent = 'Santa Cena';
-//                 service.classList.add('cena');
-//                 service.style.display = 'block';
-//             } else if(index === 3) {
-//                 service.href = '#';
-//                 service.textContent = 'Vigilia';
-//                 service.classList.add('vigil');
-//                 service.style.display = 'block';
-//             }
-//     });
-
 const insta = document.querySelector('.insta');
 
 insta.addEventListener('click', (e) => {
     e.preventDefault();
     window.open('https://www.instagram.com/nuevoremanenteoc/', '_blank');
 });
+
+// Code for screen size: 428px and below
+
+if(screenWidth <= 428) {
+    iconBox.addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        console.log('This function will just be for smaller screen');
+        const navSmall = document.querySelector('.navigation');
+        navSmall.style.height = '100%';
+        navSmall.style.width = '100%';
+        navSmall.style.display = 'block';
+
+        const closeSmall= document.querySelector('.exit');
+        closeSmall.addEventListener('click', (e) => {
+        e.preventDefault();
+        console.log('Display before:', navSmall.style.display);
+        navSmall.style.height = '0';
+    });
+    });
+}
