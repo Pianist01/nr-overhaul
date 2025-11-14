@@ -667,52 +667,61 @@ height: 200px;
 
   .history-title {
     font-size: 1.4rem;
-    left: 0;
-    right: 0;
-    width: 100%;
-    grid-column: unset;
-    justify-self: unset;
-    text-align: unset;
-    align-self: unset;
-    top: 45%;
-    transform: translateY(-50%);
+    /* Remove all grid properties */
+    grid-column: initial;
+    justify-self: initial;
+    align-self: initial;
+    /* Simple centering */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    text-align: center;
+    white-space: nowrap;
   }
 
   .history-btn {
     height: 40px;
     width: 100px;
-    font-size: .8rem; 
-    left: 50%;
-    margin-left: -50px;
-    grid-column: unset;
-    justify-self: unset;
-    align-self: unset;
+    font-size: .8rem;
+    /* Remove all grid properties */
+    grid-column: initial;
+    justify-self: initial;
+    align-self: initial;
+    /* Position at bottom center */
     bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
     top: auto;
   }
 
   .service-title {
     font-size: 1.4rem;
-    left: 0;
-    right: 0;
-    width: 100%;
+    /* Remove all grid properties */
+    grid-column: initial;
+    justify-self: initial;
+    align-self: initial;
+    /* Simple centering */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
     text-align: center;
-    grid-column: unset;
-    justify-self: unset;
-    align-self: unset;
-    top: 45%;
-    transform: translateY(-50%);
+    white-space: nowrap;
   }
 
   .service-btn {
     height: 40px;
     width: 100px;
-    font-size: .8rem; 
-    left: 50%;
-    margin-left: -50px;
-    grid-column: unset;
-    justify-self: unset;
+    font-size: .8rem;
+    /* Remove all grid properties */
+    grid-column: initial;
+    justify-self: initial;
+    align-self: initial;
+    /* Position at bottom center */
     bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
     top: auto;
   }
 
