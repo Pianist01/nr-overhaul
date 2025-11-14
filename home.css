@@ -656,13 +656,22 @@ height: 200px;
     transition: height 0.5s ease-in-out;
   }
 
+  .history {
+    position: relative;
+  }
+
+  .schedule {
+    position: relative;
+  }
+
   .text {
-    height: 100%;
+    height: auto;
+    display: block;
   }
 
   .seats {
-    height: 100%;
-    text-align: center;
+    height: auto;
+    display: block;
   }
 
   .history-title {
