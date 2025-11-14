@@ -672,8 +672,10 @@ height: 200px;
     width: 100%;
     grid-column: unset;
     justify-self: unset;
-    text-align: center;
-    align-self: center;
+    text-align: unset;
+    align-self: unset;
+    top: 45%;
+    transform: translateY(-50%);
   }
 
   .history-btn {
@@ -684,7 +686,9 @@ height: 200px;
     margin-left: -50px;
     grid-column: unset;
     justify-self: unset;
-    transform: translateY(-50%);
+    align-self: unset;
+    bottom: 10%;
+    top: auto;
   }
 
   .service-title {
@@ -695,6 +699,9 @@ height: 200px;
     text-align: center;
     grid-column: unset;
     justify-self: unset;
+    align-self: unset;
+    top: 45%;
+    transform: translateY(-50%);
   }
 
   .service-btn {
@@ -705,6 +712,8 @@ height: 200px;
     margin-left: -50px;
     grid-column: unset;
     justify-self: unset;
+    bottom: 10%;
+    top: auto;
   }
 
   footer {
