@@ -663,7 +663,10 @@ height: 200px;
   .history-title {
     font-size: 1.4rem;
     left: 50%;
+    grid-column: 1/4;
+    justify-self: stretch;
     transform: translate(-50%);
+    width: max-content;
   }
 
   .history-btn {
@@ -671,13 +674,18 @@ height: 200px;
     width: 100px;
     font-size: .8rem; 
     left: 50%;
+    grid-column: 1/4;
+    justify-self: stretch;
     transform: translate(-50%);
   }
 
   .service-title {
     font-size: 1.4rem;
     left: 50%;
+    grid-column: 1/4;
+    justify-self: stretch;
     transform: translate(-50%);
+    width: max-content;
   }
 
   .service-btn {
@@ -685,6 +693,8 @@ height: 200px;
     width: 100px;
     font-size: .8rem; 
     left: 50%;
+    grid-column: 1/4;
+    justify-self: stretch;
     transform: translate(-50%);
   }
 
