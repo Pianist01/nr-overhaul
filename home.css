@@ -621,13 +621,20 @@ height: 200px;
   .logo {
     width: 150px;
     height: 150px;
-    margin-top: -35px;
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 0;
     z-index: 1;
   }
 
   .icon-container {
-    margin-top: 7%;
-    margin-right: 8%;
+    position: fixed;
+    top: 20px;
+    right: 8%;
+    margin-top: 0;
+    margin-right: 0;
     z-index: 2;
   }
 
