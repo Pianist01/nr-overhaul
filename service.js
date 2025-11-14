@@ -7,19 +7,26 @@ const mainContainer = document.querySelector('.main-container');
 
 const pageLogo = document.querySelector('.logo');
 
+const screenWidth = window.innerWidth;
+
+console.log('Screen width is: ' + screenWidth + 'px');
+
 pageLogo.addEventListener('click', (e) => {
   e.preventDefault();
   window.location.href = 'index.html';
 });
 
-navBox.addEventListener('click', (e) => {
+if(screenWidth > 428) {
+  navBox.addEventListener('click', (e) => {
   e.preventDefault();
   navMenu = document.querySelector('.navigation');
   navMenu.style.width = '300px';
   navMenu.style.display = 'block';
 });
 
-menuExit();
+  menuExit();
+}
+
 
 const sunday = document.querySelector('.sunday-image');
 const tuesday = document.querySelector('.tuesday-image');
@@ -265,3 +272,21 @@ insta.addEventListener('click', (e) => {
     e.preventDefault();
     window.open('https://www.instagram.com/nuevoremanenteoc/', '_blank');
 });
+
+// Code for screen size: 428px and below
+
+if(screenWidth <= 428) {
+  navBox.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    const navSmall = document.querySelector('.navigation');
+    navSmall.style.height = '100%';
+
+    const closeSmall = document.querySelector('.exit');
+    closeSmall.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      navSmall.style.height = '0';
+    });
+  });
+}
