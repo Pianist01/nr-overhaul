@@ -162,7 +162,7 @@ if(screenWidth <= 428) {
         
         console.log('This function will just be for smaller screen');
         const navSmall = document.querySelector('.navigation');
-        navSmall.style.height = '100vh';
+        navSmall.style.height = '128.5%';
 
         const closeSmall= document.querySelector('.exit');
         closeSmall.addEventListener('click', (e) => {
@@ -171,4 +171,4 @@ if(screenWidth <= 428) {
         navSmall.style.height = '0';
     });
     });
-}
+} 
