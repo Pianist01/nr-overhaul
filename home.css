@@ -460,6 +460,10 @@ height: 200px;
     overflow-x: hidden;
   }
 
+  .navigation {
+    height: 150%;
+  }
+
   .long-logo {
     margin-right: 22%;
   }
@@ -782,6 +786,7 @@ height: 200px;
   body {
     width: 100%;
   }
+
 
   .long-logo {
     margin-right: -120%;
