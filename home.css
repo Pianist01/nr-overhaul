@@ -673,6 +673,7 @@ height: 200px;
     grid-column: unset;
     justify-self: unset;
     text-align: center;
+    align-self: center;
   }
 
   .history-btn {
@@ -683,6 +684,7 @@ height: 200px;
     margin-left: -50px;
     grid-column: unset;
     justify-self: unset;
+    transform: translateY(-50%);
   }
 
   .service-title {
