@@ -1,5 +1,5 @@
 console.log('This is a test');
-const screenWidth = screen.width;
+const screenWidth = window.innerWidth;
 console.log('Total screen wdith: ', screenWidth)
 
 const iconBox = document.querySelector('.icon-container');
@@ -162,9 +162,7 @@ if(screenWidth <= 428) {
         
         console.log('This function will just be for smaller screen');
         const navSmall = document.querySelector('.navigation');
-        navSmall.style.height = '100%';
-        navSmall.style.width = '100%';
-        navSmall.style.display = 'block';
+        navSmall.style.height = '100vh';
 
         const closeSmall= document.querySelector('.exit');
         closeSmall.addEventListener('click', (e) => {
