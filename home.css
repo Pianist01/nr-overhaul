@@ -660,13 +660,19 @@ height: 200px;
     height: 100%;
   }
 
+  .seats {
+    height: 100%;
+    text-align: center;
+  }
+
   .history-title {
     font-size: 1.4rem;
-    left: 50%;
-    grid-column: 1/4;
-    justify-self: stretch;
-    transform: translateX(-50%);
-    width: max-content;
+    left: 0;
+    right: 0;
+    width: 100%;
+    grid-column: unset;
+    justify-self: unset;
+    text-align: center;
   }
 
   .history-btn {
@@ -674,18 +680,19 @@ height: 200px;
     width: 100px;
     font-size: .8rem; 
     left: 50%;
-    grid-column: 1/4;
-    justify-self: stretch;
-    transform: translateX(-50%);
+    margin-left: -50px;
+    grid-column: unset;
+    justify-self: unset;
   }
 
   .service-title {
     font-size: 1.4rem;
-    left: 50%;
-    grid-column: 1/4;
-    justify-self: stretch;
-    transform: translateX(-50%);
-    width: max-content;
+    left: 0;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    grid-column: unset;
+    justify-self: unset;
   }
 
   .service-btn {
@@ -693,9 +700,9 @@ height: 200px;
     width: 100px;
     font-size: .8rem; 
     left: 50%;
-    grid-column: 1/4;
-    justify-self: stretch;
-    transform: translateX(-50%);
+    margin-left: -50px;
+    grid-column: unset;
+    justify-self: unset;
   }
 
   footer {
