@@ -279,14 +279,22 @@ if(screenWidth <= 428) {
   navBox.addEventListener('click', (e) => {
     e.preventDefault();
 
+    mainContainer.style.zIndex = '-1';
+
     const navSmall = document.querySelector('.navigation');
-    navSmall.style.height = '100%';
+    navSmall.style.height = '110vh';
 
     const closeSmall = document.querySelector('.exit');
     closeSmall.addEventListener('click', (e) => {
       e.preventDefault();
 
       navSmall.style.height = '0';
+
+      setTimeout(() => {
+        mainContainer.style.zIndex = '1';
+      }, 1000);
+
     });
+
   });
 }
