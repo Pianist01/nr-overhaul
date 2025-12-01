@@ -560,6 +560,7 @@ height: 200px;
   body {
     width: 100%;
     overflow-x: hidden;
+    grid-template-rows: 1.6fr 2fr .5fr;
   }
 
   .logo {
@@ -588,6 +589,7 @@ height: 200px;
   }
 
   .navigation {
+    grid-column: 1/4;
     justify-self: start;
     position: fixed;
     left: 0;
@@ -598,5 +600,37 @@ height: 200px;
     width: 100vw;
     overflow-y: auto;
     transition: height 0.5s ease-in-out;
+  }
+
+  .main-container {
+    z-index: -1;
+  }
+
+  .sunday-image, .tuesday-image, .cena-image, .vigilia-image {
+    height: 135px;
+    width: 135px;
+  }
+
+}
+
+@media (max-width: 375px) {
+  body {
+    width: 100%;
+    overflow: hidden;
+    grid-template-rows: 1.5fr 2fr 1fr;
+  }
+
+  .logo {
+    width: 130px;
+    height: 130px;
+  }
+
+  .sunday-image, .tuesday-image, .cena-image, .vigilia-image {
+    height: 120px;
+    width: 120px;
+  }
+
+  footer {
+    height: 100%;
   }
 }
