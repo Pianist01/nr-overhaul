@@ -1,5 +1,7 @@
 console.log('This page is working');
 
+const screenWidth = window.innerWidth;
+
 // Logo functionality
 const logo = document.querySelector('.logo');
 logo.addEventListener('click', (e) => {
@@ -132,3 +134,21 @@ function dropDownUp() {
 }
 
 dropDownUp();
+
+// Code for screen size: 428px and below
+
+if(screen.width <= 428) {
+    navBox.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        const navSmall = document.querySelector('.navigation');
+        navSmall.style.height = '110vh';
+
+        const closeSmall = document.querySelector('.exit');
+        closeSmall.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            navSmall.style.height = '0';
+        });
+    });
+}
