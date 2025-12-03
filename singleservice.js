@@ -12,18 +12,23 @@ logo.addEventListener('click', (e) => {
 // Nav menu
 
 let navMenu;
+
 const navBox = document.querySelector('.icon-container');
-navBox.addEventListener('click', (e) => {
+const navExit = document.querySelector('.nav-exit');
+
+if(screenWidth > 428) {
+    navBox.addEventListener('click', (e) => {
     navMenu = document.querySelector('.navigation');
     navMenu.style.width = '300px';
     navMenu.style.display = 'block';
 });
 
-const navExit = document.querySelector('.nav-exit');
 navExit.addEventListener('click', (e) => {
     e.preventDefault();
     navMenu.style.width = '0';
 });
+}
+
 
 let tuesday = document.createElement('a');
 let cena = document.createElement('a');
