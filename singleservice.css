@@ -387,7 +387,8 @@ height: 200px;
 
 @media (max-width: 428px) {
   .navigation {
-    grid-column: 1/4;
+    grid-column-start: 1;
+    grid-column-end: 4;
     justify-self: start;
     position: fixed;
     left: 0;
