@@ -11,6 +11,10 @@ const screenWidth = window.innerWidth;
 
 console.log('Screen width is: ' + screenWidth + 'px');
 
+window.onload = () => {
+  mainContainer.style.zIndex = '1';
+}
+
 pageLogo.addEventListener('click', (e) => {
   e.preventDefault();
   window.location.href = 'index.html';
@@ -204,11 +208,11 @@ function imageHover() {
 
 function aboutSunday() {
   const sundayTitle = document.createElement('h2');
-  sundayTitle.classList.add('info-title');
+  sundayTitle.classList.add('info-title', 'sunday-title');
   sundayTitle.textContent = 'Servicio Regular';
 
   const sundayHours = document.createElement('p');
-  sundayHours.classList.add('service-hours');
+  sundayHours.classList.add('service-hours', 'sunday-hours');
   sundayHours.textContent = 'Domingos(5PM-7PM)';
 
   const sundayDescrip = document.createElement('p');
@@ -228,7 +232,7 @@ function aboutTuesday() {
   tuesdayHours.textContent = 'Martes(7PM-8:30PM)';
 
   const tuesdayDescrip = document.createElement('p');
-  tuesdayDescrip.classList.add('service-description');
+  tuesdayDescrip.classList.add('service-description', 'tuesday-description');
   tuesdayDescrip.textContent = 'Cada Martes tenemos servicio de oracion, predicacion, o estudio Biblico. El primer Martes de cada mes es servicio de oracion donde dedicamos un servicio entero a la oracion. La oracion es un aspecto importante en manteniendo una relacion con Dios. Los Martes siguientes son servicios normales donde adoramos al se\u00F1or y despues tenemos tiempo de predicacion donde podemos escuchar la palabra de Dios. El ultimo Martes del mes tenemos estudio Biblico. Si en qualquier momento ha tenido preguntas sobre lo que dice la Biblia, este servicio es para usted.';
 
   infoBox.append(tuesdayTitle, tuesdayHours, tuesdayDescrip);
@@ -240,7 +244,7 @@ function aboutSantaCena() {
   cenaTitle.textContent = 'Santa Cena';
 
   const cenaHours = document.createElement('p');
-  cenaHours.classList.add('service-hours');
+  cenaHours.classList.add('service-hours', 'cena-hours');
   cenaHours.textContent = 'Primer Domingo Del Mes(5PM - 7PM)';
 
   const cenaDescrip = document.createElement('p');
@@ -256,7 +260,7 @@ function aboutVigilia() {
   vigilTitle.textContent = 'Vigilia';
 
   const vigilHours = document.createElement('p');
-  vigilHours.classList.add('service-hours');
+  vigilHours.classList.add('service-hours', 'vigil-hours');
   vigilHours.textContent = 'Ultimo Sabado Del Mes(7PM - 12AM)';
 
   const vigilDescrip = document.createElement('p');
