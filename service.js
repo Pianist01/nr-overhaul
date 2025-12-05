@@ -216,7 +216,7 @@ function aboutSunday() {
   sundayHours.textContent = 'Domingos(5PM-7PM)';
 
   const sundayDescrip = document.createElement('p');
-  sundayDescrip.classList.add('service-description');
+  sundayDescrip.classList.add('service-description', 'sunday-description');
   sundayDescrip.textContent = 'Cada Domingo a las 5PM, nos reunimos para adorar a nuestro se\u00F1or. Es importante en mantener una relacion personal con Dios cada dia, y ser parte de una congregacion tambien nos ayuda en aprender mas de la palabra de Dios. Ademas de adoracion y predicacion, cada Domingo despues del servicio tenemos convivir juntos con comida o un refresco hecho por nuestras hermanas incre\u00EDbles.';
 
   infoBox.append(sundayTitle, sundayHours, sundayDescrip);
@@ -224,7 +224,7 @@ function aboutSunday() {
 
 function aboutTuesday() {
   const tuesdayTitle = document.createElement('h2');
-  tuesdayTitle.classList.add('info-title');
+  tuesdayTitle.classList.add('info-title', 'tuesday-title');
   tuesdayTitle.textContent = 'Oracion/Predicacion/Estudio';
 
   const tuesdayHours = document.createElement('p');
@@ -240,7 +240,7 @@ function aboutTuesday() {
 
 function aboutSantaCena() {
   const cenaTitle = document.createElement('h2');
-  cenaTitle.classList.add('info-title');
+  cenaTitle.classList.add('info-title', 'cena-title');
   cenaTitle.textContent = 'Santa Cena';
 
   const cenaHours = document.createElement('p');
@@ -248,7 +248,7 @@ function aboutSantaCena() {
   cenaHours.textContent = 'Primer Domingo Del Mes(5PM - 7PM)';
 
   const cenaDescrip = document.createElement('p');
-  cenaDescrip.classList.add('service-description');
+  cenaDescrip.classList.add('service-description', 'cena-description');
   cenaDescrip.textContent = 'Cada primer Domingo del mes tenemos nuestro servicio de la Santa Cena. Como un servicio normal, tenemos adoracion y predicacion, pero al final tomamos parte de la Santa Cena. Jesus nos instruye recordando su memoria y sacrificio con pan y vino(no usamos vino real). Pero tambien es un tiempo lindo para poder reflexionar.';
 
   infoBox.append(cenaTitle, cenaHours, cenaDescrip);
@@ -256,7 +256,7 @@ function aboutSantaCena() {
 
 function aboutVigilia() {
   const vigilTitle = document.createElement('h2');
-  vigilTitle.classList.add('info-title');
+  vigilTitle.classList.add('info-title', 'vigil-title');
   vigilTitle.textContent = 'Vigilia';
 
   const vigilHours = document.createElement('p');
@@ -264,7 +264,7 @@ function aboutVigilia() {
   vigilHours.textContent = 'Ultimo Sabado Del Mes(7PM - 12AM)';
 
   const vigilDescrip = document.createElement('p');
-  vigilDescrip.classList.add('service-description');
+  vigilDescrip.classList.add('service-description', 'vigil-description');
   vigilDescrip.textContent = 'El ultimo Sabado de cada mes tenemos nuestro servicio de Vigilia. Comenzando a las 7PM, dedicamos una noche entera a nuestro se\u00F1or en oracion, adoracion, predicacion, testimonios, y mas! Ademas de eso, tenemos una cena hecho por nuestras hermanas para la congregacion, y si usted quiere, puede traer algo para compartir con todos. Este servicio es el paquete completeo.';
 
   infoBox.append(vigilTitle, vigilHours, vigilDescrip);
@@ -301,4 +301,9 @@ if(screenWidth <= 428) {
     });
 
   });
+
+  sundayBox.addEventListener('click', (e) => {
+    e.preventDefault();
+    serviceBox.style.width = '80%';
+  })
 }
