@@ -405,6 +405,8 @@ footer {
   grid-column: 1/4;
   grid-row: 3/4;
   background-color: black;
+  filter: blur(0px);
+  transition: filter .5s ease-in-out;
 }
 
 .footer-container {
@@ -942,6 +944,11 @@ height: 200px;
 }
 
 @media (max-width: 320px) {
+  .logo {
+    width: 110px;
+    height: 110px;
+  }
+
   .sunday-image, .tuesday-image, .cena-image, .vigilia-image {
     height: 100px;
     width: 100px;
