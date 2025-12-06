@@ -59,7 +59,6 @@ services.forEach((service, index) => {
 
     if(container !== e) {
       container.style.backgroundColor = 'rgba(0, 0, 0, 1)';
-      footer.style.backgroundColor = 'rgba(0, 0, 0, 1)';
     }
 
     serviceBoxes.forEach((item) => {
@@ -178,6 +177,7 @@ function imageHover() {
     service.addEventListener('mouseover', (e) => {
       e.preventDefault();
       headerContainer.style.filter = 'blur(5px)';
+      footer.style.filter = 'blur(5px)';
       if(index === 0) {
         tuesday.style.filter = 'blur(5px)';
         cena.style.filter = 'blur(5px)';
@@ -199,6 +199,7 @@ function imageHover() {
     service.addEventListener('mouseout', (e) => {
       e.preventDefault();
       headerContainer.style.filter = '';
+      footer.style.filter = '';
       services.forEach((item) => {
         item.style.filter = '';
       });
@@ -286,6 +287,7 @@ if(screenWidth <= 428) {
     e.preventDefault();
 
     mainContainer.style.zIndex = '-1';
+    footer.style.zIndex = '-1';
 
     const navSmall = document.querySelector('.navigation');
     navSmall.style.height = '110vh';
@@ -298,6 +300,7 @@ if(screenWidth <= 428) {
 
       setTimeout(() => {
         mainContainer.style.zIndex = '1';
+        footer.style.zIndex = '1';
       }, 1000);
 
     });
