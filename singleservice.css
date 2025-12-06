@@ -371,10 +371,20 @@ height: 200px;
   }
 }
 
+@media (max-width: 900px) {
+  figure {
+    margin-top: 7%;
+  }
+
+  .main-info {
+    line-height: 35px;
+  }
+}
+
 @media (max-width: 800px) {
   .main-info {
     font-size: 1em;
-    line-height: 35px;
+    line-height: 33px;
   }
 
   figure {
@@ -382,6 +392,15 @@ height: 200px;
     grid-row: 1/2;
     grid-column: 1/2;
     margin-top: 6%;
+  }
+}
+
+@media (max-width: 768px) {
+  .info-container {
+    width: 80%;
+  }
+  .main-info {
+    text-align: center;
   }
 }
 
