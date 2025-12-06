@@ -4,6 +4,7 @@ let navMenu;
 const navExit = document.querySelector('.exit');
 const headerContainer = document.querySelector('.header-container');
 const mainContainer = document.querySelector('.main-container');
+const footer = document.querySelector('footer');
 
 const pageLogo = document.querySelector('.logo');
 
@@ -58,6 +59,7 @@ services.forEach((service, index) => {
 
     if(container !== e) {
       container.style.backgroundColor = 'rgba(0, 0, 0, 1)';
+      footer.style.backgroundColor = 'rgba(0, 0, 0, 1)';
     }
 
     serviceBoxes.forEach((item) => {
@@ -228,7 +230,7 @@ function aboutTuesday() {
   tuesdayTitle.textContent = 'Oracion/Predicacion/Estudio';
 
   const tuesdayHours = document.createElement('p');
-  tuesdayHours.classList.add('service-hours');
+  tuesdayHours.classList.add('service-hours', 'tuesday-hours');
   tuesdayHours.textContent = 'Martes(7PM-8:30PM)';
 
   const tuesdayDescrip = document.createElement('p');
@@ -302,8 +304,27 @@ if(screenWidth <= 428) {
 
   });
 
-  sundayBox.addEventListener('click', (e) => {
-    e.preventDefault();
-    serviceBox.style.width = '80%';
-  })
+  serviceBoxes.forEach((box, index) => {
+    box.addEventListener('click', (e) => {
+      e.preventDefault();
+      
+      if(index === 0, 1, 2, 3) {
+        serviceBox.style.width = '80%';
+      }
+    });
+  });
+}
+
+// Code just for screen size 320px
+
+if(screenWidth <= 320) {
+  serviceBoxes.forEach((box, index) => {
+    box.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      if(index === 0, 1, 2, 3) {
+        serviceBox.style.width = '95%';
+      }
+    });
+  });
 }
