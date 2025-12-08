@@ -820,6 +820,12 @@ height: 200px;
     width: 135px;
   }
 
+  .service-box {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
   .info-box {
     padding: 15px;
   }
