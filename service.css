@@ -854,7 +854,7 @@ height: 200px;
 
   .tuesday-description {
     font-size: .9em;
-    line-height: 30px;
+    line-height: 25px;
     grid-row: 1/4;
     align-self: center;
     text-align: center;
