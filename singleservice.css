@@ -420,6 +420,12 @@ height: 200px;
 }
 
 @media (max-width: 428px) {
+  .logo {
+    top: 13%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
   .icon-container {
     position: absolute;
     top: 20px;
@@ -491,18 +497,37 @@ height: 200px;
 }
 
 @media (max-width: 414px) {
+  .logo {
+    top: 13%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  body {
+    grid-template-rows: .6fr 2fr .3fr;
+  }
   .main-info {
     line-height: 23px;
   }
 
   .tuesday-info {
-    margin-top: 7%;
+    margin-top: 10%;
     line-height: 25px;
     font-size: 1.1em;
+  }
+
+  .tuesday-hours {
+    margin-top: 12%;
   }
 }
 
 @media (max-width: 375px) {
+  .logo {
+    top: 13%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
   .main-info {
     font-size: 1em;
     line-height: 20px;
@@ -510,8 +535,22 @@ height: 200px;
 }
 
 @media (max-width: 320px) {
+  .logo {
+    width: 180px;
+    height: 180px;
+    margin-top: -30px;
+  }
+
   .main-info {
     font-size: 0.9em;
     line-height: 20px;
+  }
+
+  .tuesday-hours {
+    margin-top: 20%;
+  }
+
+  .tuesday-info {
+    margin-top: 5%;
   }
 }
