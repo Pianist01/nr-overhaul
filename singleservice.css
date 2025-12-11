@@ -527,7 +527,7 @@ height: 200px;
     left: 50%;
     transform: translate(-50%, -50%);
   }
-  
+
   .main-info {
     font-size: 1em;
     line-height: 20px;
@@ -538,7 +538,9 @@ height: 200px;
   .logo {
     width: 180px;
     height: 180px;
-    margin-top: -30px;
+    top: 13%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
   .main-info {
