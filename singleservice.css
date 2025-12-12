@@ -379,6 +379,10 @@ height: 200px;
   .main-info {
     font-size: 1.1em;
   }
+
+  .cena-hours {
+    margin-top: 6%;
+  }
 }
 
 @media (max-width: 900px) {
