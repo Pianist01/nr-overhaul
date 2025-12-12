@@ -390,15 +390,15 @@ function levaExit() {
 
 function aboutLeva() {
     const levaTitle = document.createElement('h2')
-    levaTitle.classList.add('member-title');
+    levaTitle.classList.add('member-title', 'leva-position');
     levaTitle.textContent = 'Victor y Brizza Hernandez';
 
     const levaPosition = document.createElement('p');
-    levaPosition.classList.add('member-position');
+    levaPosition.classList.add('member-position', 'leva-position');
     levaPosition.textContent = 'Pastores';
 
     const levaDescrip = document.createElement('p');
-    levaDescrip.classList.add('member-paragraph');
+    levaDescrip.classList.add('member-paragraph', 'leva-info');
     levaDescrip.textContent = 'Victor y Brizza tienen 20 a\u00F1os casados. Con sus dos hijos y hija, toda la familia sirve dentro de la iglesia. Salvado de una vida de drogas y deliquencia, Victor sigue con el mismo fuego de servir a Cristo hoy como el primer dia. Pero, tras cada hombre que se esfuerza a servir a Dios a lo 100%, siempre hay una mujer de Dios tras de el. Brizza siempre hace todo lo posible de ayudar el ministerio con las mujeres y para todos en general. Siempre la puedes encontrar sirviendo la congregacion en todo lo que necesita.';
 
     levaSquare.append(levaTitle, levaPosition, levaDescrip);
@@ -407,15 +407,15 @@ function aboutLeva() {
 // This function and every other one named about(insert band member) will display member description
 function aboutJoksan() {
     joksanTitle = document.createElement('h2');
-    joksanTitle.classList.add('member-title');
+    joksanTitle.classList.add('member-title', 'joata-name');
     joksanTitle.textContent = nameArray[0];
 
     const joksanPosition = document.createElement('p');
-    joksanPosition.classList.add('member-position');
+    joksanPosition.classList.add('member-position', 'joata-position');
     joksanPosition.textContent = 'Baterista/Primera Voz';
 
     const joksanDescrip = document.createElement('p');
-    joksanDescrip.classList.add('member-paragraph');
+    joksanDescrip.classList.add('member-paragraph', 'joata-info');
     joksanDescrip.textContent = 'Tocando la baterai por la mayoria de su vida, Joksan lidera la banda de Nuevo Remanente con su talento y tambien con su voz. Joksan siempre le da todo su esfuerzo a adorar a nuestro se\u00F1or con cada cancion.';
     memberInfo.append(joksanTitle, joksanPosition, joksanDescrip);
 }

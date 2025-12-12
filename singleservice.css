@@ -360,6 +360,14 @@ height: 200px;
 /* MEDIA QUERIES */
 
 @media (max-width: 1199px) {
+  .vigil-hours {
+    margin-top: 7%;
+  }
+
+  .vigil-info {
+    text-indent: 0;
+  }
+
   .tuesday-hours {
     margin-top: 6%;
   }
@@ -498,6 +506,19 @@ height: 200px;
   .tuesday-info {
     line-height: 21px;
   }
+
+  .cena-info {
+    margin-top: 3%;
+    line-height: 35px;
+  }
+
+  .cena-hours {
+    margin-top: 12%;
+  }
+
+  .vigil-info {
+    font-size: .8em;
+  }
 }
 
 @media (max-width: 414px) {
@@ -514,6 +535,10 @@ height: 200px;
     line-height: 23px;
   }
 
+  .sunday-hours {
+    margin-top: 13%;
+  }
+
   .tuesday-info {
     margin-top: 10%;
     line-height: 25px;
@@ -522,6 +547,23 @@ height: 200px;
 
   .tuesday-hours {
     margin-top: 12%;
+  }
+
+  .cena-hours {
+    margin-top: 13%;
+  }
+
+  .cena-info {
+    margin-top: 12%;
+  }
+
+  .vigil-hours {
+    margin-top: 13%;
+  }
+
+  .vigil-info {
+    font-size: 1.1em;
+    margin-top: 7%;
   }
 }
 
@@ -536,6 +578,13 @@ height: 200px;
     font-size: 1em;
     line-height: 20px;
   }
+
+  .main-container .cena-title {
+    grid-column: 1/2;
+    text-align: center;
+    font-size: 1.1em;
+  }
+
 }
 
 @media (max-width: 320px) {

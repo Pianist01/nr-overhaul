@@ -409,6 +409,26 @@ grid-row-start: 4;
 grid-row-end: 5;
 }
 
+.leva-title {
+  grid-column: 1/4;
+  grid-row: 1/2;
+}
+
+.leva-position {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  align-self: center;
+  justify-content: center;
+}
+
+.leva-info {
+  grid-row: 1/4;
+  grid-column: 1/4;
+  align-self: center;
+  text-align: center;
+  margin-top: -6%;
+}
+
 .band {
 grid-row-start: 3;
 grid-row-end: 4;
@@ -439,6 +459,10 @@ justify-self: center;
 width: 250px;
 height: 250px;
 border-radius: 50%;
+}
+
+.joata-info {
+  text-align: center;
 }
 
 .joata-caption {
