@@ -390,15 +390,15 @@ function levaExit() {
 
 function aboutLeva() {
     const levaTitle = document.createElement('h2')
-    levaTitle.classList.add('member-title', 'leva-position');
+    levaTitle.classList.add('member-title');
     levaTitle.textContent = 'Victor y Brizza Hernandez';
 
     const levaPosition = document.createElement('p');
-    levaPosition.classList.add('member-position', 'leva-position');
+    levaPosition.classList.add('member-position');
     levaPosition.textContent = 'Pastores';
 
     const levaDescrip = document.createElement('p');
-    levaDescrip.classList.add('member-paragraph', 'leva-info');
+    levaDescrip.classList.add('member-paragraph', 'leva-paragraph');
     levaDescrip.textContent = 'Victor y Brizza tienen 20 a\u00F1os casados. Con sus dos hijos y hija, toda la familia sirve dentro de la iglesia. Salvado de una vida de drogas y deliquencia, Victor sigue con el mismo fuego de servir a Cristo hoy como el primer dia. Pero, tras cada hombre que se esfuerza a servir a Dios a lo 100%, siempre hay una mujer de Dios tras de el. Brizza siempre hace todo lo posible de ayudar el ministerio con las mujeres y para todos en general. Siempre la puedes encontrar sirviendo la congregacion en todo lo que necesita.';
 
     levaSquare.append(levaTitle, levaPosition, levaDescrip);
@@ -407,7 +407,7 @@ function aboutLeva() {
 // This function and every other one named about(insert band member) will display member description
 function aboutJoksan() {
     joksanTitle = document.createElement('h2');
-    joksanTitle.classList.add('member-title', 'joata-name');
+    joksanTitle.classList.add('member-title');
     joksanTitle.textContent = nameArray[0];
 
     const joksanPosition = document.createElement('p');
@@ -415,7 +415,7 @@ function aboutJoksan() {
     joksanPosition.textContent = 'Baterista/Primera Voz';
 
     const joksanDescrip = document.createElement('p');
-    joksanDescrip.classList.add('member-paragraph', 'joata-info');
+    joksanDescrip.classList.add('member-paragraph', 'joata-paragraph');
     joksanDescrip.textContent = 'Tocando la baterai por la mayoria de su vida, Joksan lidera la banda de Nuevo Remanente con su talento y tambien con su voz. Joksan siempre le da todo su esfuerzo a adorar a nuestro se\u00F1or con cada cancion.';
     memberInfo.append(joksanTitle, joksanPosition, joksanDescrip);
 }
@@ -430,7 +430,7 @@ function aboutAbel() {
     abelPosition.textContent = 'Guitarista';
 
     const abelDescrip = document.createElement('p');
-    abelDescrip.classList.add('member-paragraph');
+    abelDescrip.classList.add('member-paragraph', 'abel-paragraph');
     abelDescrip.textContent = 'El primer guitarista del equipo, Abel demuestra su talento en la guitara electrica en cada servicio. Con sonidos de excellencia y nivel alta, y todo para nuestro Dios.';
     memberInfo.append(abelTitle, abelPosition, abelDescrip);
 }
@@ -445,7 +445,7 @@ function aboutGadiel() {
     gadielPosition.textContent = 'Bajo';
 
     const gadielDescrip = document.createElement('p');
-    gadielDescrip.classList.add('member-paragraph');
+    gadielDescrip.classList.add('member-paragraph', 'gadiel-paragraph');
     gadielDescrip.textContent = 'Nuestro bajo de Nuevo Remanente. Gadiel siempre completa cada cancion con su bajo. Sin el, muchas canciones sonarian vacias. Ademas del bajo, Gadiel toca la bateria y la guitara.';
     memberInfo.append(gadielTitle, gadielPosition, gadielDescrip);
 }
@@ -460,7 +460,7 @@ function aboutIsai() {
     isaiPosition.textContent = 'Pianista';
 
     const isaiDescrip = document.createElement('p');
-    isaiDescrip.classList.add('member-paragraph');
+    isaiDescrip.classList.add('member-paragraph', 'isai-paragraph');
     isaiDescrip.textContent = 'El maestro del piano. Isai trae la emocion en cada cancion con su talento. Es el paquete completo en el piano.';
     memberInfo.append(isaiTitle, isaiPosition, isaiDescrip);
 }
