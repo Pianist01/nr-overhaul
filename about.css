@@ -409,26 +409,6 @@ grid-row-start: 4;
 grid-row-end: 5;
 }
 
-.leva-title {
-  grid-column: 1/4;
-  grid-row: 1/2;
-}
-
-.leva-position {
-  grid-column: 2/3;
-  grid-row: 1/2;
-  align-self: center;
-  justify-content: center;
-}
-
-.leva-info {
-  grid-row: 1/4;
-  grid-column: 1/4;
-  align-self: center;
-  text-align: center;
-  margin-top: -6%;
-}
-
 .band {
 grid-row-start: 3;
 grid-row-end: 4;
@@ -459,10 +439,6 @@ justify-self: center;
 width: 250px;
 height: 250px;
 border-radius: 50%;
-}
-
-.joata-info {
-  text-align: center;
 }
 
 .joata-caption {
@@ -569,6 +545,10 @@ font-size: 1.2em;
 width: 75%;
 }
 
+.joata-paragraph, .abel-paragraph, .gadiel-paragraph, .isai-paragraph, .leva-paragraph {
+  text-align: center;
+}
+
 .member-title {
 grid-column-start: 2;
 grid-column-end: 4;
@@ -668,4 +648,63 @@ height: 200px;
 
 .insta:hover {
   cursor: pointer;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 1200px) {
+  .intro-info2 {
+    text-align: center;
+  }
+
+  .pastor-image {
+    height: 500px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .intro-info1 {
+    margin-right: 5%;
+    margin-left: 3%;
+  }
+
+  .pastor-image {
+    height: 450px;
+  }
+
+  .leva-paragraph {
+    margin-top: -10%;
+  }
+
+  .joata-position {
+    text-align: center;
+  }
+
+  .member-image {
+    width: 70%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .leva-paragraph {
+    font-size: 1.1em;
+  }
+}
+
+@media (max-width: 900px) {
+  .intro-info1 {
+    margin-right: 5%;
+    font-size: 1.1em;
+  }
+
+  .intro-info2 {
+    font-size: 1.1em;
+  }
+  .pastor-image {
+    height: 400px;
+  }
+
+  .leva-paragraph {
+    font-size: 1em;
+  }
 }
