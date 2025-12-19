@@ -405,7 +405,7 @@ function levaExit() {
 
 function aboutLeva() {
     const levaTitle = document.createElement('h2')
-    levaTitle.classList.add('member-title');
+    levaTitle.classList.add('member-title', 'pastor-nombre');
     levaTitle.textContent = 'Victor y Brizza Hernandez';
 
     const levaPosition = document.createElement('p');
@@ -422,7 +422,7 @@ function aboutLeva() {
 // This function and every other one named about(insert band member) will display member description
 function aboutJoksan() {
     joksanTitle = document.createElement('h2');
-    joksanTitle.classList.add('member-title');
+    joksanTitle.classList.add('member-title', 'joata-title');
     joksanTitle.textContent = nameArray[0];
 
     const joksanPosition = document.createElement('p');
@@ -437,11 +437,11 @@ function aboutJoksan() {
 
 function aboutAbel() {
     const abelTitle = document.createElement('h2');
-    abelTitle.classList.add('member-title');
+    abelTitle.classList.add('member-title', 'abel-title');
     abelTitle.textContent = nameArray[1];
 
     const abelPosition = document.createElement('p');
-    abelPosition.classList.add('member-position');
+    abelPosition.classList.add('member-position', 'abel-position');
     abelPosition.textContent = 'Guitarista';
 
     const abelDescrip = document.createElement('p');
@@ -452,11 +452,11 @@ function aboutAbel() {
 
 function aboutGadiel() {
     const gadielTitle = document.createElement('h2');
-    gadielTitle.classList.add('member-title');
+    gadielTitle.classList.add('member-title', 'gadiel-title');
     gadielTitle.textContent = nameArray[2];
 
     const gadielPosition = document.createElement('p');
-    gadielPosition.classList.add('member-position');
+    gadielPosition.classList.add('member-position', 'gadiel-position');
     gadielPosition.textContent = 'Bajo';
 
     const gadielDescrip = document.createElement('p');
@@ -467,11 +467,11 @@ function aboutGadiel() {
 
 function aboutIsai() {
     const isaiTitle = document.createElement('h2');
-    isaiTitle.classList.add('member-title');
+    isaiTitle.classList.add('member-title', 'isai-title');
     isaiTitle.textContent = nameArray[3];
 
     const isaiPosition = document.createElement('p');
-    isaiPosition.classList.add('member-position');
+    isaiPosition.classList.add('member-position', 'isai-position');
     isaiPosition.textContent = 'Pianista';
 
     const isaiDescrip = document.createElement('p');

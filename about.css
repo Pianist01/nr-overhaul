@@ -760,6 +760,9 @@ height: 200px;
 }
 
 @media (max-width: 428px) {
+  body {
+    grid-template-rows: .15fr .5fr .2fr .2fr .09fr;
+  }
   .navigation {
     grid-column: 1/4;
     justify-self: start;
@@ -824,6 +827,10 @@ height: 200px;
     font-size: .9em;
   }
 
+  .pastors {
+    margin-top: 35%;
+  }
+
   .pastor-name {
     grid-column: 1/4;
     grid-row: 1/2;
@@ -840,4 +847,194 @@ height: 200px;
     width: 75%;
   }
 
+  .band {
+    grid-template-rows: 1fr;
+    grid-row: 3/5;
+    align-self: center;
+    height: 50%;
+  }
+
+  .band-title {
+    margin-top: 20%;
+  }
+
+  .joata, .zaza, .baba, .poopi {
+    width: 130px;
+    height: 130px;
+  }
+
+  .joksan-info, .abel-info{
+    align-self: center;
+  }
+
+  .gadiel-info {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    align-self: center;
+  }
+
+  .poopi-info {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    justify-self: center;
+    align-self: end;
+  }
+
+  .member-box {
+    width: 90%;
+  }
+
+}
+
+@media (max-width: 414px) {
+  .logo {
+    top: 13%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .intro-title {
+    grid-column: 1/4;
+    top: 61%;
+    left: 50%;
+    font-size: 1.2em;
+    transform: translate(-50%, -50%);
+  }
+
+  .leva-container {
+    left: 50%;
+    transform: translate(-50%, -5%);
+  }
+
+  .pastor-title {
+    grid-column: 1/4;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .pastor-nombre {
+    grid-column: 1/4;
+    grid-row: 1/2;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1em;
+    margin-top: 5%;
+  }
+
+  .member-position {
+    font-size: 1em;
+  }
+
+  .leva-paragraph {
+    font-size: .97em;
+  }
+
+  .band-title {
+    font-size: 1.4em;
+    grid-column: 1/4;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .member-box {
+    transform: translate(-50%, 10%);
+    left: 50%;
+  }
+
+  .joata-title, .abel-title, .gadiel-title, .isai-title {
+    grid-column: 1/4;
+    grid-row: 1/2;
+    transform: translate(-50%, 10%);
+    left: 50%;
+  }
+}
+
+@media (max-width: 375px) {
+  .intro-title {
+    grid-column: 1/4;
+    top: 57%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .pastor-title {
+    grid-column: 1/4;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .pastor-nombre {
+    grid-column: 1/4;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: .9em;
+  }
+
+  .leva-paragraph {
+    font-size: .9em;
+  }
+
+  .leva-container {
+    left: 50%;
+    transform: translate(-50%, -5%);
+  }
+
+  .band-title {
+    font-size: 1.25em;
+    grid-column: 1/4;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .member-image {
+    height: 45%;
+  }
+
+  .joata-title {
+    grid-column: 1/4;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 5%;
+  }
+  .joata-position {
+    grid-column: 2/3;
+    left: 50%;
+    margin-top: 30%;
+    transform: translate(0%, -50%);
+  }
+
+  .abel-title {
+    grid-column: 1/4;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 5%;
+  }
+
+  .abel-position {
+    grid-column: 2/3;
+    left: 50%;
+    margin-top: 30%;
+    transform: translate(0%, -50%);
+  }
+
+  .gadiel-title {
+    grid-column: 1/4;
+    left: 50%;
+    transform: translate(-50%, 50%);
+  }
+
+  .gadiel-position {
+    grid-column: 2/3;
+    left: 50%;
+    transform: translate(0%, -50%);
+    margin-top: 30%;
+  }
+
+  .isai-title {
+    grid-column: 1/4;
+    left: 50%;
+    transform: translate(-50%, 50%);
+  }
+
+  
 }
