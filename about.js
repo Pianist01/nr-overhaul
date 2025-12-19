@@ -13,7 +13,9 @@ logo.addEventListener('click', (e) => {
     window.location.href = 'index.html';
 });
 
-const levaContainer = document.querySelector('.pastors');
+const screenWidth = window.innerWidth;
+
+const levaArea = document.querySelector('.pastors');
 
 console.log(getComputedStyle(bodyContainer).backgroundColor);
 
@@ -35,7 +37,8 @@ let levaBox;
 
 let levaSquare;
 
-iconBox.addEventListener('click', (e) => {
+if(screenWidth > 428) {
+   iconBox.addEventListener('click', (e) => {
     e.preventDefault();
     console.log('It works!');
     const navMenu = document.querySelector('.navigation');
@@ -47,7 +50,8 @@ iconBox.addEventListener('click', (e) => {
         e.preventDefault();
         navMenu.style.width = '0';
     });
-});
+}); 
+}
 
 const serviceMenu = document.querySelector('.service');
 const maxMenuHeight = 70;
@@ -148,6 +152,7 @@ const minTransparent = 0;
 let insideChurch = document.querySelector('.service-image');
 let levaWife = document.querySelector('.pastor-image');
 
+
 levaWife.addEventListener('click', (e) => {
     e.preventDefault();
     console.log('This is Leva and Reyna');
@@ -156,7 +161,12 @@ levaWife.addEventListener('click', (e) => {
 
     levaBox = document.createElement('div');
     levaBox.classList.add('leva-container');
-    levaBox.style.width = '50%';
+
+    if(screenWidth <= 428) {
+        levaBox.style.width = '90%';
+    } else {
+        levaBox.style.width = '50%';
+    }
 
     levaSquare = document.createElement('div');
     levaSquare.classList.add('leva-square');
@@ -196,8 +206,11 @@ levaWife.addEventListener('click', (e) => {
     levaBox.style.justifySelf = 'center';
     levaBox.style.alignSelf = 'center';
 
-    levaContainer.append(levaBox);
-})
+    levaArea.append(levaBox);
+});
+
+
+
 
 bandArray.forEach((member, index) => {
     member.addEventListener('click', (e) => {
@@ -375,6 +388,8 @@ function levaExit() {
             levaBox.style.height = height + '%';
             if(height) {
                 requestAnimationFrame(byeLeva);
+            } else {
+                levaBox.remove();
             }
         }
 
@@ -486,3 +501,21 @@ insta.addEventListener('click', (e) => {
     e.preventDefault();
     window.open('https://www.instagram.com/nuevoremanenteoc/', '_blank');
 });
+
+// Code for screen size 428px and below
+if(screenWidth <= 428) {
+    iconBox.addEventListener('click', (e) => {
+        e.preventDefault();
+        console.log('This function will just be for smaller screen');
+        const navSmall = document.querySelector('.navigation');
+        navSmall.style.height = '100%';
+
+        const closeSmall= document.querySelector('.exit');
+        closeSmall.addEventListener('click', (e) => {
+        e.preventDefault();
+        console.log('Display before:', navSmall.style.display);
+        navSmall.style.height = '0';
+    });
+    });
+
+}
