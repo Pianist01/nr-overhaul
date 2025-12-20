@@ -1038,3 +1038,67 @@ height: 200px;
 
   
 }
+
+@media (max-width: 320px) {
+  body {
+    grid-template-rows: .15fr .3fr .2fr .3fr .08fr;
+  }
+  .intro-info2 {
+    margin-top: 5%;
+  }
+  .pastor-image {
+    height: 270px;
+  }
+
+  .pastor-nombre {
+    grid-column: 1/4;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    font-size: .75em;
+    text-align: center;
+  }
+
+  .leva-position {
+    font-size: .9em;
+  }
+
+  .leva-square {
+    padding: 10px;
+  }
+
+  .leva-exit {
+    margin-right: 10%;
+    margin-top: 15%;
+  }
+
+  .leva-paragraph {
+    width: 90%;
+  }
+
+  .band-title {
+    grid-column: 1/4; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1em;
+    text-align: center;
+  }
+
+  .joata, .zaza, .baba, .poopi {
+    width: 90px;
+    height: 90px;
+  }
+
+  .joksan-info {
+    align-self: center;
+  }
+
+  .joata-caption {
+    text-align: center;
+    font-size: .9em;
+  }
+
+  footer {
+    grid-row: 5/6;
+    grid-column: 1/4;
+  }
+}
