@@ -1046,6 +1046,15 @@ height: 200px;
   .intro-info2 {
     margin-top: 5%;
   }
+
+  .intro-title {
+    grid-column: 1/4;
+    text-align: center;
+    font-size: 1em;
+    top: 57%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
   .pastor-image {
     height: 270px;
   }
@@ -1095,6 +1104,26 @@ height: 200px;
   .joata-caption {
     text-align: center;
     font-size: .9em;
+  }
+
+  .member-image {
+    height: 33%;
+    width: 80%;
+  }
+
+  .joata-title {
+    grid-column: 1/4;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    text-align: center;
+    font-size: 1.1em;
+  }
+
+  .joata-position {
+    grid-column: 2/3;
+    transform: translate(0, -50%);
+    left: 50%;
+    text-align: center;
   }
 
   footer {
