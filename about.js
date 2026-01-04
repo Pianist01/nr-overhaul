@@ -249,6 +249,7 @@ bandArray.forEach((member, index) => {
             aboutAbel();
             enableClick();
             img.src = 'img/Zaza.jpg';
+            img.classList.add('abel-image');
             zaza.style.pointerEvents = 'none';
             joksan.style.pointerEvents = 'none';
             baba.style.pointerEvents = 'none';
@@ -261,6 +262,7 @@ bandArray.forEach((member, index) => {
             aboutGadiel();
             enableClick();
             img.src = 'img/Gadiel.jpg';
+            img.classList.add('gadiel-image');
             baba.style.pointerEvents = 'none';
             joksan.style.pointerEvents = 'none';
             zaza.style.pointerEvents = 'none';
@@ -273,6 +275,7 @@ bandArray.forEach((member, index) => {
             aboutIsai();
             enableClick();
             img.src = 'img/poopi.jpg';
+            img.classList.add('isai-image');
             poopi.style.pointerEvents = 'none';
             joksan.style.pointerEvents = 'none';
             zaza.style.pointerEvents = 'none';
