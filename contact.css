@@ -453,3 +453,60 @@ height: 200px;
     margin-left: 22%;
   }
 }
+
+@media (max-width: 768px) {
+  .long-logo {
+    margin-left: 45%;
+  }
+}
+
+@media (max-width: 428px) {
+  body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .logo {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: -10%;
+    z-index: 1;
+  }
+
+  .icon-container {
+    position: absolute;
+    top: 20px;
+    right: 8%;
+    margin-top: 0;
+    margin-right: 0;
+    z-index: 2;
+  }
+
+  .nav-icon-one, .nav-icon-two, .nav-icon-three {
+    width: 40px;
+    border: 1.9px solid white;
+  }
+
+  .navigation {
+    grid-column: 1/4;
+    justify-self: start;
+    position: fixed;
+    left: 0;
+    right: 0;
+    background: linear-gradient(109.6deg, rgb(36, 45, 57) 11.2%, rgb(16, 37, 60) 51.2%, rgb(0, 0, 0) 98.6%);
+    z-index: 100;
+    height: 0;
+    width: 100vw;
+    overflow-y: auto;
+    transition: height 0.5s ease-in-out
+  }
+
+  .footer-list {
+    font-size: .9;
+    margin-left: 50%;
+  }
+}

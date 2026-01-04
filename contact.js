@@ -1,5 +1,8 @@
 console.log('Working');
 
+const screenWidth = window.innerWidth;
+console.log(screenWidth);
+
 // Header functionality
 
 const logo = document.querySelector('.logo');
@@ -11,7 +14,9 @@ logo.addEventListener('click', (e) => {
 const menu = document.querySelector('.icon-container');
 const navMenu = document.querySelector('.navigation');
 const navExit = document.querySelector('.exit');
-menu.addEventListener('click', (e) => {
+
+if(screenWidth > 428) {
+    menu.addEventListener('click', (e) => {
     e.preventDefault();
     navMenu.style.width = '300px';
 });
@@ -20,6 +25,8 @@ navExit.addEventListener('click', (e) => {
     e.preventDefault();
     navMenu.style.width = '0';
 });
+}
+
 
 const serviceMenu = document.querySelector('.service');
 const maxHeight = 70;
@@ -114,47 +121,18 @@ window.addEventListener('scroll', (e) => {
     }
 });
 
-// const button = document.querySelector('button');
+// Code for screen size 428px and below
 
-// button.disabled = true;
+if(screenWidth <= 428) {
+    menu.addEventListener('click', (e) => {
+        e.preventDefault();
+        console.log('Smaller screen');
+        navMenu.style.height = '100%';
+    });
 
-// const formInputs = document.querySelectorAll('.form-input');
+    navExit.addEventListener('click', (e) => {
+        e.preventDefault();
+        navMenu.style.height = '0';
+    });
 
-// let formData = [];
-
-// class inquire {
-//     constructor(name, email, number, message) {
-//         this.name = name,
-//         this.email = email,
-//         this.number = number,
-//         this.message = message
-//     };
-// }
-
-
-// formInputs.forEach((item) => {
-
-//     console.log(item);
-
-//     item.addEventListener('input', function() {
-//         if(item.value.trim() !== '') {
-//             console.log('Filled');
-//             button.disabled = false;
-//             console.log(formData);
-//         } else {
-//             console.log('Not filled');
-//             button.disabled = true;
-//         }
-//     });
-
-
-//     button.addEventListener('click', (e) => {
-//         e.preventDefault();
-//         formData.push(item.value);
-//         console.log(formData);
-//         const userInformation = new inquire(...formData);
-//         let data = JSON.stringify(userInformation);
-//         localStorage.setItem('visitorData', data);
-//         window.location.href = 'user.html';
-//     });
-// });
+}
