@@ -257,17 +257,24 @@ grid-column-start: 1;
 grid-column-end: 4;
 }
 
+.history, .schedule {
+  height: auto;
+}
+
 .history {
 grid-column-start: 1;
 grid-column-end: 4;
 display: grid;
 grid-template-columns: repeat(3, 1fr);
-height: 1200px;
+}
+
+.text, .seats {
+  height: auto;
+  width: 100%;
+  display: block;
 }
 
 .text {
-width: 100%;
-height: 1200px;
 position: relative;
 grid-column-start: 1;
 grid-column-end: 4;
@@ -314,12 +321,9 @@ grid-column-start: 1;
 grid-column-end: 4;
 display: grid;
 grid-template-columns: repeat(3, 1fr);
-height: 1200px;
 }
 
 .seats {
-width: 100%;
-height: 1200px;
 position: relative;
 grid-column-start: 1;
 grid-column-end: 4;
@@ -425,203 +429,65 @@ height: 200px;
 
 /* MEDIA QUERIES */
 
-@media (max-width: 1199px) {
-  body {
-    width: 100%;
-    overflow-x: hidden;
-  }
-}
-
 @media (max-width: 1600px) {
-  body {
-    width: 100%;
-    overflow-x: hidden;
-  }
-
   .long-logo {
-    margin-right: 32%;
-  }
-}
-
-@media (max-width: 1440px) {
-  body {
-    width: 100%;
-    overflow-x: hidden;
-  }
-
-  .long-logo {
-    margin-right: 28%
+    margin-right: 28%;
   }
 }
 
 @media (max-width: 1280px) {
-  body {
-    width: 100%;
-    overflow-x: hidden;
-  }
-
   .navigation {
     height: 150%;
   }
 
   .long-logo {
-    margin-right: 22%;
-  }
-}
-
-@media (max-width: 1200px) {
-  body {
-    width: 100%;
-    overflow-x: hidden;
-  }
-
-  .long-logo {
-    margin-right: 20%;
+    margin-right: 18%;
   }
 }
 
 @media (max-width: 1024px) {
-  body {
-    width: 100%;
-    overflow-x: hidden;
-  }
-
-  .hands {
-    width: 100%;
-    height: 100%;
-  }
-
   main {
     grid-row: 2/4;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, .2fr);
-  }
-
-  .history {
-    grid-row: 1/2; 
-    height: 100%;
-  }
-
-  .text {
-    height: 100%;
-  }
-
-  .schedule {
-    grid-row: 2/3;
-    height: 100%;
-  }
-
-  .seats {
-    height: 100%;
-  }
-
-  .long-logo {
-    margin-right: 12%;
-  }
-
-  .footer-list {
-    margin-right: 20%;
-  }
-}
-
-@media (max-width: 1100px) {
-  body {
-    width: 100%;
-    overflow-x: hidden;
-  }
-
-  .hands {
-    width: 100%;
-    height: 100%;
-  }
-
-  main {
-    grid-row: 2/4;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, .2fr);
+    grid-template-rows: repeat(2, auto);
   }
 
   .history {
     grid-row: 1/2;
-    height: 100%;
-  }
-
-  .text {
-    height: 100%;
   }
 
   .schedule {
     grid-row: 2/3;
-    height: 100%;
-  }
-
-  .seats {
-    height: 100%;
-  }
-
-  footer {
-    grid-row: 4/5;
-    height: 100%;
   }
 
   .long-logo {
+    margin-right: 8%;
+  }
+
+  .footer-list {
     margin-right: 15%;
   }
 }
 
-@media (max-width: 900px) {
-  body {
-    width: 100%;
-    overflow-x: hidden;
-  }
-
-  .long-logo {
-    margin-right: 4%;
-  }
-
-  .footer-list {
-    margin-right: 10%;
-  }
-}
-
-@media (max-width: 800px) {
-  body {
-    width: 100%;
-    overflow-x: hidden;
-  }
-
-  .footer-list {
-    margin-right: 7%;
-  }
-
-  .long-logo {
-    margin-right: -6%;
-  }
-}
-
 @media (max-width: 768px) {
-  body {
-    width: 100%;
-    overflow-x: hidden;
+  .long-logo {
+    margin-right: 0%;
+    justify-self: start;
+    margin-left: 5%;
   }
 
   .footer-list {
     margin-right: 5%;
   }
 
-  .long-logo {
-    margin-right: -10%;
+  .history-title,
+  .service-title {
+    font-size: 1.6rem;
   }
 }
 
 @media (max-width: 428px) {
-  body {
-    width: 100%;
-    overflow-x: hidden;
-  }
-
   .logo {
     width: 150px;
     height: 150px;
@@ -637,21 +503,22 @@ height: 200px;
     position: absolute;
     top: 20px;
     right: 8%;
-    margin-top: 0;
-    margin-right: 0;
+    margin: 0;
     z-index: 2;
   }
 
-  .nav-icon-one, .nav-icon-two, .nav-icon-three {
+  .nav-icon-one,
+  .nav-icon-two,
+  .nav-icon-three {
     width: 40px;
     border: 1.9px solid white;
   }
+
   .navigation {
-    /* grid-column: 1/4; */
-    justify-self: start;
     position: fixed;
     left: 0;
     right: 0;
+    justify-self: start;
     background: linear-gradient(109.6deg, rgb(36, 45, 57) 11.2%, rgb(16, 37, 60) 51.2%, rgb(0, 0, 0) 98.6%);
     z-index: 100;
     height: 0;
@@ -660,87 +527,31 @@ height: 200px;
     transition: height 0.5s ease-in-out;
   }
 
-  .history {
-    position: relative;
-  }
-
-  .schedule {
-    position: relative;
-  }
-
-  .text {
-    height: auto;
-    display: block;
-  }
-
-  .seats {
-    height: auto;
-    display: block;
-  }
-
-  .history-title {
-    font-size: 1.4rem;
-    /* Remove all grid properties */
-    grid-column: initial;
-    justify-self: initial;
-    align-self: initial;
-    /* Simple centering */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: auto;
-    text-align: center;
-    white-space: nowrap;
-  }
-
-  .history-btn {
-    height: 40px;
-    width: 100px;
-    font-size: .8rem;
-    /* Remove all grid properties */
-    grid-column: initial;
-    justify-self: initial;
-    align-self: initial;
-    /* Position at bottom center */
-    bottom: 10%;
-    left: 50%;
-    transform: translateX(-50%);
-    top: auto;
-  }
-
+  .history-title,
   .service-title {
     font-size: 1.4rem;
-    /* Remove all grid properties */
     grid-column: initial;
     justify-self: initial;
     align-self: initial;
-    /* Simple centering */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: auto;
     text-align: center;
     white-space: nowrap;
   }
 
+  .history-btn,
   .service-btn {
     height: 40px;
     width: 100px;
-    font-size: .8rem;
-    /* Remove all grid properties */
+    font-size: 0.8rem;
     grid-column: initial;
     justify-self: initial;
     align-self: initial;
-    /* Position at bottom center */
     bottom: 10%;
     left: 50%;
     transform: translateX(-50%);
     top: auto;
-  }
-
-  footer {
-    grid-row: 4/5;
-    height: 100%;
   }
 
   .footer-container {
@@ -753,9 +564,10 @@ height: 200px;
     display: flex;
     grid-row: 1/2;
     grid-column: 1/4;
-    font-size: .9rem;
+    font-size: 0.9rem;
     justify-content: space-around;
     width: 100%;
+    margin-right: 0;
   }
 
   .footer-logo {
@@ -763,8 +575,9 @@ height: 200px;
   }
 
   .long-logo {
-    margin-right:-72%;
     grid-row: 2/3;
+    margin: 0;
+    justify-self: center;
   }
 
   .insta {
@@ -773,22 +586,26 @@ height: 200px;
 }
 
 @media (max-width: 375px) {
-  body {
-    width: 100%;
+  .history-title,
+  .service-title {
+    font-size: 1.2rem;
   }
 
   .long-logo {
-    margin-right: -90%;
+    width: 80px;
+    height: 80px;
   }
 }
 
 @media (max-width: 320px) {
-  body {
-    width: 100%;
+  .history-title,
+  .service-title {
+    font-size: 1rem;
   }
 
-
-  .long-logo {
-    margin-right: -120%;
+  ul {
+    font-size: 1rem;
+    line-height: 70px;
   }
 }
+
