@@ -276,6 +276,9 @@ background-color: white;
 width: 55%;
 align-self: center;
 justify-self: center;
+max-height: 85vh;
+overflow-y: auto;
+border-radius: 8px;
 }
 
 .info-box {
@@ -285,7 +288,7 @@ justify-self: center;
   background: radial-gradient(343px at 46.3% 47.5%, rgb(242, 242, 242) 0%, rgb(241, 241, 241) 72.9%);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: auto auto 1fr;
 }
 
 .info-title {
@@ -301,6 +304,7 @@ justify-self: center;
   justify-self: center;
   align-self: start;
   margin-top: 15%;
+  white-space: nowrap;
 }
 
 .service-description {
@@ -309,6 +313,7 @@ justify-self: center;
   font-size: 1.2em;
   width: 70%;
   justify-self: center;
+  line-height: 1.8;
 }
 
 .info-exit {
@@ -765,6 +770,7 @@ height: 200px;
   }
 }
 
+
 @media (max-width: 428px) {
   body {
     width: 100%;
@@ -821,9 +827,23 @@ height: 200px;
   }
 
   .service-box {
+    width: 90%;
+    max-height: 80vh;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+  }
+
+  .service-hours {
+    white-space: normal;
+    text-align: center;
+    grid-column: 1/4;
+  }
+
+  .service-description {
+    font-size: 0.95em;
+    width: 90%;
+    line-height: 1.6;
   }
 
   .info-box {
