@@ -847,7 +847,12 @@ height: 200px;
   }
 
   .info-box {
-    padding: 15px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 40px 24px 20px 24px;
   }
 
   .sunday-description {
@@ -883,10 +888,6 @@ height: 200px;
 
   .tuesday-title {
     font-size: 1.2em;
-  }
-
-  .tuesday-hours {
-    margin-top: 12px;
   }
 
   .cena-description {
