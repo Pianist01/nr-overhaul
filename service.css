@@ -1021,4 +1021,23 @@ height: 200px;
     height: 100px;
     width: 100px;
   }
+  
+  .info-box {
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .info-title {
+    font-size: 0.95em;
+  }
+
+  .service-hours {
+    font-size: 0.85em;
+  }
+
+  .service-description {
+    font-size: 0.85em;
+    width: 100%;
+    line-height: 1.5;
+  }
 }
