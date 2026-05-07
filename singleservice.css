@@ -475,7 +475,8 @@ height: 200px;
   }
 
   body {
-    grid-template-rows: .6fr 1fr .35fr;
+    height: auto;
+    grid-template-rows: auto auto auto;
   }
 
   .main-container h1 figure {
