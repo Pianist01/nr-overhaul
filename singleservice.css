@@ -509,7 +509,7 @@ height: 200px;
   }
 
   .cena-info {
-    margin-top: 4px;
+    margin-top: 1px;
     line-height: 35px;
   }
 
@@ -518,7 +518,7 @@ height: 200px;
   }
 
   .vigil-info {
-    margin-top: 4px;
+    margin-top: 1px;
     font-size: .8em;
   }
 }
