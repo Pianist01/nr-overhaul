@@ -556,7 +556,7 @@ height: 200px;
   }
 
   .cena-info {
-    margin-top: 1px;
+    margin-top: 16px;
   }
 
   .vigil-hours {
@@ -565,7 +565,11 @@ height: 200px;
 
   .vigil-info {
     font-size: 1.1em;
-    margin-top: 1px;
+    margin-top: 16px;
+  }
+
+  .info-container {
+    padding: 5%;
   }
 }
 
