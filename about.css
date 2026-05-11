@@ -810,14 +810,17 @@ height: 200px;
 
   .intro-title {
     position: static;
+    top: auto;
+    left: auto;
     transform: none;
-    /* grid-column: 1/4;
-    grid-row: 1/2; */
-    /* justify-self: center; */
     text-align: center;
     color: black;
     margin: 12px 0;
     width: 100%;
+    grid-column: unset;
+    grid-row: unset;
+    justify-self: unset;
+    font-size: 1.2em;
   }
 
   .service-image {
@@ -857,6 +860,7 @@ height: 200px;
     margin-top: 0;
     padding: 16px;
     height: auto;
+    position: relative;
   }
 
   .pastor-title {
@@ -866,38 +870,55 @@ height: 200px;
     color: black;
     margin: 12px 0 8px 0;
     width: 100%;
+    top: auto;
+    left: auto;
+    grid-column: unset;
   }
 
   .pastor-name {
     position: static;
+    top: auto;
+    left: auto;
     transform: none;
     text-align: center;
     margin: 4px 0;
     width: 100%;
+    grid-column: unset;
+    grid-row: unset;
   }
 
   .pastor-image {
     position: static;
+    top: auto;left: auto;
     transform: none;
     width: 85%;
     height: auto;
     margin: 8px 0;
+    grid-column: unset;
+    grid-row: unset;
   }
 
   .band {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 16px 0 8px 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto auto;
+    justify-items: center;
+    align-items: start;
+    padding: 12px 8px 8px 8px;
     height: auto;
     position: relative;
   }
 
   .band-title {
-    margin: 0;
+    grid-column: 1/4;
+    grid-row: 1/2;
+    position: static;
+    top: auto;
+    left: auto;
+    transform: none;
     text-align: center;
-    width: 100%;
-    order: -1;
+    margin: 0 0 4px 0;
+    font-size: 1.2em;
   }
 
   .joata, .zaza, .baba, .poopi {
@@ -909,22 +930,41 @@ height: 200px;
     text-align: center;
   }
 
-  .joksan-info, .abel-info, .gadiel-info, .poopi-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: static;
-    grid-column: unset;
-    grid-row: unset;
+  .joksan-info {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    justify-self: center;
+    align-self: start;
+  }
+
+  .abel-info {
+    grid-column: 3/4;
+    grid-row: 2/3;
+    justify-self: center;
+    align-self: start;
+  }
+
+  .gadiel-info {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    justify-self: center;
+    align-self: start;
+  }
+
+  .poopi-info {
+    grid-column: 2/3;
+    grid-row: 3/4;
+    justify-self: center;
+    align-self: start;
   }
 
   .member-box {
     position: absolute;
-    top: 80px;
+    top: 60px;
     left: 50%;
     transform: translateX(-50%);
     width: 90%;
-    max-height: 70vh;
+    max-height: 75vh;
     overflow-y: auto;
     z-index: 10;
   }
@@ -933,16 +973,16 @@ height: 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 16px;
-    gap: 12px;
+    padding: 40px 16px 16px 16px;
+    gap: 8px;
     width: 100%;
     height: auto;
     position: relative;
   }
 
   .member-image {
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: 90px;
     border-radius: 50%;
   }
 
@@ -980,11 +1020,11 @@ height: 200px;
 
   .leva-container {
     position: absolute;
-    top: 80px;
+    top: 60px;
     left: 50%;
     transform: translateX(-50%);
     width: 90%;
-    max-height: 70vh;
+    max-height: 75vh;
     overflow-y: auto;
     z-index: 10;
   }
@@ -993,7 +1033,7 @@ height: 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 16px;
+    padding: 40px 16px 16px 16px;
     gap: 8px;
     position: relative;
     height: auto;
@@ -1206,8 +1246,17 @@ height: 200px;
 
 @media (max-width: 320px) {
   body {
-    grid-template-rows: .15fr .3fr .2fr .3fr .08fr;
+    grid-template-rows: auto auto auto auto auto;
   }
+
+  .logo {
+    width: 110px;
+    height: 110px;
+    top: 13%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
   .intro-info2 {
     margin-top: 5%;
   }
@@ -1229,7 +1278,8 @@ height: 200px;
   }
 
   .pastor-image {
-    height: 270px;
+    height: auto;
+    width: 90%;
   }
 
   .pastor-name {
@@ -1273,8 +1323,16 @@ height: 200px;
   }
 
   .joata, .zaza, .baba, .poopi {
-    width: 90px;
-    height: 90px;
+    width: 80px;
+    height: 80px;
+  }
+
+  figcaption {
+    font-size: .75em;
+  }
+
+  .intro-info2 {
+    font-size: 0.75em;
   }
 
   .joksan-info {
