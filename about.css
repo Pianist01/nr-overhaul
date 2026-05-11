@@ -762,7 +762,7 @@ height: 200px;
 @media (max-width: 428px) {
   body {
     height: auto;
-    grid-template-rows: auto auto auto auto auto;;
+    grid-template-rows: auto auto auto auto auto;
   }
   .navigation {
     grid-column: 1/4;
@@ -800,101 +800,104 @@ height: 200px;
     width: 100%;
   }
 
+  .intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+    height: auto;
+  }
+
   .intro-title {
     position: static;
     transform: none;
-    grid-column: 1/4;
-    grid-row: 1/2;
-    justify-self: center;
+    /* grid-column: 1/4;
+    grid-row: 1/2; */
+    /* justify-self: center; */
     text-align: center;
     color: black;
-    margin-top: 16px;
+    margin: 12px 0;
+    width: 100%;
   }
 
   .service-image {
-    grid-column: 1/4;
-    grid-row: 2/3;
-    justify-self: center;
+    grid-column: unset;
+    grid-row: unset;
+    justify-self: unset;
     width: 95%;
     height: auto;
-    margin-top: 5%;
+    margin: 8px 0;
+    position: static;
   }
 
   .intro-info1 {
-    grid-column: 1/4;
-    grid-row: 3/4;
-    justify-self: center;
-    align-self: start;
     width: 95%;
     text-align: center;
     font-size: .9em;
-    margin-top: 12px;
+    margin: 8px 0;
+    position: static;
+    grid-column: unset;
+    grid-row: unset;
   }
 
   .intro-info2 {
-    grid-column: 1/4;
-    grid-row: 4/5;
-    justify-self: center;
-    width: 93%;
-    padding: 0;
-    margin: 12px 0;
-    font-size: .9em;
+    width: 95%;
     text-align: center;
+    font-size: .9em;
+    margin: 8px 0;
+    position: static;
+    grid-column: unset;
+    grid-row: unset;
   }
 
   .pastors {
-    margin-top: 5%;
-    padding: 16px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0;
+    padding: 16px;
+    height: auto;
   }
 
   .pastor-title {
-    grid-column: 1/4;
-    justify-self: center;
-    text-align: center;
     position: static;
     transform: none;
+    text-align: center;
     color: black;
-    margin-bottom: 8px;
+    margin: 12px 0 8px 0;
+    width: 100%;
   }
 
   .pastor-name {
-    grid-column: 1/4;
-    grid-row: 2/3;
-    justify-self: center;
-    align-self: center;
-    margin-top: 8px;
+    position: static;
+    transform: none;
+    text-align: center;
+    margin: 4px 0;
+    width: 100%;
   }
 
   .pastor-image {
-    grid-column: 1/4;
-    grid-row: 3/4;
-    justify-self: center;
-    align-self: center;
+    position: static;
+    transform: none;
     width: 85%;
     height: auto;
-    margin-top: 8px;
+    margin: 8px 0;
   }
 
   .band {
-    grid-template-rows: auto auto auto;
-    grid-row: 3/5;
-    height: auto;
-    padding: 24px 0;
-    /* display: flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 24px;
-    padding: 24px 0;
+    padding: 16px 0 8px 0;
     height: auto;
-    position: relative; */
+    position: relative;
   }
 
   .band-title {
-    grid-column: 1/4;
-    margin-top: 8px;
+    margin: 0;
     text-align: center;
-    justify-self: center;
-    /* width: 100%; */
+    width: 100%;
+    order: -1;
   }
 
   .joata, .zaza, .baba, .poopi {
@@ -906,41 +909,22 @@ height: 200px;
     text-align: center;
   }
 
-  .joksan-info {
-    grid-column: 1/2;
-    grid-row: 2/3;
-    align-self: center;
-    justify-self: center;
-  }
-
-  .abel-info {
-    grid-column: 3/4;
-    grid-row: 2/3;
-    align-self: center;
-    justify-self: center;
-  }
-
-  .gadiel-info {
-    grid-column: 2/3;
-    grid-row: 2/3;
-    align-self: center;
-    justify-self: center;
-  }
-
-  .poopi-info {
-    grid-column: 2/3;
-    grid-row: 3/4;
-    justify-self: center;
-    align-self: center;
+  .joksan-info, .abel-info, .gadiel-info, .poopi-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: static;
+    grid-column: unset;
+    grid-row: unset;
   }
 
   .member-box {
-    position: fixed;
-    top: 50%;
+    position: absolute;
+    top: 80px;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
     width: 90%;
-    max-height: 80vh;
+    max-height: 70vh;
     overflow-y: auto;
     z-index: 10;
   }
@@ -953,6 +937,7 @@ height: 200px;
     gap: 12px;
     width: 100%;
     height: auto;
+    position: relative;
   }
 
   .member-image {
@@ -964,13 +949,18 @@ height: 200px;
   .member-title {
     text-align: center;
     font-size: 1.1em;
+    width: 100%;
     grid-column: unset;
+    grid-row: unset;
   }
 
   .member-position {
     text-align: center;
     font-size: 1em;
+    width: 100%;
+    font-weight: bold;
     grid-column: unset;
+    grid-row: unset;
   }
 
   .member-paragraph {
@@ -978,6 +968,7 @@ height: 200px;
     font-size: 0.9em;
     width: 95%;
     grid-column: unset;
+    grid-row: unset;
     margin: 0;
   }
 
@@ -985,6 +976,34 @@ height: 200px;
     position: absolute;
     top: 10px;
     right: 10px;
+  }
+
+  .leva-container {
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-height: 70vh;
+    overflow-y: auto;
+    z-index: 10;
+  }
+
+  .leva-square {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+    gap: 8px;
+    position: relative;
+    height: auto;
+  }
+
+  .leav-exit {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    margin: 0;
   }
 
   .footer-container {
