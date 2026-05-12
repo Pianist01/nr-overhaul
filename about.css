@@ -117,7 +117,7 @@ margin-top: -50px;
 cursor: pointer;
 }
 
-h2 {
+.container > h2 {
 justify-self: center;
 grid-column-start: 2;
 grid-column-end: 3;
@@ -495,6 +495,12 @@ justify-self: center;
 width: 250px;
 height: 250px;
 border-radius: 50%;
+}
+
+.intro-title, .pastor-title, .band-title {
+  text-align: center;
+  width: 100%;
+  justify-self: center;
 }
 
 /* INFO PANELS THAT HOVER OVER BAND */
@@ -1098,24 +1104,29 @@ height: 200px;
     transform: translate(-50%, -50%);
   }
 
-  .intro-title {
+  .intro-title, .pastor-title, .band-title {
+    font-size: 1.2em;
+    text-align: center;
+  }
+
+  /* .intro-title {
     grid-column: 1/4;
     top: 61%;
     left: 50%;
     font-size: 1.2em;
     transform: translate(-50%, -50%);
-  }
+  } */
 
   .leva-container {
     left: 50%;
     transform: translate(-50%, -5%);
   }
 
-  .pastor-title {
+  /* .pastor-title {
     grid-column: 1/4;
     left: 50%;
     transform: translate(-50%, -50%);
-  }
+  } */
 
   .pastor-nombre {
     grid-column: 1/4;
@@ -1134,12 +1145,12 @@ height: 200px;
     font-size: .97em;
   }
 
-  .band-title {
+  /* .band-title {
     font-size: 1.4em;
     grid-column: 1/4;
     left: 50%;
     transform: translate(-50%, -50%);
-  }
+  } */
 
   .member-box {
     transform: translate(-50%, 10%);
