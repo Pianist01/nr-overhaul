@@ -199,26 +199,26 @@ levaWife.addEventListener('click', (e) => {
 
     // This is orginal code
 
-    // levaBox.style.gridColumnStart = 1;
-    // levaBox.style.gridColumnEnd = 4;
-    // levaBox.style.gridRowStart = 1;
-    // levaBox.style.gridRowEnd = 4;
-    // levaBox.style.zIndex = 1;
-    // levaBox.style.position = 'absolute';
-    // levaBox.style.justifySelf = 'center';
-    // levaBox.style.alignSelf = 'center';
+    levaBox.style.gridColumnStart = 1;
+    levaBox.style.gridColumnEnd = 4;
+    levaBox.style.gridRowStart = 1;
+    levaBox.style.gridRowEnd = 4;
+    levaBox.style.zIndex = 1;
+    levaBox.style.position = 'absolute';
+    levaBox.style.justifySelf = 'center';
+    levaBox.style.alignSelf = 'center';
 
     // This is new code to see if it will work better for mobile devices
 
-    levaBox.style.height = 'auto';
-    levaBox.style.maxHeight = '75vh';
-    levaBox.style.overflow = 'auto';
-    levaBox.style.position = 'absolute';
-    levaBox.style.top = '60px';
-    levaBox.style.left = '50%';
-    levaBox.style.transform = 'translateX(-50%)';
-    levaBox.style.width = '90%';
-    levaBox.style.zIndex = '10';
+    // levaBox.style.height = 'auto';
+    // levaBox.style.maxHeight = '75vh';
+    // levaBox.style.overflow = 'auto';
+    // levaBox.style.position = 'absolute';
+    // levaBox.style.top = '60px';
+    // levaBox.style.left = '50%';
+    // levaBox.style.transform = 'translateX(-50%)';
+    // levaBox.style.width = '90%';
+    // levaBox.style.zIndex = '10';
 
     levaArea.append(levaBox);
 });
@@ -325,32 +325,43 @@ function animate() {
         } 
     }
 
-    animateHeight();
+    if(screenWidth > 428) {
+        animateHeight();
+    }
 
     // This is orginal code
-
-    // memberBox.style.gridColumnStart = '1';
-    // memberBox.style.gridColumnEnd = '4';
-    // memberBox.style.gridRowStart = '1';
-    // memberBox.style.gridRowEnd = '3';
-    // memberBox.style.zIndex = '1';
-    // memberBox.style.position = 'absolute';
-
-    // This is new code to see if it will work better for mobile devices
-
-    memberBox.style.height = 'auto';
-    memberBox.style.maxHeight = '75vh';
-    memberBox.style.overflow = 'auto';
+    memberBox.style.position = 'absolute';
     memberBox.style.gridColumnStart = '1';
     memberBox.style.gridColumnEnd = '4';
     memberBox.style.gridRowStart = '1';
     memberBox.style.gridRowEnd = '3';
-    memberBox.style.zIndex = '10';
-    memberBox.style.position = 'absolute';
-    memberBox.style.top = '60px';
-    memberBox.style.left = '50%';
-    memberBox.style.transform = 'translateX(-50%)';
-    memberBox.style.width = '90%';
+    memberBox.style.zIndex = '1';
+
+    if(screenWidth <= 428) {
+        memberBox.style.height = 'auto';
+        memberBox.style.maxHeight = '80vh';
+        memberBox.style.overflowY = 'auto';
+        memberBox.style.top = '50%';
+        memberBox.style.left = '50%';
+        memberBox.style.transform = 'translate(-50%, -50%)';
+        memberBox.style.width = '90%';
+    }
+
+    // This is new code to see if it will work better for mobile devices
+
+    // memberBox.style.height = 'auto';
+    // memberBox.style.maxHeight = '75vh';
+    // memberBox.style.overflow = 'auto';
+    // memberBox.style.gridColumnStart = '1';
+    // memberBox.style.gridColumnEnd = '4';
+    // memberBox.style.gridRowStart = '1';
+    // memberBox.style.gridRowEnd = '3';
+    // memberBox.style.zIndex = '10';
+    // memberBox.style.position = 'absolute';
+    // memberBox.style.top = '60px';
+    // memberBox.style.left = '50%';
+    // memberBox.style.transform = 'translateX(-50%)';
+    // memberBox.style.width = '90%';
     
 }
 
