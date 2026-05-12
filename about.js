@@ -162,11 +162,6 @@ levaWife.addEventListener('click', (e) => {
     levaBox = document.createElement('div');
     levaBox.classList.add('leva-container');
 
-    if(screenWidth <= 428) {
-        levaBox.style.width = '90%';
-    } else {
-        levaBox.style.width = '50%';
-    }
 
     levaSquare = document.createElement('div');
     levaSquare.classList.add('leva-square');
@@ -327,25 +322,16 @@ function animate() {
 
     if(screenWidth > 428) {
         animateHeight();
+        memberBox.style.position = 'absolute';
+        memberBox.style.gridColumnStart = '1';
+        memberBox.style.gridColumnEnd = '4';
+        memberBox.style.gridRowStart = '1';
+        memberBox.style.gridRowEnd = '3';
+        memberBox.style.zIndex = '1';
     }
 
     // This is orginal code
-    memberBox.style.position = 'absolute';
-    memberBox.style.gridColumnStart = '1';
-    memberBox.style.gridColumnEnd = '4';
-    memberBox.style.gridRowStart = '1';
-    memberBox.style.gridRowEnd = '3';
-    memberBox.style.zIndex = '1';
-
-    if(screenWidth <= 428) {
-        memberBox.style.height = 'auto';
-        memberBox.style.maxHeight = '80vh';
-        memberBox.style.overflowY = 'auto';
-        memberBox.style.top = '50%';
-        memberBox.style.left = '50%';
-        memberBox.style.transform = 'translate(-50%, -50%)';
-        memberBox.style.width = '90%';
-    }
+    
 
     // This is new code to see if it will work better for mobile devices
 
