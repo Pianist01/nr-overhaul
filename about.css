@@ -819,7 +819,7 @@ height: 200px;
   main {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 36px;
   }
 
 
@@ -918,6 +918,8 @@ height: 200px;
     align-items: center;
     margin-top: 0;
     padding: 8px 16px;
+    height: auto;
+    position: relative;
   }
 
   .pastor-title {
@@ -1077,9 +1079,9 @@ height: 200px;
 
   .leva-container {
     position: absolute;
-    top: 60px;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%, -10%);
     width: 90%;
     max-height: 75vh;
     overflow-y: auto;
