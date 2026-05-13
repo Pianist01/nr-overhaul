@@ -929,7 +929,8 @@ height: 200px;
   .pastor-name {
     width: 100%;
     text-align: center;
-    margin: 0;
+    margin: 8px 0;
+    font-size: 1em;
     position: static;
     transform: none;
   }
@@ -1187,11 +1188,9 @@ height: 200px;
     transform: translate(-50%, -50%);
   } */
 
-  .pastor-nombre {
-    grid-column: 1/4;
-    grid-row: 1/2;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  .pastor-name {
+    width: 100%;
+    text-align: center;
     font-size: 1em;
     margin-top: 5%;
   }
@@ -1238,10 +1237,7 @@ height: 200px;
     transform: translate(-50%, -50%);
   }
 
-  .pastor-nombre {
-    grid-column: 1/4;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  .pastor-name {
     font-size: .9em;
   }
 
@@ -1353,16 +1349,6 @@ height: 200px;
   }
 
   .pastor-name {
-    grid-column: 1/4;
-    left: 50%;
-    transform: translate(0%, 0%);
-    text-align: center;
-  }
-
-  .pastor-nombre {
-    grid-column: 1/4;
-    left: 50%;
-    transform: translate(-50%, 50%);
     font-size: .75em;
     text-align: center;
   }
