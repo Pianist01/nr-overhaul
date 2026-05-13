@@ -178,21 +178,17 @@ levaWife.addEventListener('click', (e) => {
 
     insideChurch.style.opacity = 0;
 
-    if(screenWidth > 428) {
-         height = 0;
+    height = 0;
 
-         const animateHeight = () => {
-            height += 3;
-            levaBox.style.height = height + '%';
+   const animateHeight = () => {
+    height += 3;
+    levaBox.style.height = height + '%';
 
-            if(height < maxHeight) {
-                requestAnimationFrame(animateHeight);
-            }
-         }
-            animateHeight();
-    } else {
-        levaBox.style.height = 'auto';
+    if(height < maxHeight) {
+        requestAnimationFrame(animateHeight);
     }
+   }
+    animateHeight();
 
     // height = 0;
     // maxHeight;
@@ -442,7 +438,7 @@ function levaExit() {
         const byeLeva = () => {
             height -= 3;
             levaBox.style.height = height + '%';
-            if(height) {
+            if(height > 0) {
                 requestAnimationFrame(byeLeva);
             } else {
                 levaBox.remove();
