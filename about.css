@@ -917,6 +917,7 @@ height: 200px;
     flex-direction: column;
     align-items: center;
     margin-top: 0;
+    margin-bottom: 25px;
     padding: 8px 16px;
     height: auto;
     position: relative;
@@ -963,6 +964,7 @@ height: 200px;
     padding: 8px;
     height: auto;
     position: relative;
+    margin-bottom: 25px;
   }
 
   .band-title {
