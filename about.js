@@ -152,9 +152,13 @@ const minTransparent = 0;
 let insideChurch = document.querySelector('.service-image');
 let levaWife = document.querySelector('.pastor-image');
 
+let popupActive = false;
+
 
 levaWife.addEventListener('click', (e) => {
     e.preventDefault();
+    if(popupActive) return;
+    popupActive = true;
     console.log('This is Leva and Reyna');
 
     levaWife.style.opacity = 0;
@@ -174,19 +178,35 @@ levaWife.addEventListener('click', (e) => {
 
     insideChurch.style.opacity = 0;
 
-    height = 0;
-    maxHeight;
+    if(screenWidth > 428) {
+         height = 0;
 
-    const animateHeight = () => {
-        height += 3;
-        levaBox.style.height = height + '%';
+         const animateHeight = () => {
+            height += 3;
+            levaBox.style.height = height + '%';
 
-        if(height < maxHeight) {
-            requestAnimationFrame(animateHeight);
-        } 
+            if(height < maxHeight) {
+                requestAnimationFrame(animateHeight);
+            }
+         }
+            animateHeight();
+    } else {
+        levaBox.style.height = 'auto';
     }
 
-    animateHeight();
+    // height = 0;
+    // maxHeight;
+
+    // const animateHeight = () => {
+    //     height += 3;
+    //     levaBox.style.height = height + '%';
+
+    //     if(height < maxHeight) {
+    //         requestAnimationFrame(animateHeight);
+    //     } 
+    // }
+
+    // animateHeight();
 
     aboutLeva();
 
@@ -223,6 +243,8 @@ levaWife.addEventListener('click', (e) => {
 
 bandArray.forEach((member, index) => {
     member.addEventListener('click', (e) => {
+        if(popupActive) return;
+        popupActive = true;
 
         if(bodyContainer !== e) {
             console.log('this is not body');
@@ -371,6 +393,7 @@ function enableClick() {
     memberExit.append(exitImage);
     memberExit.addEventListener('click', (e) => {
         e.preventDefault();
+        popupActive = false;
         bodyContainer.style.backgroundColor = 'rgba(0, 0, 0, 0)';
         insideChurch.style.opacity = 1;
         levaWife.style.opacity = 1;
@@ -414,6 +437,7 @@ function levaExit() {
     levaSquare.append(exit);
 
     exit.addEventListener('click', (e) => {
+        popupActive = false;
         bodyContainer.style.backgroundColor = 'rgba(0, 0, 0, 0)';
         const byeLeva = () => {
             height -= 3;
