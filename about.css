@@ -1085,9 +1085,13 @@ height: 200px;
     left: 50%;
     transform: translateX(-50%, -10%);
     width: 90%;
+    height: 0;
     max-height: 75vh;
     overflow-y: auto;
     z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .leva-square {
