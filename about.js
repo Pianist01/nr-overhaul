@@ -445,7 +445,7 @@ function aboutLeva() {
     levaPosition.textContent = 'Pastores';
 
     const levaDescrip = document.createElement('p');
-    levaDescrip.classList.add('member-paragraph', 'leva-paragraph');
+    levaDescrip.classList.add('member-paragraph', 'leva-paragraph', 'pastor-info');
     levaDescrip.textContent = 'Victor y Brizza tienen 20 a\u00F1os casados. Con sus dos hijos y hija, toda la familia sirve dentro de la iglesia. Salvado de una vida de drogas y deliquencia, Victor sigue con el mismo fuego de servir a Cristo hoy como el primer dia. Pero, tras cada hombre que se esfuerza a servir a Dios a lo 100%, siempre hay una mujer de Dios tras de el. Brizza siempre hace todo lo posible de ayudar el ministerio con las mujeres y para todos en general. Siempre la puedes encontrar sirviendo la congregacion en todo lo que necesita.';
 
     levaSquare.append(levaTitle, levaPosition, levaDescrip);
