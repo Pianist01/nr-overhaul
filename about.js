@@ -338,6 +338,8 @@ function animate() {
         } 
     }
 
+    animateHeight();
+
     if(screenWidth > 428) {
         animateHeight();
         memberBox.style.position = 'absolute';
@@ -347,25 +349,6 @@ function animate() {
         memberBox.style.gridRowEnd = '3';
         memberBox.style.zIndex = '999';
     }
-
-    // This is orginal code
-    
-
-    // This is new code to see if it will work better for mobile devices
-
-    // memberBox.style.height = 'auto';
-    // memberBox.style.maxHeight = '75vh';
-    // memberBox.style.overflow = 'auto';
-    // memberBox.style.gridColumnStart = '1';
-    // memberBox.style.gridColumnEnd = '4';
-    // memberBox.style.gridRowStart = '1';
-    // memberBox.style.gridRowEnd = '3';
-    // memberBox.style.zIndex = '10';
-    // memberBox.style.position = 'absolute';
-    // memberBox.style.top = '60px';
-    // memberBox.style.left = '50%';
-    // memberBox.style.transform = 'translateX(-50%)';
-    // memberBox.style.width = '90%';
     
 }
 
