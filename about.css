@@ -1042,10 +1042,13 @@ height: 200px;
   }
 
   .member-image {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
+    min-width: 120px;
+    min-height: 120px;
     border-radius: 50%;
     object-fit: cover;
+    aspect-ratio: 1/1;
   }
 
   .member-title {
@@ -1103,8 +1106,8 @@ height: 200px;
     align-items: center;
     justify-content: flex-start;
     position: relative;
-    padding: 38px 18px 22px 18px;
-    gap: 12px;
+    padding: 18px 18px 22px 18px;
+    gap: 10px;
     width: 100%;
     height: auto;
     overflow-y: auto;
@@ -1121,7 +1124,7 @@ height: 200px;
   }
 
   .leva-square .leva-exit {
-    top: 28px;
+    top: 22px;
     right: 18px;
   }
 
