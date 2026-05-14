@@ -376,12 +376,13 @@ function enableClick() {
         bodyContainer.style.backgroundColor = 'rgba(0, 0, 0, 0)';
         insideChurch.style.opacity = 1;
         levaWife.style.opacity = 1;
-        memberInfo.style.display = 'none';
         const goAway = () => {
             height -= 3;
             memberBox.style.height = height + '%';
-            if(height) {
+            if(height > 0) {
                 requestAnimationFrame(goAway);
+            } else {
+                memberBox.textContent = '';
             }
         }
 
