@@ -1117,6 +1117,11 @@ height: 200px;
     z-index: 10;
   }
 
+  .leva-square .leva-exit {
+    top: 45px;
+    right: 18px;
+  }
+
   .leva-square .memmber-title, .leva-square .member-position {
     width: 100%;
     text-align: center;
