@@ -345,7 +345,7 @@ function animate() {
         memberBox.style.gridColumnEnd = '4';
         memberBox.style.gridRowStart = '1';
         memberBox.style.gridRowEnd = '3';
-        memberBox.style.zIndex = '1';
+        memberBox.style.zIndex = '999';
     }
 
     // This is orginal code
