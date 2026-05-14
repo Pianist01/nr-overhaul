@@ -21,7 +21,7 @@ console.log(getComputedStyle(bodyContainer).backgroundColor);
 
 let height = 0;
 
-const maxHeight = 60;
+const maxHeight = 72;
 
 const minHeight = 0;
 
