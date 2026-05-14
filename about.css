@@ -1034,7 +1034,7 @@ height: 200px;
     align-items: center;
     justify-content: flex-start;
     position: relative;
-    padding: 60px 16px 20px 16px;
+    padding: 28px 16px 20px 16px;
     gap: 10px;
     width: 100%;
     height: auto;
@@ -1074,7 +1074,7 @@ height: 200px;
 
   .band-exit {
     position: absolute;
-    top: 72px;
+    top: 38px;
     right: 18px;
     width: 25px;
     height: 25px;
