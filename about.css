@@ -1025,6 +1025,7 @@ height: 200px;
     max-height: 75vh;
     overflow-y: auto;
     z-index: 999;
+    background: white;
   }
 
   .info-box {
