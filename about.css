@@ -1081,7 +1081,7 @@ height: 200px;
 
   .leva-container {
     position: absolute;
-    top: 32%;
+    top: 24%;
     left: 50%;
     transform: translateX(-50%, -10%);
     width: 90%;
@@ -1100,7 +1100,7 @@ height: 200px;
     align-items: center;
     justify-content: flex-start;
     position: relative;
-    padding: 55px 18px 25px 18px;
+    padding: 38px 18px 22px 18px;
     gap: 12px;
     width: 100%;
     height: auto;
@@ -1118,7 +1118,7 @@ height: 200px;
   }
 
   .leva-square .leva-exit {
-    top: 45px;
+    top: 28px;
     right: 18px;
   }
 
