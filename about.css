@@ -1081,14 +1081,14 @@ height: 200px;
 
   .leva-container {
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 50%;
     transform: translateX(-50%, -10%);
     width: 90%;
     height: 0;
-    max-height: 75vh;
+    max-height: 82vh;
     overflow-y: auto;
-    z-index: 10;
+    z-index: 20;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1100,8 +1100,8 @@ height: 200px;
     align-items: center;
     justify-content: flex-start;
     position: relative;
-    padding: 60px 16px 20px 16px;
-    gap: 10px;
+    padding: 85px 18px 30px 18px;
+    gap: 12px;
     width: 100%;
     height: auto;
     overflow-y: auto;
@@ -1109,8 +1109,8 @@ height: 200px;
 
   .leva-exit {
     position: absolute;
-    top: 12px;
-    right: 12px;
+    top: 22px;
+    right: 18px;
     width: 25px;
     height: 25px;
     margin: 0;
