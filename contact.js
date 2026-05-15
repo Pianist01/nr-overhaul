@@ -114,10 +114,15 @@ const box = document.querySelector('.contact-box');
 
 window.addEventListener('scroll', (e) => {
     e.preventDefault();
-    if(window.scrollY > 900) {
+
+    const triggerPoint = window.innerWidth <= 768 ? 250 : 900;
+    
+    if(window.scrollY > triggerPoint) {
         main.style.backgroundColor = 'rgba(0, 0, 0, 1)';
         box.style.boxShadow = '1px 1px 20px 1px white';
         box.style.backgroundColor = 'white';
+    } else {
+        main.style.backgroundColor = 'rgba(0, 0, 0, 0)';
     }
 });
 
