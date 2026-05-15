@@ -1,5 +1,7 @@
 console.log('Working');
 
+emailjs.init('yqZixuN23JZWME2M1');
+
 const screenWidth = window.innerWidth;
 console.log(screenWidth);
 
@@ -141,3 +143,19 @@ if(screenWidth <= 428) {
     });
 
 }
+
+const form = document.querySelector('#contact-form');
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_w43j5cg', 'template_5eer8ha', form)
+    .then(() => {
+        alert('Mensaje enviado! Gracias por contactarnos.');
+        form.reset();
+    })
+    .catch((error) => {
+        alert('Error al enviar el mensaje. Por favor, inténtalo de nuevo.');
+        console.error(error);
+    });
+});
