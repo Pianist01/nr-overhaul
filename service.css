@@ -1133,3 +1133,30 @@ height: 200px;
     max-height: 75vh;
   }
 }
+
+/* Rotated Device */
+
+@media (orientation: landscape) and (max-width: 932) {
+  .header-container {
+    height: 250px;
+  }
+
+  .logo {
+    width: 100px;
+    height: 100px;
+    margin-top: -20px;
+  }
+
+  .page-image, .header-image {
+    height: 250px;
+    object-fit: cover;
+  }
+
+  main {
+    margin-top: 40px;
+  }
+
+  .navigation {
+    overflow-y: auto;
+  }
+}
