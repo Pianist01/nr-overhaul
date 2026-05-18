@@ -777,6 +777,7 @@ height: 200px;
   body {
     width: 100%;
     overflow-x: hidden;
+    grid-template-rows: auto auto auto;
   }
 
   main {
