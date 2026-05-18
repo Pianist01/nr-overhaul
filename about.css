@@ -981,10 +981,10 @@ height: 200px;
   }
 
   .joata, .zaza, .baba, .poopi {
-    width: 110px;
-    height: 110px;
-    min-width: 110px;
-    min-height: 110px;
+    width: 28vw;
+    height: 28vw;
+    min-width: unset;
+    min-height: unset;
     border-radius: 50%;
     object-fit: cover;
     aspect-ratio: unset;
