@@ -638,7 +638,7 @@ height: 200px;
     grid-row: 2/3;
     justify-self: start;
     align-self: center;
-    margin-left: 15px;
+    transform: translateX(-15px);
   }
 
   .long-logo {
