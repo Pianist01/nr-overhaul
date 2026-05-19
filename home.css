@@ -617,7 +617,7 @@ height: 200px;
   .footer-logo {
     grid-column: 1/2;
     grid-row: 2/3;
-    justify-self: end;
+    justify-self: start;
     margin-right: -10px;
     align-self: center;
   }
