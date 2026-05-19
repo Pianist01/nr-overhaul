@@ -636,9 +636,9 @@ height: 200px;
   .footer-logo {
     grid-column: 1/2;
     grid-row: 2/3;
-    justify-self: start;
+    justify-self: end;
     align-self: center;
-    transform: translateX(-30px);
+    transform: translateX(-5px);
   }
 
   .long-logo {
@@ -646,7 +646,7 @@ height: 200px;
     grid-row: 2/3;
     justify-self: start;
     align-self: center;
-    margin-left: -80px;
+    margin-left: -75px;
     width: 80px;
     height: 80px;
   }
