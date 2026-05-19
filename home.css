@@ -629,9 +629,9 @@ height: 200px;
     grid-row: 2/3;
     width: 80px;
     height: 80px;
-    justify-self: end;
+    justify-self: start;
     align-self: center;
-    margin-left: -4px;
+    margin-left: 0;
   }
 
   .insta {
