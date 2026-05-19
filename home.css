@@ -617,17 +617,19 @@ height: 200px;
   .footer-logo {
     grid-column: 1/2;
     grid-row: 2/3;
-    justify-self: start;
-    margin-left: 8%;
+    justify-self: center;
+    margin-left: -35px;
     align-self: center;
+    width: 50px;
+    height: 50px;
   }
 
   .long-logo {
-    grid-column: 1/2;
+    grid-column: 2/3;
     grid-row: 2/3;
     justify-self: start;
     align-self: center;
-    margin-left: 70px;
+    margin-left: -45px;
     width: 80px;
     height: 80px;
   }
