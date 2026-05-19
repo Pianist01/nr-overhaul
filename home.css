@@ -597,7 +597,7 @@ height: 200px;
 
   .footer-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: .8fr 1fr 1fr;
     grid-template-rows: repeat(2, auto);
     align-items: center;
     padding: 10px 0;
@@ -632,8 +632,7 @@ height: 200px;
     height: 80px;
     justify-self: start;
     align-self: center;
-    margin: 0;
-    transform: translateX(-55px);
+    transform: translateX(-25px);
   }
 
   .insta {
