@@ -619,7 +619,6 @@ height: 200px;
     grid-template-rows: repeat(2, auto);
     align-items: center;
     padding: 10px 0;
-    height: auto;
   }
 
   .footer-list {
