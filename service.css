@@ -1029,23 +1029,28 @@ height: 200px;
   .footer-logo {
     grid-column: 1/2;
     grid-row: 2/3;
+    width: 50px;
+    height: 50px;
     justify-self: center;
-    margin-left: 0;
+    align-self: center;
+    margin-left: -20px;
   }
 
   .long-logo {
     grid-column: 2/3;
     grid-row: 2/3;
-    justify-self: center;
-    margin: 0;
     width: 80px;
     height: 80px;
+    justify-self: start;
+    align-self: center;
+    margin-left: -40px;
   }
 
   .insta {
     grid-column: 3/4;
     grid-row: 2/3;
     justify-self: center;
+    align-self: center;
     margin-right: 0;
   }
 
