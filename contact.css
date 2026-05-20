@@ -650,7 +650,7 @@ height: 200px;
     height: 80px;
     justify-self: start;
     align-self: center;
-    transform: translateX(-25px);
+    margin-left: -40px;
   }
 
   .insta {
