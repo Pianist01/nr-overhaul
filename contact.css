@@ -615,7 +615,7 @@ height: 200px;
 
   .footer-container {
     display: grid;
-    grid-template-columns: .8fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, auto);
     align-items: center;
     padding: 10px 0;
