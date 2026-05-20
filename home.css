@@ -621,7 +621,7 @@ height: 200px;
     height: 50px;
     justify-self: center;
     align-self: center;
-    margin-left: 0;
+    margin-left: -20px;
   }
 
   .long-logo {
@@ -631,7 +631,7 @@ height: 200px;
     height: 80px;
     justify-self: start;
     align-self: center;
-    margin-left: 0;
+    margin-left: 10px;
   }
 
   .insta {
