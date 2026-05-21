@@ -53,25 +53,25 @@
 
         <img class="form-image" src="img/form-image.jpg" alt="Bible laying flat on wooden table">
 
-        <form action="contact.php" id="contact-form" method="post">
+        <form id="contact-form">
             <div class="form-row1">
                 <!-- <label class="name" for="contact-form-name">Name:</label> -->
-                <input class="form-input" id="contact-form-name" class="form-input" type="text" name="name" placeholder="Name *" required>
+                <input class="form-input" id="contact-form-name" type="text" name="from_name" placeholder="Name *" required>
             </div>
 
             <div class="form-row2">
                 <!-- <label for="contact-form-email">Email:</label> -->
-                <input id="contact-form-email" class="form-input" type="email" name="email" placeholder="Email *" required>
+                <input id="contact-form-email" class="form-input" type="email" name="from_email" placeholder="Email *" required>
             </div>
 
             <div class="form-row3">
                 <!-- <label for="contact-form-phone">Telefono:</label> -->
-                <input id="contact-form-phone" class="form-input" type="tel" name="phone" placeholder="Numero De Telefono *" required>
+                <input id="contact-form-phone" class="form-input" type="tel" name="from_phone" placeholder="Numero De Telefono *" required>
             </div>
 
             <div class="form-row4">
                 <label for="contact-form-message"></label>
-                <textarea id="form-message" class="form-input" name="message" placeholder="Si tiene una pregunta, aqui nos puede decir!"></textarea>
+                <textarea id="form-message" class="form-input" name="message" placeholder="Si tiene una pregunta, aqui nos puede decir!" required></textarea>
             </div>
 
             <button type="submit">Submit</button>
@@ -101,6 +101,7 @@
             </ul>
         </div>
     </footer>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <script src="contact.js"></script>
 </body>
 </html>

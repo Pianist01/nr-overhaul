@@ -1,6 +1,10 @@
 console.log('This page is working');
 
 const screenWidth = window.innerWidth;
+if(screenWidth <= 428) {
+    document.body.style.height = 'auto';
+    document.body.style.gridTemplateRows = 'auto auto auto';
+}
 
 // Logo functionality
 const logo = document.querySelector('.logo');

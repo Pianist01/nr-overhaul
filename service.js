@@ -217,10 +217,14 @@ function aboutSunday() {
   const sundayHours = document.createElement('p');
   sundayHours.classList.add('service-hours', 'sunday-hours');
   sundayHours.textContent = 'Domingos(5PM-7PM)';
+  if(screenWidth <= 428)  {
+    sundayHours.style.marginTop = '0';
+  }
 
   const sundayDescrip = document.createElement('p');
   sundayDescrip.classList.add('service-description', 'sunday-description');
   sundayDescrip.textContent = 'Cada Domingo a las 5PM, nos reunimos para adorar a nuestro se\u00F1or. Es importante en mantener una relacion personal con Dios cada dia, y ser parte de una congregacion tambien nos ayuda en aprender mas de la palabra de Dios. Ademas de adoracion y predicacion, cada Domingo despues del servicio tenemos convivir juntos con comida o un refresco hecho por nuestras hermanas incre\u00EDbles.';
+  sundayDescrip.style.marginTop = '8px';
 
   infoBox.append(sundayTitle, sundayHours, sundayDescrip);
 }
@@ -233,10 +237,14 @@ function aboutTuesday() {
   const tuesdayHours = document.createElement('p');
   tuesdayHours.classList.add('service-hours', 'tuesday-hours');
   tuesdayHours.textContent = 'Martes(7PM-8:30PM)';
+  if(screenWidth <= 428) {
+    tuesdayHours.style.marginTop = '0';
+  }
 
   const tuesdayDescrip = document.createElement('p');
   tuesdayDescrip.classList.add('service-description', 'tuesday-description');
   tuesdayDescrip.textContent = 'Cada Martes tenemos servicio de oracion, predicacion, o estudio Biblico. El primer Martes de cada mes es servicio de oracion donde dedicamos un servicio entero a la oracion. La oracion es un aspecto importante en manteniendo una relacion con Dios. Los Martes siguientes son servicios normales donde adoramos al se\u00F1or y despues tenemos tiempo de predicacion donde podemos escuchar la palabra de Dios. El ultimo Martes del mes tenemos estudio Biblico. Si en qualquier momento ha tenido preguntas sobre lo que dice la Biblia, este servicio es para usted.';
+  tuesdayDescrip.style.marginTop = '8px';
 
   infoBox.append(tuesdayTitle, tuesdayHours, tuesdayDescrip);
 }
@@ -249,10 +257,14 @@ function aboutSantaCena() {
   const cenaHours = document.createElement('p');
   cenaHours.classList.add('service-hours', 'cena-hours');
   cenaHours.textContent = 'Primer Domingo Del Mes(5PM - 7PM)';
+  if(screenWidth <= 428) {
+    cenaHours.style.marginTop = '0';
+  }
 
   const cenaDescrip = document.createElement('p');
   cenaDescrip.classList.add('service-description', 'cena-description');
   cenaDescrip.textContent = 'Cada primer Domingo del mes tenemos nuestro servicio de la Santa Cena. Como un servicio normal, tenemos adoracion y predicacion, pero al final tomamos parte de la Santa Cena. Jesus nos instruye recordando su memoria y sacrificio con pan y vino(no usamos vino real). Pero tambien es un tiempo lindo para poder reflexionar.';
+  cenaDescrip.style.marginTop = '8px';
 
   infoBox.append(cenaTitle, cenaHours, cenaDescrip);
 }
@@ -265,10 +277,14 @@ function aboutVigilia() {
   const vigilHours = document.createElement('p');
   vigilHours.classList.add('service-hours', 'vigil-hours');
   vigilHours.textContent = 'Ultimo Sabado Del Mes(7PM - 12AM)';
+  if(screenWidth <= 428) {
+    vigilHours.style.marginTop = '0';
+  }
 
   const vigilDescrip = document.createElement('p');
   vigilDescrip.classList.add('service-description', 'vigil-description');
   vigilDescrip.textContent = 'El ultimo Sabado de cada mes tenemos nuestro servicio de Vigilia. Comenzando a las 7PM, dedicamos una noche entera a nuestro se\u00F1or en oracion, adoracion, predicacion, testimonios, y mas! Ademas de eso, tenemos una cena hecho por nuestras hermanas para la congregacion, y si usted quiere, puede traer algo para compartir con todos. Este servicio es el paquete completeo.';
+  vigilDescrip.style.marginTop = '8px';
 
   infoBox.append(vigilTitle, vigilHours, vigilDescrip);
 }

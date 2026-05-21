@@ -56,7 +56,7 @@ body {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 2fr 2fr .5fr;
   overflow-x: hidden;
-  height: 100%;
+  min-height: 100vh;
   width: 100%;
   background-color: rgba(0, 0, 0, 0);
   transition: background-color .5s ease-in-out;
@@ -117,16 +117,20 @@ header {
   height: var(--header-container-height);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  position: relative;
+  overflow: hidden;
   width: 100%;
-  height: 105%;
+  height: 700px;
   filter: blur(0px);
   transition: filter .5s ease-in-out;
 }
 
 .page-image {
-  width: var(--header-image-width);
-  height: var(--header-image-height);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   grid-column: var(--header-image-column);
+  display: block;
 }
 
 .logo {
@@ -269,6 +273,8 @@ grid-column: 1/4;
 display: grid;
 grid-template-columns: repeat(3, 1fr);
 margin-top: 5%;
+row-gap: 40px;
+padding-bottom: 32px;
 }
 
 .service-box {
@@ -383,7 +389,7 @@ transition: filter .5s ease-in-out;
 
 .vigilia {
 grid-column: 2/3;
-grid-row: 2/2;
+grid-row: 2/3;
 width: 100%;
 height: 100%;
 display: grid;
@@ -775,7 +781,31 @@ height: 200px;
   body {
     width: 100%;
     overflow-x: hidden;
-    grid-template-rows: 1.6fr 2fr .5fr;
+    grid-template-rows: auto auto auto;
+  }
+
+  .header-container {
+    height: 350px;
+  }
+
+  header {
+    height: auto;
+  }
+
+  main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto;
+    gap: 20px;
+    justify-items: center;
+    align-items: center;
+    padding: 16px;
+    margin-top: 1%;
+  }
+
+  .page-image {
+    height: 350px;
+    object-fit: cover;
   }
 
   .logo {
@@ -821,9 +851,49 @@ height: 200px;
     z-index: -1;
   }
 
+  .sundays {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .tuesdays {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .santa-cena {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .vigilia {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   .sunday-image, .tuesday-image, .cena-image, .vigilia-image {
-    height: 135px;
-    width: 135px;
+    width: 100%;
+    height: auto;
   }
 
   .service-box {
@@ -839,6 +909,7 @@ height: 200px;
     white-space: normal;
     width: 100%;
     text-align: center;
+    /* grid-column: 1/4; */
     margin-top: 0;
   }
 
@@ -847,16 +918,17 @@ height: 200px;
     width: 100%;
     line-height: 1.6;
     text-align: center;
-    margin-top: 4px;
+    margin-top: 12px;
     padding: 0 8px;
   }
 
   .info-box {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px;
-    padding: 20px 24px;
+    gap: 4px;
+    padding: 16px 24px 20px 24px;
   }
 
   .info-title {
@@ -958,23 +1030,28 @@ height: 200px;
   .footer-logo {
     grid-column: 1/2;
     grid-row: 2/3;
+    width: 50px;
+    height: 50px;
     justify-self: center;
-    margin-left: 0;
+    align-self: center;
+    margin-left: -20px;
   }
 
   .long-logo {
     grid-column: 2/3;
     grid-row: 2/3;
-    justify-self: center;
-    margin: 0;
     width: 80px;
     height: 80px;
+    justify-self: start;
+    align-self: center;
+    margin-left: -40px;
   }
 
   .insta {
     grid-column: 3/4;
     grid-row: 2/3;
     justify-self: center;
+    align-self: center;
     margin-right: 0;
   }
 
@@ -984,7 +1061,6 @@ height: 200px;
   body {
     width: 100%;
     overflow: hidden;
-    grid-template-rows: 1.5fr 2fr 1fr;
   }
 
   .logo {
@@ -1061,5 +1137,56 @@ height: 200px;
   .sunday-image, .tuesday-image, .cena-image, .vigilia-image {
     height: 100px;
     width: 100px;
+  }
+  
+  .info-box {
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .info-title {
+    font-size: 0.95em;
+  }
+
+  .service-hours {
+    font-size: 0.85em;
+  }
+
+  .service-description {
+    font-size: 0.85em;
+    width: 100%;
+    line-height: 1.5;
+  }
+
+  .service-box {
+    width: 95%;
+    max-height: 75vh;
+  }
+}
+
+/* Rotated Device */
+
+@media (orientation: landscape) and (max-width: 932) {
+  .header-container {
+    height: 250px;
+  }
+
+  .logo {
+    width: 100px;
+    height: 100px;
+    margin-top: -20px;
+  }
+
+  .page-image, .header-image {
+    height: 250px;
+    object-fit: cover;
+  }
+
+  main {
+    margin-top: 40px;
+  }
+
+  .navigation {
+    overflow-y: auto;
   }
 }

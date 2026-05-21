@@ -1,5 +1,7 @@
 console.log('Working');
 
+emailjs.init('yqZixuN23JZWME2M1');
+
 const screenWidth = window.innerWidth;
 console.log(screenWidth);
 
@@ -114,10 +116,15 @@ const box = document.querySelector('.contact-box');
 
 window.addEventListener('scroll', (e) => {
     e.preventDefault();
-    if(window.scrollY > 900) {
+
+    const triggerPoint = window.innerWidth <= 768 ? 250 : 900;
+    
+    if(window.scrollY > triggerPoint) {
         main.style.backgroundColor = 'rgba(0, 0, 0, 1)';
         box.style.boxShadow = '1px 1px 20px 1px white';
         box.style.backgroundColor = 'white';
+    } else {
+        main.style.backgroundColor = 'rgba(0, 0, 0, 0)';
     }
 });
 
@@ -136,3 +143,19 @@ if(screenWidth <= 428) {
     });
 
 }
+
+const form = document.querySelector('#contact-form');
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_w43j5cg', 'template_5eer8ha', form)
+    .then(() => {
+        alert('Mensaje enviado! Gracias por contactarnos.');
+        form.reset();
+    })
+    .catch((error) => {
+        alert('Error al enviar el mensaje. Por favor, inténtalo de nuevo.');
+        console.error(error);
+    });
+});

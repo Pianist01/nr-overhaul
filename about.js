@@ -21,7 +21,7 @@ console.log(getComputedStyle(bodyContainer).backgroundColor);
 
 let height = 0;
 
-const maxHeight = 60;
+const maxHeight = 72;
 
 const minHeight = 0;
 
@@ -152,9 +152,13 @@ const minTransparent = 0;
 let insideChurch = document.querySelector('.service-image');
 let levaWife = document.querySelector('.pastor-image');
 
+let popupActive = false;
+
 
 levaWife.addEventListener('click', (e) => {
     e.preventDefault();
+    if(popupActive) return;
+    popupActive = true;
     console.log('This is Leva and Reyna');
 
     levaWife.style.opacity = 0;
@@ -162,11 +166,6 @@ levaWife.addEventListener('click', (e) => {
     levaBox = document.createElement('div');
     levaBox.classList.add('leva-container');
 
-    if(screenWidth <= 428) {
-        levaBox.style.width = '90%';
-    } else {
-        levaBox.style.width = '50%';
-    }
 
     levaSquare = document.createElement('div');
     levaSquare.classList.add('leva-square');
@@ -180,22 +179,36 @@ levaWife.addEventListener('click', (e) => {
     insideChurch.style.opacity = 0;
 
     height = 0;
-    maxHeight;
 
-    const animateHeight = () => {
-        height += 3;
-        levaBox.style.height = height + '%';
+   const animateHeight = () => {
+    height += 3;
+    levaBox.style.height = height + '%';
 
-        if(height < maxHeight) {
-            requestAnimationFrame(animateHeight);
-        } 
+    if(height < maxHeight) {
+        requestAnimationFrame(animateHeight);
     }
-
+   }
     animateHeight();
+
+    // height = 0;
+    // maxHeight;
+
+    // const animateHeight = () => {
+    //     height += 3;
+    //     levaBox.style.height = height + '%';
+
+    //     if(height < maxHeight) {
+    //         requestAnimationFrame(animateHeight);
+    //     } 
+    // }
+
+    // animateHeight();
 
     aboutLeva();
 
     levaExit();
+
+    // This is orginal code
 
     levaBox.style.gridColumnStart = 1;
     levaBox.style.gridColumnEnd = 4;
@@ -206,6 +219,18 @@ levaWife.addEventListener('click', (e) => {
     levaBox.style.justifySelf = 'center';
     levaBox.style.alignSelf = 'center';
 
+    // This is new code to see if it will work better for mobile devices
+
+    // levaBox.style.height = 'auto';
+    // levaBox.style.maxHeight = '75vh';
+    // levaBox.style.overflow = 'auto';
+    // levaBox.style.position = 'absolute';
+    // levaBox.style.top = '60px';
+    // levaBox.style.left = '50%';
+    // levaBox.style.transform = 'translateX(-50%)';
+    // levaBox.style.width = '90%';
+    // levaBox.style.zIndex = '10';
+
     levaArea.append(levaBox);
 });
 
@@ -214,6 +239,8 @@ levaWife.addEventListener('click', (e) => {
 
 bandArray.forEach((member, index) => {
     member.addEventListener('click', (e) => {
+        if(popupActive) return;
+        popupActive = true;
 
         if(bodyContainer !== e) {
             console.log('this is not body');
@@ -313,12 +340,15 @@ function animate() {
 
     animateHeight();
 
-    memberBox.style.gridColumnStart = '1';
-    memberBox.style.gridColumnEnd = '4';
-    memberBox.style.gridRowStart = '1';
-    memberBox.style.gridRowEnd = '3';
-    memberBox.style.zIndex = '1';
-    memberBox.style.position = 'absolute';
+    if(screenWidth > 428) {
+        animateHeight();
+        memberBox.style.position = 'absolute';
+        memberBox.style.gridColumnStart = '1';
+        memberBox.style.gridColumnEnd = '4';
+        memberBox.style.gridRowStart = '1';
+        memberBox.style.gridRowEnd = '3';
+        memberBox.style.zIndex = '999';
+    }
     
 }
 
@@ -342,15 +372,17 @@ function enableClick() {
     memberExit.append(exitImage);
     memberExit.addEventListener('click', (e) => {
         e.preventDefault();
+        popupActive = false;
         bodyContainer.style.backgroundColor = 'rgba(0, 0, 0, 0)';
         insideChurch.style.opacity = 1;
         levaWife.style.opacity = 1;
-        memberInfo.style.display = 'none';
         const goAway = () => {
             height -= 3;
             memberBox.style.height = height + '%';
-            if(height) {
+            if(height > 0) {
                 requestAnimationFrame(goAway);
+            } else {
+                memberBox.textContent = '';
             }
         }
 
@@ -385,11 +417,12 @@ function levaExit() {
     levaSquare.append(exit);
 
     exit.addEventListener('click', (e) => {
+        popupActive = false;
         bodyContainer.style.backgroundColor = 'rgba(0, 0, 0, 0)';
         const byeLeva = () => {
             height -= 3;
             levaBox.style.height = height + '%';
-            if(height) {
+            if(height > 0) {
                 requestAnimationFrame(byeLeva);
             } else {
                 levaBox.remove();
@@ -416,7 +449,7 @@ function aboutLeva() {
     levaPosition.textContent = 'Pastores';
 
     const levaDescrip = document.createElement('p');
-    levaDescrip.classList.add('member-paragraph', 'leva-paragraph');
+    levaDescrip.classList.add('member-paragraph', 'leva-paragraph', 'pastor-info');
     levaDescrip.textContent = 'Victor y Brizza tienen 20 a\u00F1os casados. Con sus dos hijos y hija, toda la familia sirve dentro de la iglesia. Salvado de una vida de drogas y deliquencia, Victor sigue con el mismo fuego de servir a Cristo hoy como el primer dia. Pero, tras cada hombre que se esfuerza a servir a Dios a lo 100%, siempre hay una mujer de Dios tras de el. Brizza siempre hace todo lo posible de ayudar el ministerio con las mujeres y para todos en general. Siempre la puedes encontrar sirviendo la congregacion en todo lo que necesita.';
 
     levaSquare.append(levaTitle, levaPosition, levaDescrip);
