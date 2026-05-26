@@ -615,7 +615,7 @@ height: 200px;
     align-items: center;
     gap: 8px;
     justify-self: center;
-    margin-left: 0;
+    margin-left: 25px;
   }
 
   .footer-logo {
