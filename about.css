@@ -256,8 +256,7 @@ align-self: center;
   /* NAV END */
 
 main {
-grid-row-start: 2;
-grid-row-end: 5;
+grid-row: 2/3;
 grid-column-start: 1;
 grid-column-end: 4;
 display: grid;
@@ -635,7 +634,7 @@ margin-top: 2px;
 
 footer {
   grid-column: 1/-1;
-  align-self: end;
+  width: 100%;
   background-color: black;
 }
 
@@ -647,7 +646,7 @@ grid-template-columns: repeat(3, 1fr);
 grid-template-rows: 1fr;
 width: 100%;
 height: auto;
-min-height: 120px;
+min-height: 200px;
 }
 
 .footer-brand {
