@@ -55,9 +55,9 @@ body {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: .20fr .5fr .5fr .5fr .1fr;
+  grid-template-rows: auto 1fr auto;
   overflow-x: hidden;
-  height: 100%;
+  min-height: 100vh;
   background-color: rgba(0, 0, 0, 0);
   transition: background-color .5s ease-in-out;
 }
@@ -634,8 +634,8 @@ margin-top: 2px;
 /* FOOTER */
 
 footer {
-  grid-column: 1/4;
-  grid-row: 5/6;
+  grid-column: 1/-1;
+  /* grid-row: 5/6; */
   background-color: black;
 }
 
