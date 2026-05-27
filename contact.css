@@ -635,7 +635,7 @@ height: 200px;
 
   .footer-brand {
     grid-row: 2;
-    grid-column: 1;
+    grid-column: 1/2;
 
     display: flex;
     align-items: center;
