@@ -617,33 +617,32 @@ height: 200px;
   .footer-container {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
-    justify-items: start;
+    grid-template-rows: auto auto;
+    padding: 10px 0;
   }
 
   .footer-list {
-    display: flex;
     grid-row: 1;
     grid-column: 1;
-    font-size: 0.9rem;
+
+    display: flex;
     justify-content: space-around;
     width: 100%;
     margin: 0;
     padding: 10px 0;
+    font-size: 0.9rem;
   }
 
   .footer-brand {
-    grid-row: 1;
-    grid-column: 2;
-   justify-self: start;
-   align-self: center;
+    grid-row: 2;
+    grid-column: 1;
 
-   display: flex;
-   align-items: center;
-   justify-content: flex-start;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 
-   gap: 6px;
-   margin-left: 15px;
+    gap: 8px;
+    margin-left: 15px;
   }
 
   .footer-logo {
@@ -659,10 +658,13 @@ height: 200px;
   }
 
   .insta {
+    grid-row: 2;
     grid-column: 1;
-    grid-row: 3;
-    justify-self: start;
-    margin-left: 15px;
+
+    justify-self: end;
+    align-self: center;
+
+    margin-right: 15px;
   }
 
 }
