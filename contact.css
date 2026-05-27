@@ -616,16 +616,15 @@ height: 200px;
 
   .footer-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, auto);
-    align-items: center;
-    padding: 10px 0;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    justify-items: start;
   }
 
   .footer-list {
     display: flex;
-    grid-row: 1/2;
-    grid-column: 1/4;
+    grid-row: 1;
+    grid-column: 1;
     font-size: 0.9rem;
     justify-content: space-around;
     width: 100%;
@@ -634,8 +633,8 @@ height: 200px;
   }
 
   .footer-brand {
-    grid-row: 2/3;
-    grid-column: 1/4;
+    grid-row: 1;
+    grid-column: 2;
    justify-self: start;
    align-self: center;
 
@@ -660,11 +659,10 @@ height: 200px;
   }
 
   .insta {
-    grid-column: 3/4;
-    grid-row: 2/3;
-    justify-self: center;
-    align-self: center;
-    margin-right: 0;
+    grid-column: 1;
+    grid-row: 3;
+    justify-self: start;
+    margin-left: 15px;
   }
 
 }
