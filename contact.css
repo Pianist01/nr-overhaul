@@ -627,7 +627,6 @@ height: 200px;
   .footer-logo {
     width: 45px;
     height: 45px;
-    flex-shrink: 0;
   }
 
   .long-logo {
