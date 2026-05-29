@@ -823,7 +823,7 @@ height: 200px;
   .icon-container {
     position: absolute;
     top: 20px;
-    right: 50%;
+    right: 25%;
     margin: 0;
     z-index: 2;
   }
