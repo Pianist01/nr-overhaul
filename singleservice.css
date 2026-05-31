@@ -434,7 +434,9 @@ height: 200px;
 
 @media (max-width: 428px) {
   .logo {
-    top: 13%;
+    width: 150px;
+    height: 150px;
+    top: 15%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
