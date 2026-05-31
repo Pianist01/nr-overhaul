@@ -25,6 +25,20 @@ if(screenWidth > 428) {
 });
 }
 
+const iconContainer = document.querySelector('.icon-container');
+iconContainer.addEventListener('click', (e) => {
+    e.preventDefault();
+    console.log('When clicked, class will be added to play animation');
+    iconContainer.classList.add('click-icon');
+});
+
+const closeMenu = document.querySelector('.exit');
+closeMenu.addEventListener('click', (e) => {
+    e.preventDefault();
+    console.log('When clicked, class will be removed to reset animation');
+    iconContainer.classList.remove('click-icon');
+});
+
 
 const historyButton = document.querySelector('.history-btn');
 

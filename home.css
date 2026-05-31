@@ -193,6 +193,9 @@ height: 100%;
 
     .icon-container:hover {
       cursor: pointer;
+    }
+
+    .click-icon {
       animation: rotate .5s ease-in-out 1;
     }
 
