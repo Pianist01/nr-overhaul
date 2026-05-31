@@ -144,6 +144,13 @@ function dropDownUp() {
 
 dropDownUp();
 
+const insta = document.querySelector('.insta');
+
+insta.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.open('https://www.instagram.com/nuevoremanenteoc/', '_blank');
+})
+
 // Code for screen size: 428px and below
 
 if(screen.width <= 428) {

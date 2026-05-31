@@ -128,6 +128,13 @@ window.addEventListener('scroll', (e) => {
     }
 });
 
+const insta = document.querySelector('.insta');
+
+insta.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.open('https://www.instagram.com/nuevoremanenteoc/', '_blank');
+});
+
 // Code for screen size 428px and below
 
 if(screenWidth <= 428) {
