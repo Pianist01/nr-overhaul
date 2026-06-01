@@ -53,6 +53,22 @@ if(screenWidth > 428) {
 }); 
 }
 
+function iconAnimation() {
+    const iconContainer = document.querySelector('.icon-container');
+    iconContainer.addEventListener('click', (e) => {
+        e.preventDefault();
+        iconContainer.classList.add('click-icon');
+    });
+
+    const closeMenu = document.querySelector('.exit');
+    closeMenu.addEventListener('click', (e) => {
+        e.preventDefault();
+        iconContainer.classList.remove('click-icon');
+    });
+}
+
+iconAnimation();
+
 const serviceMenu = document.querySelector('.service');
 const maxMenuHeight = 70;
 const baseHeight = 25;
@@ -190,20 +206,6 @@ levaWife.addEventListener('click', (e) => {
    }
     animateHeight();
 
-    // height = 0;
-    // maxHeight;
-
-    // const animateHeight = () => {
-    //     height += 3;
-    //     levaBox.style.height = height + '%';
-
-    //     if(height < maxHeight) {
-    //         requestAnimationFrame(animateHeight);
-    //     } 
-    // }
-
-    // animateHeight();
-
     aboutLeva();
 
     levaExit();
@@ -219,17 +221,6 @@ levaWife.addEventListener('click', (e) => {
     levaBox.style.justifySelf = 'center';
     levaBox.style.alignSelf = 'center';
 
-    // This is new code to see if it will work better for mobile devices
-
-    // levaBox.style.height = 'auto';
-    // levaBox.style.maxHeight = '75vh';
-    // levaBox.style.overflow = 'auto';
-    // levaBox.style.position = 'absolute';
-    // levaBox.style.top = '60px';
-    // levaBox.style.left = '50%';
-    // levaBox.style.transform = 'translateX(-50%)';
-    // levaBox.style.width = '90%';
-    // levaBox.style.zIndex = '10';
 
     levaArea.append(levaBox);
 });
@@ -515,21 +506,6 @@ function aboutIsai() {
     isaiDescrip.textContent = 'El maestro del piano. Isai trae la emocion en cada cancion con su talento. Es el paquete completo en el piano.';
     memberInfo.append(isaiTitle, isaiPosition, isaiDescrip);
 }
-
-// function aboutRosy() {
-//     const rosaTitle = document.createElement('h2');
-//     rosaTitle.classList.add('member-title');
-//     rosaTitle.textContent = nameArray[4];
-
-//     const rosaPosition = document.createElement('p');
-//     rosaPosition.classList.add('member-position');
-//     rosaPosition.textContent = 'Segunda Voz';
-
-//     const rosaDescrip = document.createElement('p');
-//     rosaDescrip.classList.add('member-paragraph');
-//     rosaDescrip.textContent = 'Apasionada con cantando, Rosy ayuda la banda como la segunda voz. Ella le agrega mas emocion a cada cancion con una sonrisa en su cara.';
-//     memberInfo.append(rosaTitle, rosaPosition, rosaDescrip);
-// }
 
 const insta = document.querySelector('.insta');
 

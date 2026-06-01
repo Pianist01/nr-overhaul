@@ -29,6 +29,22 @@ navExit.addEventListener('click', (e) => {
 });
 }
 
+function iconAnimation() {
+    const iconContainer = document.querySelector('.icon-container');
+    iconContainer.addEventListener('click', (e) => {
+        e.preventDefault();
+        iconContainer.classList.add('click-icon');
+    });
+
+    const closeMenu = document.querySelector('.exit');
+    closeMenu.addEventListener('click', (e) => {
+        e.preventDefault();
+        iconContainer.classList.remove('click-icon');
+    });
+}
+
+iconAnimation();
+
 
 const serviceMenu = document.querySelector('.service');
 const maxHeight = 70;
