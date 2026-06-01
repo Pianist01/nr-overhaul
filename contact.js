@@ -1,5 +1,5 @@
 console.log('Working');
-
+const body = document.querySelector('body');
 emailjs.init('yqZixuN23JZWME2M1');
 
 const screenWidth = window.innerWidth;
@@ -174,11 +174,18 @@ form.addEventListener('submit', (e) => {
 
     emailjs.sendForm('service_w43j5cg', 'template_5eer8ha', form)
     .then(() => {
-        alert('Mensaje enviado! Gracias por contactarnos.');
+        displayMessage('Mensaje enviado! Gracias por contactarnos.', 'success');
         form.reset();
     })
     .catch((error) => {
-        alert('Error al enviar el mensaje. Por favor, inténtalo de nuevo.');
+        displayMessage('Error al enviar el mensaje. Por favor, inténtalo de nuevo.', 'error');
         console.error(error);
     });
 });
+
+function displayMessage(text, type) {
+    const message = document.createElement('div');
+    message.classList.add('message-box');
+    message.textContent = text;
+    body.append(message);
+}
