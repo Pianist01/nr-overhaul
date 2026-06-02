@@ -134,11 +134,23 @@ let formSubmit = false;
 function scrollingAnimation() {
     window.addEventListener('scroll', (e) => {
     e.preventDefault();
-    const triggerPoint = window.innerWidth <= 768 ? 250 : 900;
+    const triggerPoint = window.innerWidth <= 768 ? 250 : 300;
 
     if(formSubmit === true) {
         window.removeEventListener('scroll', scrollingAnimation);
         console.log('Event listener removed');
+        setTimeout(() => {
+            window.addEventListener('scroll', (e) => {
+                e.preventDefault();
+                if(window.scrollY > triggerPoint) {
+                    main.style.backgroundColor = 'rgba(0, 0, 0, 1)';
+                    box.style.boxShadow = '1px 1px 20px 1px white';
+                    box.style.backgroundColor = 'white';
+                } else {
+                    main.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+                }
+            });
+        }, 4000);
     } else if(window.scrollY > triggerPoint) {
         main.style.backgroundColor = 'rgba(0, 0, 0, 1)';
         box.style.boxShadow = '1px 1px 20px 1px white';
@@ -202,6 +214,10 @@ function displayMessage(text, type) {
 
     messageContainer.append(message);
     body.append(messageContainer);
+
+    setTimeout(() => {
+        messageContainer.style.opacity = '0';
+    }, 3000);
 }
 
 function submitFormAnimation() {
@@ -218,4 +234,15 @@ function submitFormAnimation() {
     });
     headerContainer.style.opacity = '0';
     contactBox.style.opacity = '0';
+
+    setTimeout(() => {
+        collection.forEach((element) => {
+            element.styleb.backgroundColor = 'white';
+        });
+    }, 4000);
+
+    setTimeout(() => {
+        headerContainer.style.opacity = '1';
+        contactBox.style.opacity = '1';
+    }, 4000);
 }

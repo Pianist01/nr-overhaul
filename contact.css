@@ -85,6 +85,8 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     width: 100%;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
   }
 
   .header-image {
@@ -260,6 +262,8 @@
       border-radius: 30px;
       overflow: hidden;
       background-color: white;
+      opacity: 1;
+      transition: opacity 1s ease-in-out;
     }
 
 
@@ -432,8 +436,13 @@ height: 200px;
   z-index: 10;
   border-radius: 15px;
   background-color: white;
+  will-change: box-shadow;
+  box-shadow: 1px 1px 20px 1px white;
+  transition: box-shadow 1s ease-in-out;
   min-height: 100px;
   min-width: 100px;
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
 }
 
 .message-box {
