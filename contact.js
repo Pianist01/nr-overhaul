@@ -218,6 +218,10 @@ function displayMessage(text, type) {
     setTimeout(() => {
         messageContainer.style.opacity = '0';
     }, 3000);
+
+    setTimeout(() => {
+        messageContainer.remove();
+    }, 4000);
 }
 
 function submitFormAnimation() {
@@ -237,7 +241,7 @@ function submitFormAnimation() {
 
     setTimeout(() => {
         collection.forEach((element) => {
-            element.styleb.backgroundColor = 'white';
+            element.style.backgroundColor = 'white';
         });
     }, 4000);
 
