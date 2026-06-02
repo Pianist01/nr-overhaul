@@ -423,17 +423,25 @@ height: 200px;
 
 /* EMAILJS MESSAGE BOX */
 
-.message-box {
+.message-container {
+  display: flex;
   grid-row: 2/3;
   grid-column: 1/2;
   justify-self: center;
   align-self: center;
   z-index: 10;
-  border-radius: 50%;
-  background-color: #ccc;
-  min-height: 50px;
+  border-radius: 15px;
+  background-color: white;
+  min-height: 100px;
   min-width: 100px;
+}
+
+.message-box {
+  color: black;
+  font-size: 1rem;
   text-align: center;
+  align-self: center;
+  width: 99%;
 }
 
 /* MEDIA QUERIES */

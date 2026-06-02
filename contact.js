@@ -129,20 +129,28 @@ dropDownUp();
 const main = document.querySelector('main');
 const title = document.querySelector('h1');
 const box = document.querySelector('.contact-box');
+let formSubmit = false;
 
-window.addEventListener('scroll', (e) => {
+function scrollingAnimation() {
+    window.addEventListener('scroll', (e) => {
     e.preventDefault();
-
     const triggerPoint = window.innerWidth <= 768 ? 250 : 900;
-    
-    if(window.scrollY > triggerPoint) {
+
+    if(formSubmit === true) {
+        window.removeEventListener('scroll', scrollingAnimation);
+        console.log('Event listener removed');
+    } else if(window.scrollY > triggerPoint) {
         main.style.backgroundColor = 'rgba(0, 0, 0, 1)';
         box.style.boxShadow = '1px 1px 20px 1px white';
         box.style.backgroundColor = 'white';
     } else {
         main.style.backgroundColor = 'rgba(0, 0, 0, 0)';
     }
+    
 });
+}
+
+scrollingAnimation();
 
 const insta = document.querySelector('.insta');
 
@@ -171,7 +179,8 @@ const form = document.querySelector('#contact-form');
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-
+    submitFormAnimation();
+    formSubmit = true;
     emailjs.sendForm('service_w43j5cg', 'template_5eer8ha', form)
     .then(() => {
         displayMessage('Mensaje enviado! Gracias por contactarnos.', 'success');
@@ -184,8 +193,29 @@ form.addEventListener('submit', (e) => {
 });
 
 function displayMessage(text, type) {
-    const message = document.createElement('div');
+    const messageContainer = document.createElement('div');
+    messageContainer.classList.add('message-container');
+
+    const message = document.createElement('p');
     message.classList.add('message-box');
     message.textContent = text;
-    body.append(message);
+
+    messageContainer.append(message);
+    body.append(messageContainer);
+}
+
+function submitFormAnimation() {
+    const header = document.querySelector('header');
+    const main = document.querySelector('main');
+    const footer = document.querySelector('footer');
+    const headerContainer = document.querySelector('.header-container');
+    const contactBox = document.querySelector('.contact-box');
+
+    const collection = [header, main, footer];
+
+    collection.forEach((element) => {
+        element.style.backgroundColor = 'black';
+    });
+    headerContainer.style.opacity = '0';
+    contactBox.style.opacity = '0';
 }
