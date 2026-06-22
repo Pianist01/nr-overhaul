@@ -14,7 +14,7 @@ Features
 
 TECHNOLOGIES USED
 
-For this project I leaned heavily on JavaScript and CSS. JavaScript was used to generate content while also creating functionality within the page. CSS was used to style everything else along with the page responsiveness. EmailJS was then used to handle the form submissions users send via the contact page.
+For this project I leaned heavily on JavaScript and CSS. JavaScript was used to generate content while also creating functionality within the page. CSS was used to style everything else along with the page responsiveness. EmailJS was then used to handle the form submissions users send via the contact page. AI assisted development tools such as Claude and ChatGPT were used to help debug issues while also exploring ideas. While all customization, testing, and final code decisions were made without the use of AI. 
 
 What I learned
 
